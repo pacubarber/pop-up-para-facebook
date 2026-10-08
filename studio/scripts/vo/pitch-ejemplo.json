@@ -1,0 +1,14 @@
+{
+  "name": "pitch-ejemplo",
+  "lead": 0.35,
+  "gap": 0.3,
+  "voices": {"voz": {"model": "es_MX-claude-high", "speed": 1.04}},
+  "lines": [
+    {"voice": "voz", "text": "Hola, Laura.", "gap": 0.35},
+    {"voice": "voz", "text": "Vi el perfil de Panadería La Espiga y preparé este video solo para ti.", "gap": 0.55},
+    {"voice": "voz", "text": "Así se verían tus videos con edición profesional:", "gap": 0.25},
+    {"voice": "voz", "text": "subtítulos que enganchan, cortes con ritmo, y tu marca en cada segundo.", "gap": 0.5},
+    {"voice": "voz", "text": "Te dejo tres ideas de contenido para Panadería La Espiga.", "gap": 2.6},
+    {"voice": "voz", "text": "Tu primer video te lo edito gratis. Responde a este mensaje y empezamos."}
+  ]
+}

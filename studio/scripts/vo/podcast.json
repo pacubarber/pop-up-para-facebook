@@ -1,0 +1,18 @@
+{
+  "name": "podcast",
+  "lead": 0.5,
+  "gap": 0.32,
+  "voices": {
+    "valeria": {"model": "es_MX-claude-high", "speed": 1.02},
+    "diego": {"model": "es_MX-ald-medium", "speed": 1.08, "gain": 1.05}
+  },
+  "lines": [
+    {"voice": "valeria", "text": "¿Cuál fue el error que casi te hunde la empresa?", "gap": 0.45},
+    {"voice": "diego", "text": "Hablar del producto, y no del cliente."},
+    {"voice": "diego", "text": "Durante un año dijimos: tenemos la mejor tecnología. Y nadie compraba."},
+    {"voice": "diego", "text": "Cambiamos una sola frase: te devolvemos diez horas a la semana.", "gap": 0.2},
+    {"voice": "diego", "text": "Las ventas se triplicaron.", "gap": 0.4},
+    {"voice": "valeria", "text": "¿Con una frase?", "gap": 0.35},
+    {"voice": "diego", "text": "Con una frase. Mismo producto, mismo precio. Otra historia."}
+  ]
+}

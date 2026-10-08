@@ -1,0 +1,349 @@
+{
+ "name": "pitch-ejemplo",
+ "duration": 25.9,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Hola, Laura.",
+   "start": 0.35,
+   "end": 1.4,
+   "words": [
+    {
+     "text": "Hola,",
+     "start": 0.35,
+     "end": 0.75
+    },
+    {
+     "text": "Laura.",
+     "start": 0.92,
+     "end": 1.4
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Vi el perfil de Panadería La Espiga y preparé este video solo para ti.",
+   "start": 1.75,
+   "end": 6.13,
+   "words": [
+    {
+     "text": "Vi",
+     "start": 1.75,
+     "end": 1.959
+    },
+    {
+     "text": "el",
+     "start": 1.959,
+     "end": 2.167
+    },
+    {
+     "text": "perfil",
+     "start": 2.167,
+     "end": 2.584
+    },
+    {
+     "text": "de",
+     "start": 2.584,
+     "end": 2.793
+    },
+    {
+     "text": "Panadería",
+     "start": 2.793,
+     "end": 3.366
+    },
+    {
+     "text": "La",
+     "start": 3.366,
+     "end": 3.575
+    },
+    {
+     "text": "Espiga",
+     "start": 3.575,
+     "end": 3.992
+    },
+    {
+     "text": "y",
+     "start": 3.992,
+     "end": 4.149
+    },
+    {
+     "text": "preparé",
+     "start": 4.149,
+     "end": 4.618
+    },
+    {
+     "text": "este",
+     "start": 4.618,
+     "end": 4.931
+    },
+    {
+     "text": "video",
+     "start": 4.931,
+     "end": 5.296
+    },
+    {
+     "text": "solo",
+     "start": 5.296,
+     "end": 5.609
+    },
+    {
+     "text": "para",
+     "start": 5.609,
+     "end": 5.921
+    },
+    {
+     "text": "ti.",
+     "start": 5.921,
+     "end": 6.13
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Así se verían tus videos con edición profesional:",
+   "start": 6.68,
+   "end": 9.85,
+   "words": [
+    {
+     "text": "Así",
+     "start": 6.68,
+     "end": 6.958
+    },
+    {
+     "text": "se",
+     "start": 6.958,
+     "end": 7.181
+    },
+    {
+     "text": "verían",
+     "start": 7.181,
+     "end": 7.625
+    },
+    {
+     "text": "tus",
+     "start": 7.625,
+     "end": 7.904
+    },
+    {
+     "text": "videos",
+     "start": 7.904,
+     "end": 8.348
+    },
+    {
+     "text": "con",
+     "start": 8.348,
+     "end": 8.626
+    },
+    {
+     "text": "edición",
+     "start": 8.626,
+     "end": 9.127
+    },
+    {
+     "text": "profesional:",
+     "start": 9.127,
+     "end": 9.85
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "subtítulos que enganchan, cortes con ritmo, y tu marca en cada segundo.",
+   "start": 10.1,
+   "end": 14.5,
+   "words": [
+    {
+     "text": "subtítulos",
+     "start": 10.1,
+     "end": 10.713
+    },
+    {
+     "text": "que",
+     "start": 10.713,
+     "end": 10.968
+    },
+    {
+     "text": "enganchan,",
+     "start": 10.968,
+     "end": 11.53
+    },
+    {
+     "text": "cortes",
+     "start": 11.61,
+     "end": 12.038
+    },
+    {
+     "text": "con",
+     "start": 12.038,
+     "end": 12.306
+    },
+    {
+     "text": "ritmo,",
+     "start": 12.306,
+     "end": 12.68
+    },
+    {
+     "text": "y",
+     "start": 12.75,
+     "end": 12.909
+    },
+    {
+     "text": "tu",
+     "start": 12.909,
+     "end": 13.121
+    },
+    {
+     "text": "marca",
+     "start": 13.121,
+     "end": 13.492
+    },
+    {
+     "text": "en",
+     "start": 13.492,
+     "end": 13.705
+    },
+    {
+     "text": "cada",
+     "start": 13.705,
+     "end": 14.023
+    },
+    {
+     "text": "segundo.",
+     "start": 14.023,
+     "end": 14.5
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Te dejo tres ideas de contenido para Panadería La Espiga.",
+   "start": 15.0,
+   "end": 18.32,
+   "words": [
+    {
+     "text": "Te",
+     "start": 15.0,
+     "end": 15.198
+    },
+    {
+     "text": "dejo",
+     "start": 15.198,
+     "end": 15.496
+    },
+    {
+     "text": "tres",
+     "start": 15.496,
+     "end": 15.793
+    },
+    {
+     "text": "ideas",
+     "start": 15.793,
+     "end": 16.14
+    },
+    {
+     "text": "de",
+     "start": 16.14,
+     "end": 16.338
+    },
+    {
+     "text": "contenido",
+     "start": 16.338,
+     "end": 16.883
+    },
+    {
+     "text": "para",
+     "start": 16.883,
+     "end": 17.18
+    },
+    {
+     "text": "Panadería",
+     "start": 17.18,
+     "end": 17.725
+    },
+    {
+     "text": "La",
+     "start": 17.725,
+     "end": 17.924
+    },
+    {
+     "text": "Espiga.",
+     "start": 17.924,
+     "end": 18.32
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Tu primer video te lo edito gratis. Responde a este mensaje y empezamos.",
+   "start": 20.92,
+   "end": 25.4,
+   "words": [
+    {
+     "text": "Tu",
+     "start": 20.92,
+     "end": 21.134
+    },
+    {
+     "text": "primer",
+     "start": 21.134,
+     "end": 21.563
+    },
+    {
+     "text": "video",
+     "start": 21.563,
+     "end": 21.938
+    },
+    {
+     "text": "te",
+     "start": 21.938,
+     "end": 22.152
+    },
+    {
+     "text": "lo",
+     "start": 22.152,
+     "end": 22.366
+    },
+    {
+     "text": "edito",
+     "start": 22.366,
+     "end": 22.741
+    },
+    {
+     "text": "gratis.",
+     "start": 22.741,
+     "end": 23.17
+    },
+    {
+     "text": "Responde",
+     "start": 23.27,
+     "end": 23.777
+    },
+    {
+     "text": "a",
+     "start": 23.777,
+     "end": 23.929
+    },
+    {
+     "text": "este",
+     "start": 23.929,
+     "end": 24.234
+    },
+    {
+     "text": "mensaje",
+     "start": 24.234,
+     "end": 24.69
+    },
+    {
+     "text": "y",
+     "start": 24.69,
+     "end": 24.842
+    },
+    {
+     "text": "empezamos.",
+     "start": 24.842,
+     "end": 25.4
+    }
+   ]
+  }
+ ]
+}

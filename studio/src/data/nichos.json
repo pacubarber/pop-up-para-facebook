@@ -1,0 +1,12 @@
+{
+  "restaurante": {"nombre": "restaurante", "ideas": ["Tu plato estrella en 15 segundos", "Clientes probando algo nuevo", "Un día en la cocina, de la apertura al cierre"]},
+  "cafeteria": {"nombre": "cafetería", "ideas": ["El ritual de tu mejor bebida en cámara lenta", "Qué pedir según tu mood", "Detrás de la barra a las 7 a. m."]},
+  "inmobiliaria": {"nombre": "inmobiliaria", "ideas": ["Tour de propiedad en 30 s con plano animado", "3 errores al comprar tu primera casa", "Antes y después de una remodelación"]},
+  "gimnasio": {"nombre": "gimnasio", "ideas": ["La transformación de un socio (con su permiso)", "Rutina de 3 ejercicios para principiantes", "Mitos del gym que hay que olvidar"]},
+  "clinica": {"nombre": "clínica", "ideas": ["Antes y después de un tratamiento", "La duda más común, resuelta en 20 s", "Conoce al equipo detrás de cada sonrisa"]},
+  "belleza": {"nombre": "salón de belleza", "ideas": ["Transformación de look en 15 segundos", "La tendencia del mes explicada fácil", "Errores de cuidado que todos cometemos"]},
+  "coach": {"nombre": "marca personal", "ideas": ["Tu mejor consejo en 30 s con subtítulos", "Clips de tus lives con un gancho fuerte", "La historia de un cliente en 3 actos"]},
+  "ecommerce": {"nombre": "tienda online", "ideas": ["Unboxing con ritmo y diseño sonoro", "3 formas de usar tu producto", "Respuesta a la objeción más común"]},
+  "podcast": {"nombre": "podcast", "ideas": ["Los 3 mejores momentos del episodio en clips", "Audiogramas con subtítulos por invitado", "Tráiler del episodio para historias"]},
+  "otro": {"nombre": "negocio", "ideas": ["Un video que explique qué haces en 20 s", "Las preguntas que más te hacen, respondidas", "Detrás de cámara de tu día a día"]}
+}

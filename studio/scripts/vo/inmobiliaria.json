@@ -1,0 +1,12 @@
+{
+  "name": "inmobiliaria",
+  "lead": 0.6,
+  "gap": 0.45,
+  "voices": {"voz": {"model": "es_MX-ald-medium", "speed": 0.98}},
+  "lines": [
+    {"voice": "voz", "text": "Esto no es una casa más en Alameda."},
+    {"voice": "voz", "text": "Tres habitaciones, dos baños, y una terraza que mira al atardecer."},
+    {"voice": "voz", "text": "Ciento cuarenta y cinco metros cuadrados, a cinco minutos del parque."},
+    {"voice": "voz", "text": "Agenda tu visita esta semana."}
+  ]
+}

@@ -1,0 +1,203 @@
+{
+ "name": "cafe",
+ "duration": 12.28,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Tu café sabe a lunes?",
+   "start": 0.35,
+   "end": 1.67,
+   "words": [
+    {
+     "text": "¿Tu",
+     "start": 0.35,
+     "end": 0.553
+    },
+    {
+     "text": "café",
+     "start": 0.553,
+     "end": 0.858
+    },
+    {
+     "text": "sabe",
+     "start": 0.858,
+     "end": 1.162
+    },
+    {
+     "text": "a",
+     "start": 1.162,
+     "end": 1.315
+    },
+    {
+     "text": "lunes?",
+     "start": 1.315,
+     "end": 1.67
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Grano Alto. Café de especialidad, tostado esta semana.",
+   "start": 2.22,
+   "end": 5.81,
+   "words": [
+    {
+     "text": "Grano",
+     "start": 2.22,
+     "end": 2.639
+    },
+    {
+     "text": "Alto.",
+     "start": 2.639,
+     "end": 2.998
+    },
+    {
+     "text": "Café",
+     "start": 2.998,
+     "end": 3.357
+    },
+    {
+     "text": "de",
+     "start": 3.357,
+     "end": 3.596
+    },
+    {
+     "text": "especialidad,",
+     "start": 3.596,
+     "end": 4.434
+    },
+    {
+     "text": "tostado",
+     "start": 4.434,
+     "end": 4.972
+    },
+    {
+     "text": "esta",
+     "start": 4.972,
+     "end": 5.331
+    },
+    {
+     "text": "semana.",
+     "start": 5.331,
+     "end": 5.81
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "De la finca a tu taza en cuarenta y ocho horas.",
+   "start": 6.11,
+   "end": 8.64,
+   "words": [
+    {
+     "text": "De",
+     "start": 6.11,
+     "end": 6.284
+    },
+    {
+     "text": "la",
+     "start": 6.284,
+     "end": 6.459
+    },
+    {
+     "text": "finca",
+     "start": 6.459,
+     "end": 6.764
+    },
+    {
+     "text": "a",
+     "start": 6.764,
+     "end": 6.895
+    },
+    {
+     "text": "tu",
+     "start": 6.895,
+     "end": 7.07
+    },
+    {
+     "text": "taza",
+     "start": 7.07,
+     "end": 7.331
+    },
+    {
+     "text": "en",
+     "start": 7.331,
+     "end": 7.506
+    },
+    {
+     "text": "cuarenta",
+     "start": 7.506,
+     "end": 7.942
+    },
+    {
+     "text": "y",
+     "start": 7.942,
+     "end": 8.073
+    },
+    {
+     "text": "ocho",
+     "start": 8.073,
+     "end": 8.335
+    },
+    {
+     "text": "horas.",
+     "start": 8.335,
+     "end": 8.64
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Tu primera bolsa, con treinta por ciento de descuento.",
+   "start": 8.94,
+   "end": 11.78,
+   "words": [
+    {
+     "text": "Tu",
+     "start": 8.94,
+     "end": 9.123
+    },
+    {
+     "text": "primera",
+     "start": 9.123,
+     "end": 9.535
+    },
+    {
+     "text": "bolsa,",
+     "start": 9.535,
+     "end": 9.856
+    },
+    {
+     "text": "con",
+     "start": 9.856,
+     "end": 10.085
+    },
+    {
+     "text": "treinta",
+     "start": 10.085,
+     "end": 10.497
+    },
+    {
+     "text": "por",
+     "start": 10.497,
+     "end": 10.726
+    },
+    {
+     "text": "ciento",
+     "start": 10.726,
+     "end": 11.093
+    },
+    {
+     "text": "de",
+     "start": 11.093,
+     "end": 11.276
+    },
+    {
+     "text": "descuento.",
+     "start": 11.276,
+     "end": 11.78
+    }
+   ]
+  }
+ ]
+}

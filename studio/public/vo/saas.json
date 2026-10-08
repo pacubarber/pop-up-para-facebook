@@ -1,0 +1,178 @@
+{
+ "name": "saas",
+ "duration": 14.29,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Sigues agendando citas por mensaje, una por una?",
+   "start": 0.4,
+   "end": 3.35,
+   "words": [
+    {
+     "text": "¿Sigues",
+     "start": 0.4,
+     "end": 0.834
+    },
+    {
+     "text": "agendando",
+     "start": 0.834,
+     "end": 1.431
+    },
+    {
+     "text": "citas",
+     "start": 1.431,
+     "end": 1.81
+    },
+    {
+     "text": "por",
+     "start": 1.81,
+     "end": 2.082
+    },
+    {
+     "text": "mensaje,",
+     "start": 2.082,
+     "end": 2.57
+    },
+    {
+     "text": "una",
+     "start": 2.64,
+     "end": 2.877
+    },
+    {
+     "text": "por",
+     "start": 2.877,
+     "end": 3.113
+    },
+    {
+     "text": "una?",
+     "start": 3.113,
+     "end": 3.35
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Con Flujo, tus clientes reservan solos.",
+   "start": 3.85,
+   "end": 6.29,
+   "words": [
+    {
+     "text": "Con",
+     "start": 3.85,
+     "end": 4.117
+    },
+    {
+     "text": "Flujo,",
+     "start": 4.117,
+     "end": 4.49
+    },
+    {
+     "text": "tus",
+     "start": 4.6,
+     "end": 4.864
+    },
+    {
+     "text": "clientes",
+     "start": 4.864,
+     "end": 5.392
+    },
+    {
+     "text": "reservan",
+     "start": 5.392,
+     "end": 5.92
+    },
+    {
+     "text": "solos.",
+     "start": 5.92,
+     "end": 6.29
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Recordatorios automáticos, pagos por adelantado y cero ausencias.",
+   "start": 6.64,
+   "end": 10.6,
+   "words": [
+    {
+     "text": "Recordatorios",
+     "start": 6.64,
+     "end": 7.497
+    },
+    {
+     "text": "automáticos,",
+     "start": 7.497,
+     "end": 8.24
+    },
+    {
+     "text": "pagos",
+     "start": 8.44,
+     "end": 8.784
+    },
+    {
+     "text": "por",
+     "start": 8.784,
+     "end": 9.029
+    },
+    {
+     "text": "adelantado",
+     "start": 9.029,
+     "end": 9.618
+    },
+    {
+     "text": "y",
+     "start": 9.618,
+     "end": 9.765
+    },
+    {
+     "text": "cero",
+     "start": 9.765,
+     "end": 10.06
+    },
+    {
+     "text": "ausencias.",
+     "start": 10.06,
+     "end": 10.6
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Flujo. Tu agenda, en piloto automático.",
+   "start": 10.95,
+   "end": 13.74,
+   "words": [
+    {
+     "text": "Flujo.",
+     "start": 10.95,
+     "end": 11.45
+    },
+    {
+     "text": "Tu",
+     "start": 11.65,
+     "end": 11.82
+    },
+    {
+     "text": "agenda,",
+     "start": 11.82,
+     "end": 12.16
+    },
+    {
+     "text": "en",
+     "start": 12.26,
+     "end": 12.507
+    },
+    {
+     "text": "piloto",
+     "start": 12.507,
+     "end": 13.0
+    },
+    {
+     "text": "automático.",
+     "start": 13.0,
+     "end": 13.74
+    }
+   ]
+  }
+ ]
+}

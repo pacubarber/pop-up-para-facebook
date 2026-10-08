@@ -1,0 +1,12 @@
+{
+  "name": "saas",
+  "lead": 0.4,
+  "gap": 0.35,
+  "voices": {"voz": {"model": "es_MX-claude-high", "speed": 1.05}},
+  "lines": [
+    {"voice": "voz", "text": "¿Sigues agendando citas por mensaje, una por una?", "gap": 0.5},
+    {"voice": "voz", "text": "Con Flujo, tus clientes reservan solos."},
+    {"voice": "voz", "text": "Recordatorios automáticos, pagos por adelantado y cero ausencias."},
+    {"voice": "voz", "text": "Flujo. Tu agenda, en piloto automático."}
+  ]
+}

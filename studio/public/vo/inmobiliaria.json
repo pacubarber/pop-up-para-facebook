@@ -1,0 +1,213 @@
+{
+ "name": "inmobiliaria",
+ "duration": 16.21,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Esto no es una casa más en Alameda.",
+   "start": 0.6,
+   "end": 2.78,
+   "words": [
+    {
+     "text": "Esto",
+     "start": 0.6,
+     "end": 0.904
+    },
+    {
+     "text": "no",
+     "start": 0.904,
+     "end": 1.107
+    },
+    {
+     "text": "es",
+     "start": 1.107,
+     "end": 1.31
+    },
+    {
+     "text": "una",
+     "start": 1.31,
+     "end": 1.563
+    },
+    {
+     "text": "casa",
+     "start": 1.563,
+     "end": 1.867
+    },
+    {
+     "text": "más",
+     "start": 1.867,
+     "end": 2.121
+    },
+    {
+     "text": "en",
+     "start": 2.121,
+     "end": 2.324
+    },
+    {
+     "text": "Alameda.",
+     "start": 2.324,
+     "end": 2.78
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Tres habitaciones, dos baños, y una terraza que mira al atardecer.",
+   "start": 3.23,
+   "end": 7.85,
+   "words": [
+    {
+     "text": "Tres",
+     "start": 3.23,
+     "end": 3.617
+    },
+    {
+     "text": "habitaciones,",
+     "start": 3.617,
+     "end": 4.52
+    },
+    {
+     "text": "dos",
+     "start": 4.64,
+     "end": 4.953
+    },
+    {
+     "text": "baños,",
+     "start": 4.953,
+     "end": 5.39
+    },
+    {
+     "text": "y",
+     "start": 5.48,
+     "end": 5.645
+    },
+    {
+     "text": "una",
+     "start": 5.645,
+     "end": 5.921
+    },
+    {
+     "text": "terraza",
+     "start": 5.921,
+     "end": 6.417
+    },
+    {
+     "text": "que",
+     "start": 6.417,
+     "end": 6.693
+    },
+    {
+     "text": "mira",
+     "start": 6.693,
+     "end": 7.023
+    },
+    {
+     "text": "al",
+     "start": 7.023,
+     "end": 7.244
+    },
+    {
+     "text": "atardecer.",
+     "start": 7.244,
+     "end": 7.85
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Ciento cuarenta y cinco metros cuadrados, a cinco minutos del parque.",
+   "start": 8.3,
+   "end": 12.93,
+   "words": [
+    {
+     "text": "Ciento",
+     "start": 8.3,
+     "end": 8.828
+    },
+    {
+     "text": "cuarenta",
+     "start": 8.828,
+     "end": 9.487
+    },
+    {
+     "text": "y",
+     "start": 9.487,
+     "end": 9.685
+    },
+    {
+     "text": "cinco",
+     "start": 9.685,
+     "end": 10.147
+    },
+    {
+     "text": "metros",
+     "start": 10.147,
+     "end": 10.674
+    },
+    {
+     "text": "cuadrados,",
+     "start": 10.674,
+     "end": 11.4
+    },
+    {
+     "text": "a",
+     "start": 11.48,
+     "end": 11.616
+    },
+    {
+     "text": "cinco",
+     "start": 11.616,
+     "end": 11.933
+    },
+    {
+     "text": "minutos",
+     "start": 11.933,
+     "end": 12.341
+    },
+    {
+     "text": "del",
+     "start": 12.341,
+     "end": 12.568
+    },
+    {
+     "text": "parque.",
+     "start": 12.568,
+     "end": 12.93
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Agenda tu visita esta semana.",
+   "start": 13.38,
+   "end": 15.56,
+   "words": [
+    {
+     "text": "Agenda",
+     "start": 13.38,
+     "end": 13.893
+    },
+    {
+     "text": "tu",
+     "start": 13.893,
+     "end": 14.149
+    },
+    {
+     "text": "visita",
+     "start": 14.149,
+     "end": 14.662
+    },
+    {
+     "text": "esta",
+     "start": 14.662,
+     "end": 15.047
+    },
+    {
+     "text": "semana.",
+     "start": 15.047,
+     "end": 15.56
+    }
+   ]
+  }
+ ]
+}

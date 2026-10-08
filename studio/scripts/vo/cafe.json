@@ -1,0 +1,12 @@
+{
+  "name": "cafe",
+  "lead": 0.35,
+  "gap": 0.3,
+  "voices": {"voz": {"model": "es_MX-claude-high", "speed": 1.06}},
+  "lines": [
+    {"voice": "voz", "text": "¿Tu café sabe a lunes?", "gap": 0.55},
+    {"voice": "voz", "text": "Grano Alto. Café de especialidad, tostado esta semana."},
+    {"voice": "voz", "text": "De la finca a tu taza en cuarenta y ocho horas."},
+    {"voice": "voz", "text": "Tu primera bolsa, con treinta por ciento de descuento."}
+  ]
+}

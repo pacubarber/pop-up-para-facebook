@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guía de marca CORTE</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Guía de marca: una hoja por tema, como fichas de una carpeta de producción. */
+:root {
+  --ink: #0C0C0E; --panel: #151518; --line: #2A2A30; --bone: #F2EEE6; --muted: #9A978F; --red: #FF3B1F;
+  --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ink); color: var(--bone); font: 400 16px/1.6 var(--display); }
+.wrap { max-width: 1100px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); padding-block: 56px 96px; }
+h1 { font: 900 clamp(56px, 9vw, 120px)/.9 var(--display); letter-spacing: -.045em; margin: 0; }
+h1 em, h2 em { font-family: var(--serif); font-weight: 400; color: var(--red); }
+h2 { font: 900 40px/1 var(--display); letter-spacing: -.03em; margin: 0 0 22px; text-wrap: balance; }
+h3 { font-weight: 800; margin: 0 0 6px; font-size: 18px; }
+p { margin: 0; color: var(--muted); max-width: 64ch; }
+.mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+section { border-top: 1px solid var(--line); padding-block: 48px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; }
+section > .mono { padding-top: 10px; }
+@media (max-width: 760px) { section { grid-template-columns: 1fr; gap: 12px; } }
+.grid { display: grid; gap: 16px; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { .g2, .g3 { grid-template-columns: 1fr; } }
+.tile { border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: flex; align-items: center; justify-content: center; min-height: 170px; }
+.tile.light { background: var(--bone); border-color: var(--bone); }
+.tile img { max-height: 90px; max-width: 100%; }
+.cap { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.swatch { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.swatch .chip { height: 120px; }
+.swatch .meta { padding: 14px 16px; background: var(--panel); }
+.swatch .meta b { display: block; color: var(--bone); }
+.swatch .meta span { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.spec { border: 1px solid var(--line); border-radius: 14px; padding: 24px; min-width: 0; }
+.spec .sample { color: var(--bone); margin: 10px 0 8px; line-height: 1; overflow-wrap: anywhere; }
+.do, .dont { border-radius: 14px; padding: 22px; border: 1px solid var(--line); }
+.do h3 { color: #7BE0A6; } .dont h3 { color: var(--red); }
+ul { margin: 0; padding-left: 18px; color: var(--muted); display: grid; gap: 6px; }
+.voice { display: grid; gap: 10px; }
+.voice div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.voice div span:first-child { color: var(--bone); }
+.voice div span:last-child { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mono">Guía de marca · v1 · 2026</div>
+  <h1 style="margin-top:18px">CORTE<span style="color:var(--red)">.</span><br><em>Cada corte cuenta.</em></h1>
+
+  <section>
+    <div class="mono">01 · Esencia</div>
+    <div class="grid">
+      <p><b style="color:var(--bone)">Qué somos:</b> un estudio de edición de video para marcas, negocios y creadores de habla hispana.</p>
+      <p><b style="color:var(--bone)">Promesa:</b> editamos videos que nadie se salta. Cada decisión de edición (gancho, corte, subtítulo, sonido) existe para que la gente siga mirando.</p>
+      <p><b style="color:var(--bone)">Por qué "CORTE":</b> el corte es la unidad mínima de la edición. El isotipo es un disco cortado en diagonal: la pieza que separa una toma de la siguiente.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">02 · Logotipo</div>
+    <div>
+      <div class="grid g2">
+        <div><div class="tile"><img src="logo/corte-horizontal.svg" alt="Logo horizontal sobre fondo oscuro"></div><div class="cap">Horizontal · fondo Negro Sala (principal)</div></div>
+        <div><div class="tile light"><img src="logo/corte-horizontal-claro.svg" alt="Logo horizontal sobre fondo claro"></div><div class="cap">Horizontal · fondo Hueso</div></div>
+        <div><div class="tile"><img src="logo/corte-isotipo.svg" alt="Isotipo"></div><div class="cap">Isotipo · avatar, favicon, marca de agua en videos</div></div>
+        <div><div class="tile light"><img src="logo/corte-logotipo-claro.svg" alt="Logotipo solo texto"></div><div class="cap">Logotipo · cuando el isotipo ya aparece cerca</div></div>
+      </div>
+      <p style="margin-top:20px">Espacio libre: deja alrededor del logo al menos la altura de la letra "O". Tamaño mínimo: 24 px de alto en pantalla. El punto final siempre va en Rojo Corte.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">03 · Color</div>
+    <div>
+      <div class="grid g3">
+        <div class="swatch"><div class="chip" style="background:#0C0C0E"></div><div class="meta"><b>Negro Sala</b><span>#0C0C0E · 12 12 14</span></div></div>
+        <div class="swatch"><div class="chip" style="background:#F2EEE6"></div><div class="meta"><b>Hueso</b><span>#F2EEE6 · 242 238 230</span></div></div>
+        <div class="swatch"><div class="chip" style="background:#FF3B1F"></div><div class="meta"><b>Rojo Corte</b><span>#FF3B1F · 255 59 31</span></div></div>
+        <div class="swatch"><div class="chip" style="background:#151518"></div><div class="meta"><b>Grafito</b><span>#151518 · superficies</span></div></div>
+        <div class="swatch"><div class="chip" style="background:#9A978F"></div><div class="meta"><b>Gris cálido</b><span>#9A978F · texto secundario</span></div></div>
+        <div class="swatch"><div class="chip" style="background:#C9260E"></div><div class="meta"><b>Rojo profundo</b><span>#C9260E · rojo sobre Hueso</span></div></div>
+      </div>
+      <p style="margin-top:20px">Proporción: 70 % Negro Sala, 25 % Hueso, 5 % Rojo Corte. El rojo marca lo importante (el punto, un botón, una palabra), nunca fondos grandes salvo en transiciones de video de un tiempo de duración.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">04 · Tipografía</div>
+    <div class="grid g3">
+      <div class="spec"><div class="mono">Titulares</div><div class="sample" style="font:900 52px/1 var(--display);letter-spacing:-.04em">Inter Tight</div><p>Black (900) para titulares, ExtraBold (800) para subtítulos. Interletrado −3 % a −5 %.</p></div>
+      <div class="spec"><div class="mono">Acento</div><div class="sample" style="font:italic 400 58px/1 var(--serif)">Instrument Serif</div><p>Itálica, para una o dos palabras con intención: <em style="font-family:var(--serif);color:var(--bone)">cuenta, gratis, cada</em>.</p></div>
+      <div class="spec"><div class="mono">Datos</div><div class="sample" style="font:500 30px/1.2 var(--mono)">00:00:04:12</div><p>JetBrains Mono para timecodes, etiquetas y datos técnicos. Siempre en mayúsculas con interletrado amplio.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">05 · Elementos</div>
+    <div class="grid g2">
+      <div class="spec"><h3>Timecode</h3><p>HH:MM:SS:FF en mono. Numera secciones de la web, marca el inicio de los videos y ordena presentaciones.</p></div>
+      <div class="spec"><h3>Punto REC</h3><p>Círculo Rojo Corte que parpadea. Señala "en vivo", "ahora" o la llamada a la acción.</p></div>
+      <div class="spec"><h3>El corte</h3><p>Las transiciones de marca separan el isotipo en dos mitades por la diagonal y las vuelven a unir con un golpe de sonido.</p></div>
+      <div class="spec"><h3>Línea de tiempo</h3><p>Pistas de clips de colores con cabezal de reproducción. Se usa para explicar procesos y en el visor de la web.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">06 · Voz</div>
+    <div>
+      <p style="margin-bottom:18px">Directa, segura y cercana. Tuteamos. Frases cortas. Hablamos de resultados para el cliente, no de nuestras herramientas.</p>
+      <div class="voice">
+        <div><span>"Tu primer video, gratis."</span><span>"Ofrecemos una prueba sin costo de nuestros servicios."</span></div>
+        <div><span>"Editamos videos que nadie se salta."</span><span>"Somos expertos en soluciones audiovisuales integrales."</span></div>
+        <div><span>"Lo tienes en 72 horas."</span><span>"Entregamos en tiempos competitivos."</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">07 · Uso</div>
+    <div class="grid g2">
+      <div class="do"><h3>Sí</h3><ul><li>Fondos Negro Sala o Hueso, planos.</li><li>Un solo acento rojo por pantalla.</li><li>Titulares grandes con mucho aire.</li><li>Música y efectos con licencia o propios.</li></ul></div>
+      <div class="dont"><h3>No</h3><ul><li>Degradados de colores en el logo.</li><li>Rotar, deformar o separar el isotipo (salvo en la animación del corte).</li><li>Más de dos familias tipográficas en una pieza.</li><li>Testimonios, cifras o logos de clientes que no sean reales.</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mono">08 · Canales</div>
+    <div class="grid g2">
+      <div class="spec"><h3>Instagram / TikTok</h3><p>@corte.studio · avatar: isotipo sobre Negro Sala.</p></div>
+      <div class="spec"><h3>Web y email</h3><p>cortestudio.co · hola@cortestudio.co (verifica que el dominio y los usuarios estén libres antes de registrarlos).</p></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

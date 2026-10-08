@@ -1,0 +1,9 @@
+node_modules/
+.cache/
+out/
+# Se regeneran con `npm run setup` (audio determinístico + voces offline)
+public/reel/
+public/audio/*.wav
+public/vo/*.wav
+public/vo/pitch-*
+!public/vo/pitch-ejemplo.json

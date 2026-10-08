@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CORTE Estudio</title>
+<meta name="description" content="CORTE: estudio de edición de video para marcas, negocios y creadores. Reels, TikTok, YouTube, podcasts y anuncios en 72 horas. Tu primer video, gratis.">
+<meta property="og:title" content="CORTE · Estudio de edición de video">
+<meta property="og:description" content="Editamos videos que nadie se salta. Tu primer video, gratis.">
+<meta property="og:image" content="media/showreel-corte.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Concepto: la página es una sala de edición. Visor + línea de tiempo arriba,
+   y cada sección lleva su timecode como si fuera un punto del montaje. */
+:root {
+  --ink: #0C0C0E;        /* Negro Sala */
+  --panel: #151518;      /* Grafito */
+  --line: #2A2A30;
+  --bone: #F2EEE6;       /* Hueso */
+  --muted: #9A978F;
+  --red: #FF3B1F;        /* Rojo Corte */
+  --red-deep: #C9260E;   /* rojo para texto sobre Hueso */
+  --display: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--bone);
+  font: 400 17px/1.55 var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+.mono { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+.tc { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); font-size: 13px; letter-spacing: .06em; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h2 { font-weight: 900; font-size: clamp(40px, 6vw, 76px); line-height: .98; letter-spacing: -.035em; }
+h2 em, h1 em { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.01em; }
+p { margin: 0; }
+
+/* ---------- barra superior */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; gap: 24px; padding-block: 14px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; letter-spacing: -.03em; }
+.logo svg { width: 30px; height: 30px; }
+.logo i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--red); margin-left: 2px; }
+.nav { display: flex; gap: 22px; margin-left: auto; }
+.nav a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: 15px; }
+.nav a:hover { color: var(--bone); }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--red); color: var(--ink);
+  font: 800 16px/1 var(--display); text-decoration: none;
+  padding: 14px 20px; border-radius: 999px; border: 0; cursor: pointer;
+  transition: transform .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--bone); box-shadow: inset 0 0 0 1.5px var(--line); }
+.btn.ghost:hover { box-shadow: inset 0 0 0 1.5px var(--bone); }
+@media (max-width: 860px) { .nav { display: none; } .top .btn { margin-left: auto; } }
+
+/* ---------- hero */
+.hero { padding-block: clamp(40px, 7vw, 88px) 56px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4vw, 56px); align-items: center; }
+.rec { display: flex; align-items: center; gap: 10px; }
+.rec b { width: 10px; height: 10px; border-radius: 50%; background: var(--red); animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { opacity: .2; } }
+h1 { font-weight: 900; font-size: clamp(52px, 7.4vw, 104px); line-height: .92; letter-spacing: -.045em; margin-top: 22px; }
+h1 em { color: var(--red); }
+.lede { color: var(--muted); font-size: clamp(18px, 1.6vw, 20px); max-width: 34ch; margin-top: 24px; }
+.lede strong { color: var(--bone); font-weight: 600; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+/* visor */
+.viewer { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 12px; min-width: 0; }
+.viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px 4px 10px; }
+.screen { position: relative; border-radius: 10px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; max-width: 100%; }
+.screen video { width: 100%; height: 100%; object-fit: cover; }
+.sound {
+  position: absolute; right: 12px; bottom: 12px;
+  background: rgba(12,12,14,.75); color: var(--bone); border: 1px solid rgba(242,238,230,.25);
+  font: 600 13px/1 var(--display); padding: 9px 13px; border-radius: 999px; cursor: pointer;
+}
+.timeline { margin-top: 12px; position: relative; }
+.track { display: flex; gap: 3px; height: 38px; }
+.clip {
+  position: relative; min-width: 0; border: 0; border-radius: 6px; cursor: pointer; padding: 0;
+  background: var(--c, #33333A); opacity: .55; transition: opacity .15s;
+}
+.clip:hover, .clip.on { opacity: 1; }
+.clip.on { box-shadow: inset 0 0 0 2px var(--bone); }
+.audio-track { margin-top: 3px; height: 16px; border-radius: 5px; background: repeating-linear-gradient(90deg, #1F4D35 0 2px, #2BB673 2px 3px, #1F4D35 3px 5px); opacity: .55; }
+.playhead { position: absolute; top: -6px; bottom: -4px; width: 2px; background: var(--bone); left: 0; pointer-events: none; }
+.playhead::before { content: ""; position: absolute; top: 0; left: -6px; border: 7px solid transparent; border-top: 8px solid var(--bone); }
+.tl-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; }
+
+@media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; } .lede { max-width: 46ch; } }
+
+/* ---------- secciones */
+section { padding-block: clamp(64px, 9vw, 120px); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; margin-bottom: 44px; }
+.sec-head .tc { display: block; margin-bottom: 18px; }
+.sec-head p { color: var(--muted); max-width: 40ch; }
+@media (max-width: 760px) { .sec-head { grid-template-columns: 1fr; } }
+
+/* trabajo */
+.work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.work { min-width: 0; }
+.work.wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 28px; align-items: center; }
+.thumb {
+  position: relative; display: block; width: 100%; padding: 0; border: 0; cursor: pointer;
+  border-radius: 16px; overflow: hidden; background: #000; aspect-ratio: 9 / 16; max-width: 100%;
+}
+.work.wide .thumb { aspect-ratio: 16 / 9; }
+.thumb img, .thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb video { opacity: 0; transition: opacity .2s; }
+.thumb.playing video { opacity: 1; }
+.thumb .play {
+  position: absolute; left: 14px; bottom: 14px; display: flex; align-items: center; gap: 8px;
+  background: rgba(12,12,14,.78); color: var(--bone); padding: 9px 13px 9px 11px; border-radius: 999px;
+  font: 700 13px/1 var(--display);
+}
+.thumb .play svg { width: 12px; height: 12px; fill: var(--red); }
+.work-info { padding-top: 16px; }
+.work-info h3 { font-weight: 800; font-size: 24px; letter-spacing: -.02em; }
+.work-info .kind { color: var(--red); margin-bottom: 8px; display: block; }
+.work-info p { color: var(--muted); margin-top: 8px; font-size: 15.5px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tags span { font: 600 12.5px/1 var(--display); border: 1px solid var(--line); color: var(--bone); padding: 7px 10px; border-radius: 999px; }
+.spec-note { margin-top: 26px; color: var(--muted); font-size: 14px; }
+@media (max-width: 860px) {
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .work.wide { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) { .work-grid { grid-template-columns: 1fr; } .work:not(.wide) .thumb { max-width: 340px; } }
+
+/* servicios (sección clara) */
+.light { background: var(--bone); color: var(--ink); }
+.light .tc, .light .sec-head p { color: #5E5B55; }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1.5px solid var(--ink); }
+.service { padding: 26px 26px 30px 0; border-bottom: 1px solid #CFC9BE; min-width: 0; }
+.service:not(:nth-child(3n)) { border-right: 1px solid #CFC9BE; }
+.service:not(:nth-child(3n+1)) { padding-left: 26px; }
+.service h3 { font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.service p { color: #4A4741; margin-top: 8px; font-size: 15.5px; }
+.service .tc { color: var(--red-deep); display: block; margin-bottom: 14px; }
+@media (max-width: 860px) {
+  .services { grid-template-columns: 1fr; }
+  .service, .service:not(:nth-child(3n+1)) { padding: 22px 0; border-right: 0 !important; }
+}
+
+/* proceso */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; }
+.step { background: var(--panel); padding: 22px; min-width: 0; }
+.step:first-child { border-radius: 14px 0 0 14px; }
+.step:last-child { border-radius: 0 14px 14px 0; }
+.step .n { font: 900 54px/1 var(--display); letter-spacing: -.04em; color: var(--red); }
+.step h3 { font-weight: 800; font-size: 20px; margin-top: 16px; }
+.step p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+.step .tc { display: block; margin-top: 18px; }
+@media (max-width: 860px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step, .step:first-child, .step:last-child { border-radius: 14px; }
+}
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* precios */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.plan { border: 1px solid var(--line); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; min-width: 0; }
+.plan.pick { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.plan .badge { align-self: flex-start; font: 800 12px/1 var(--display); background: var(--red); color: var(--ink); padding: 7px 10px; border-radius: 999px; margin-bottom: 16px; }
+.plan h3 { font-weight: 800; font-size: 24px; }
+.price { display: flex; align-items: baseline; gap: 6px; margin-top: 14px; }
+.price b { font: 900 56px/1 var(--display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.price span { color: var(--muted); }
+.plan.pick .price span, .plan.pick li { color: #4A4741; }
+.plan ul { list-style: none; padding: 0; margin: 22px 0 26px; display: grid; gap: 10px; color: var(--muted); font-size: 15.5px; }
+.plan li { padding-left: 20px; position: relative; }
+.plan li::before { content: ""; position: absolute; left: 0; top: .62em; width: 9px; height: 2px; background: var(--red); }
+.plan .btn { margin-top: auto; justify-content: center; }
+.plan:not(.pick) .btn { background: transparent; color: var(--bone); box-shadow: inset 0 0 0 1.5px var(--line); }
+.carta { margin-top: 26px; color: var(--muted); font-size: 15px; }
+.carta b { color: var(--bone); font-weight: 600; }
+@media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 520px; } }
+
+/* oferta */
+.offer { border-top: 1px solid var(--line); }
+.offer-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: center; }
+.offer h2 { font-size: clamp(48px, 8vw, 112px); }
+.offer h2 em { color: var(--red); }
+.contact { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 26px; display: grid; gap: 18px; min-width: 0; }
+.contact-row { display: grid; gap: 6px; }
+.contact-row .val { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 600 19px/1.3 var(--display); overflow-wrap: anywhere; }
+.copy { flex: none; background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; font: 600 12px/1 var(--display); padding: 8px 11px; cursor: pointer; }
+.copy:hover { color: var(--bone); border-color: var(--bone); }
+.contact ol { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; font-size: 15.5px; }
+@media (max-width: 860px) { .offer-grid { grid-template-columns: 1fr; } }
+
+/* preguntas */
+.faq { display: grid; gap: 0; max-width: 820px; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.faq summary { cursor: pointer; font-weight: 700; font-size: 19px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::after { content: "+"; color: var(--red); font-weight: 400; font-size: 26px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq p { color: var(--muted); margin-top: 12px; max-width: 64ch; }
+
+footer { border-top: 1px solid var(--line); padding-block: 32px 48px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; color: var(--muted); font-size: 14px; }
+
+/* lightbox */
+dialog { border: 0; padding: 0; background: transparent; max-width: min(92vw, 1200px); max-height: 92vh; }
+dialog::backdrop { background: rgba(5,5,6,.88); }
+dialog video { max-height: 86vh; width: auto; max-width: 100%; border-radius: 12px; background: #000; }
+.close { position: absolute; top: 10px; right: 10px; background: var(--bone); color: var(--ink); border: 0; border-radius: 999px; font: 800 14px/1 var(--display); padding: 10px 14px; cursor: pointer; z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rec b { animation: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="CORTE, inicio">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M89.90 32.96A40 40 0 0 0 24.37 78.85Z" fill="#F2EEE6"/><path d="M95.63 41.15A40 40 0 0 1 30.10 87.04Z" fill="#FF3B1F"/></svg>
+      <span>CORTE<i></i></span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="#contacto">Primer video gratis</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="rec mono"><b></b>Estudio de edición de video</div>
+        <h1>Editamos videos que <em>nadie se salta.</em></h1>
+        <p class="lede">Reels, TikTok, YouTube, podcasts y anuncios para <strong>marcas, negocios y creadores</strong> en español. Tú grabas con el celular; nosotros lo convertimos en contenido que retiene, en 72 horas.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contacto">Quiero mi primer video gratis</a>
+          <a class="btn ghost" href="#trabajo">Ver trabajo</a>
+        </div>
+      </div>
+
+      <div class="viewer" aria-label="Showreel de CORTE">
+        <div class="viewer-bar">
+          <span class="mono" style="color:var(--muted)">Showreel 2026 · 16:9</span>
+          <span class="tc" id="tc">00:00:00:00</span>
+        </div>
+        <div class="screen">
+          <video id="reel" src="media/showreel-corte.mp4" poster="media/showreel-corte.jpg" autoplay muted loop playsinline preload="auto"></video>
+          <button class="sound" id="sound" type="button">Activar sonido</button>
+        </div>
+        <div class="timeline">
+          <div class="track" id="track"></div>
+          <div class="audio-track" aria-hidden="true"></div>
+          <div class="playhead" id="playhead"></div>
+        </div>
+        <div class="tl-meta"><span class="tc">V1 · <span id="seg-name" style="color:var(--bone)">Intro</span></span><span class="tc">Toca un clip para saltar</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="trabajo">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="tc">00:00:04:00 · Trabajo</span><h2>Un estilo para <em>cada</em> marca.</h2></div>
+        <p>Cuatro formatos que editamos todas las semanas. Toca cualquier pieza para verla con sonido.</p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work">
+          <button class="thumb" type="button" data-src="media/podcast-mente-fundadora.mp4" aria-label="Ver clip de podcast Mente Fundadora">
+            <img src="media/podcast-mente-fundadora.jpg" alt="Clip vertical de podcast con dos personajes animados y subtítulos" loading="lazy">
+            <video muted loop playsinline preload="none" data-preview="media/podcast-mente-fundadora.mp4"></video>
+            <span class="play"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10 Z"/></svg>0:26</span>
+          </button>
+          <div class="work-info">
+            <span class="kind mono">Clip de podcast · 9:16</span>
+            <h3>Mente Fundadora</h3>
+            <p>Un momento clave del episodio, con subtítulos karaoke, personajes que hablan al ritmo de la voz y gráficos que subrayan la cifra.</p>
+            <div class="tags"><span>Subtítulos</span><span>Lip-sync</span><span>Motion</span></div>
+          </div>
+        </article>
+
+        <article class="work">
+          <button class="thumb" type="button" data-src="media/anuncio-grano-alto.mp4" aria-label="Ver anuncio de Grano Alto">
+            <img src="media/anuncio-grano-alto.jpg" alt="Anuncio vertical de una bolsa de café de especialidad" loading="lazy">
+            <video muted loop playsinline preload="none" data-preview="media/anuncio-grano-alto.mp4"></video>
+            <span class="play"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10 Z"/></svg>0:15</span>
+          </button>
+          <div class="work-info">
+            <span class="kind mono">Anuncio de producto · 9:16</span>
+            <h3>Grano Alto</h3>
+            <p>Gancho en 1 segundo, producto en el "drop" de la música y oferta clara al final. Pensado para anuncios pagados.</p>
+            <div class="tags"><span>Ilustración</span><span>Transiciones</span><span>Diseño sonoro</span></div>
+          </div>
+        </article>
+
+        <article class="work">
+          <button class="thumb" type="button" data-src="media/inmobiliaria-casa-alameda.mp4" aria-label="Ver video inmobiliario Casa Alameda">
+            <img src="media/inmobiliaria-casa-alameda.jpg" alt="Video vertical de una casa en venta con plano animado" loading="lazy">
+            <video muted loop playsinline preload="none" data-preview="media/inmobiliaria-casa-alameda.mp4"></video>
+            <span class="play"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10 Z"/></svg>0:18</span>
+          </button>
+          <div class="work-info">
+            <span class="kind mono">Inmobiliaria · 9:16</span>
+            <h3>Casa Alameda</h3>
+            <p>Fachada, plano que se dibuja solo, metros, ubicación y llamada a agendar visita. Una propiedad contada en 18 segundos.</p>
+            <div class="tags"><span>Plano animado</span><span>Mapa</span><span>Locución</span></div>
+          </div>
+        </article>
+
+        <article class="work wide">
+          <button class="thumb" type="button" data-src="media/saas-flujo.mp4" aria-label="Ver video de producto Flujo">
+            <img src="media/saas-flujo.jpg" alt="Video horizontal de una app de reservas" loading="lazy">
+            <video muted loop playsinline preload="none" data-preview="media/saas-flujo.mp4"></video>
+            <span class="play"><svg viewBox="0 0 10 10"><path d="M1 0 L10 5 L1 10 Z"/></svg>0:16</span>
+          </button>
+          <div class="work-info">
+            <span class="kind mono">Video de producto · 16:9</span>
+            <h3>Flujo</h3>
+            <p>Del caos de mensajes a la reserva en un clic. Interfaz animada, zoom de pantalla al estilo screen-recording y cierre con oferta.</p>
+            <div class="tags"><span>UI animada</span><span>Zoom de pantalla</span><span>Locución</span><span>Música original</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="spec-note">Piezas de muestra creadas por el estudio para mostrar cada estilo; las marcas son ficticias. Música y efectos originales.</p>
+    </div>
+  </section>
+
+  <section id="servicios" class="light">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="tc">00:00:16:00 · Servicios</span><h2>Lo que <em>editamos.</em></h2></div>
+        <p>Todo sale con subtítulos, música con licencia y formato listo para cada red.</p>
+      </div>
+      <div class="services">
+        <div class="service"><span class="tc">9:16 · 15–90 s</span><h3>Reels, TikTok y Shorts</h3><p>Gancho en los primeros 2 segundos, cortes con ritmo, subtítulos dinámicos y llamada a la acción.</p></div>
+        <div class="service"><span class="tc">1 episodio → 10 clips</span><h3>Clips de podcast</h3><p>Elegimos los mejores momentos y los convertimos en clips verticales con subtítulos y audiograma.</p></div>
+        <div class="service"><span class="tc">16:9 · hasta 20 min</span><h3>YouTube</h3><p>Edición completa con b-roll, zooms, gráficos, capítulos y miniatura.</p></div>
+        <div class="service"><span class="tc">Meta Ads · TikTok Ads</span><h3>Anuncios y producto</h3><p>Videos pensados para vender: gancho, beneficio, prueba y oferta, con variantes para probar.</p></div>
+        <div class="service"><span class="tc">After Effects · Remotion</span><h3>Motion graphics</h3><p>Textos animados, interfaces, mapas, gráficos y logotipos en movimiento.</p></div>
+        <div class="service"><span class="tc">−14 LUFS</span><h3>Sonido</h3><p>Limpieza de voz, música, efectos y volumen nivelado al estándar de cada plataforma.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="tc">00:00:20:00 · Proceso</span><h2>De tu celular <em>a publicado.</em></h2></div>
+        <p>Sin reuniones eternas. Un canal de mensajes y una carpeta compartida.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Grabas</h3><p>Nos mandas el video en bruto por Drive o WeTransfer. Si no sabes qué grabar, te damos el guion.</p><span class="tc">Día 0</span></div>
+        <div class="step"><div class="n">2</div><h3>Editamos</h3><p>Gancho, cortes, subtítulos, música, color y sonido, con tu marca en cada detalle.</p><span class="tc">48–72 h</span></div>
+        <div class="step"><div class="n">3</div><h3>Revisas</h3><p>Dos rondas de cambios incluidas en cada video. Nos mandas los ajustes en una sola lista.</p><span class="tc">2 rondas</span></div>
+        <div class="step"><div class="n">4</div><h3>Publicas</h3><p>Recibes el archivo final con descripción y hashtags sugeridos, listo para subir.</p><span class="tc">Listo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="tc">00:00:24:00 · Precios</span><h2>Planes <em>mensuales.</em></h2></div>
+        <p>Precios en dólares. Sin permanencia larga: el mínimo son 2 meses para medir resultados.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Arranque</h3>
+          <div class="price"><b>$240</b><span>USD / mes</span></div>
+          <ul><li>8 reels o TikToks (hasta 60 s)</li><li>Subtítulos y música con licencia</li><li>2 rondas de cambios por video</li><li>Entrega en 72 h</li></ul>
+          <a class="btn" href="#contacto">Empezar con Arranque</a>
+        </div>
+        <div class="plan pick">
+          <span class="badge">El más elegido</span>
+          <h3>Crecimiento</h3>
+          <div class="price"><b>$420</b><span>USD / mes</span></div>
+          <ul><li>16 reels + 4 portadas</li><li>Guiones de gancho para cada video</li><li>Calendario de contenido mensual</li><li>Entrega en 48–72 h</li></ul>
+          <a class="btn" href="#contacto">Empezar con Crecimiento</a>
+        </div>
+        <div class="plan">
+          <h3>Marca</h3>
+          <div class="price"><b>$850</b><span>USD / mes</span></div>
+          <ul><li>30 reels al mes</li><li>2 videos de YouTube (hasta 15 min) con miniatura</li><li>Motion graphics a medida</li><li>Reporte mensual de resultados</li></ul>
+          <a class="btn" href="#contacto">Empezar con Marca</a>
+        </div>
+      </div>
+      <p class="carta">¿Solo un proyecto? <b>Reel desde $35</b> · <b>Anuncio con motion desde $60</b> · <b>Video de YouTube desde $90</b> · <b>Pack podcast (10 clips) $250</b> · <b>Video de producto desde $300</b></p>
+    </div>
+  </section>
+
+  <section id="contacto" class="offer">
+    <div class="wrap offer-grid">
+      <div>
+        <span class="tc">00:00:30:00 · Oferta</span>
+        <h2 style="margin-top:18px">Tu primer video, <em>gratis.</em></h2>
+        <p class="lede">Mándanos un video en bruto y te lo devolvemos editado en 72 horas. Si te gusta, hablamos de un plan. Si no, te lo quedas igual.</p>
+      </div>
+      <div class="contact">
+        <!-- CONFIGURA AQUÍ tus datos de contacto reales antes de publicar -->
+        <div class="contact-row">
+          <span class="mono" style="color:var(--muted)">Instagram</span>
+          <div class="val"><span id="c-ig">@corte.studio</span><button class="copy" type="button" data-copy="c-ig">Copiar</button></div>
+        </div>
+        <div class="contact-row">
+          <span class="mono" style="color:var(--muted)">Email</span>
+          <div class="val"><span id="c-mail">hola@cortestudio.co</span><button class="copy" type="button" data-copy="c-mail">Copiar</button></div>
+        </div>
+        <ol>
+          <li>Escríbenos «QUIERO» por Instagram o email.</li>
+          <li>Envíanos el video (de 30 s a 3 min) y tu logo o colores.</li>
+          <li>Recíbelo editado en 72 horas.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="sec-head"><div><span class="tc">00:00:32:00 · Preguntas</span><h2>Preguntas <em>frecuentes.</em></h2></div></div>
+      <div class="faq">
+        <details><summary>¿Qué necesito grabar?</summary><p>Lo que ya grabas con el celular sirve. Si no sabes por dónde empezar, te mandamos un guion de 3 o 4 tomas por video: qué decir, dónde mirar y cuánto debe durar.</p></details>
+        <details><summary>¿Cuánto tardan?</summary><p>Entre 48 y 72 horas por video desde que recibimos el material completo. En los planes mensuales acordamos un calendario de entregas.</p></details>
+        <details><summary>¿Qué pasa si no me gusta?</summary><p>Cada video incluye 2 rondas de cambios. Y el primero es gratis, así que puedes probar sin arriesgar nada.</p></details>
+        <details><summary>¿La música tiene derechos de autor?</summary><p>Usamos música con licencia comercial o compuesta para el proyecto, para que tus videos no se silencien ni se bloqueen.</p></details>
+        <details><summary>¿Trabajan con clientes de cualquier país?</summary><p>Sí. Trabajamos en remoto con negocios y creadores de habla hispana. Cobramos en dólares por transferencia, PayPal o Wise.</p></details>
+        <details><summary>¿Los videos son míos?</summary><p>Sí, los videos finales son tuyos. Solo te pedimos permiso para mostrar algunos en nuestro portafolio.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><b style="color:var(--bone)">CORTE</b> · Estudio de edición de video · Cada corte cuenta.</span>
+    <span class="tc">00:00:34:15 · Fin</span>
+  </div>
+</footer>
+
+<dialog id="lightbox" aria-label="Reproductor de video">
+  <button class="close" id="close" type="button">Cerrar</button>
+  <video id="lb-video" controls playsinline></video>
+</dialog>
+
+<script>
+(() => {
+  // --- visor del showreel con línea de tiempo
+  const FPS = 30;
+  const segments = [
+    {t: 0, label: 'Intro', c: '#3A3A42'},
+    {t: 4, label: 'Logo', c: '#FF3B1F'},
+    {t: 6, label: 'Podcast', c: '#F5B83D'},
+    {t: 8, label: 'Café', c: '#D2603A'},
+    {t: 10, label: 'SaaS', c: '#8B74FF'},
+    {t: 12, label: 'Inmo', c: '#7E9579'},
+    {t: 14, label: 'Montaje', c: '#FF3B1F'},
+    {t: 16, label: 'Servicios', c: '#F2EEE6'},
+    {t: 20, label: 'Cada corte', c: '#C9C3B8'},
+    {t: 24, label: 'Ritmo', c: '#FF3B1F'},
+    {t: 30, label: 'Oferta', c: '#F2EEE6'},
+    {t: 32, label: 'Fin', c: '#3A3A42'},
+  ];
+  const reel = document.getElementById('reel');
+  const track = document.getElementById('track');
+  const head = document.getElementById('playhead');
+  const tc = document.getElementById('tc');
+  const segName = document.getElementById('seg-name');
+  const total = 34.5;
+  const buttons = segments.map((s, i) => {
+    const end = segments[i + 1] ? segments[i + 1].t : total;
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'clip';
+    b.style.flex = String(end - s.t);
+    b.style.setProperty('--c', s.c);
+    b.title = `Ir a ${s.label}`;
+    b.setAttribute('aria-label', `Ir a ${s.label}`);
+    b.addEventListener('click', () => { reel.currentTime = s.t + 0.05; reel.play().catch(() => {}); });
+    track.appendChild(b);
+    return {b, from: s.t, to: end};
+  });
+  const pad = (n) => String(n).padStart(2, '0');
+  const tick = () => {
+    const t = reel.currentTime || 0;
+    const dur = reel.duration || total;
+    head.style.left = `calc(${(t / dur) * 100}% - 1px)`;
+    const f = Math.floor(t * FPS);
+    tc.textContent = `00:${pad(Math.floor(f / 1800))}:${pad(Math.floor(f / FPS) % 60)}:${pad(f % FPS)}`;
+    buttons.forEach(({b, from, to}, i) => {
+      const on = t >= from && t < to;
+      b.classList.toggle('on', on);
+      if (on && segName.textContent !== segments[i].label) segName.textContent = segments[i].label;
+    });
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+  const sound = document.getElementById('sound');
+  sound.addEventListener('click', () => {
+    reel.muted = !reel.muted;
+    if (!reel.muted) { reel.play().catch(() => {}); }
+    sound.textContent = reel.muted ? 'Activar sonido' : 'Silenciar';
+  });
+
+  // --- vista previa al pasar el cursor + reproductor con sonido
+  const lb = document.getElementById('lightbox');
+  const lbv = document.getElementById('lb-video');
+  document.querySelectorAll('.thumb').forEach((thumb) => {
+    const v = thumb.querySelector('video');
+    const start = () => {
+      if (!v.src) v.src = v.dataset.preview;
+      v.play().then(() => thumb.classList.add('playing')).catch(() => {});
+    };
+    const stop = () => { v.pause(); thumb.classList.remove('playing'); };
+    thumb.addEventListener('mouseenter', start);
+    thumb.addEventListener('mouseleave', stop);
+    thumb.addEventListener('click', () => {
+      stop();
+      reel.muted = true; sound.textContent = 'Activar sonido';
+      lbv.src = thumb.dataset.src;
+      if (typeof lb.showModal === 'function') lb.showModal(); else lb.setAttribute('open', '');
+      lbv.play().catch(() => {});
+    });
+  });
+  const closeLb = () => { lbv.pause(); if (lb.open) lb.close(); };
+  document.getElementById('close').addEventListener('click', closeLb);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+  lb.addEventListener('close', () => lbv.pause());
+
+  // --- copiar datos de contacto
+  document.querySelectorAll('.copy').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const el = document.getElementById(btn.dataset.copy);
+      const done = () => { btn.textContent = 'Copiado'; setTimeout(() => (btn.textContent = 'Copiar'), 1600); };
+      const select = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Seleccionado'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(el.textContent).then(done, select);
+      else select();
+    });
+  });
+})();
+</script>
+</body>
+</html>
