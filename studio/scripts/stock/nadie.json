@@ -1,0 +1,76 @@
+{
+ "name": "nadie",
+ "fuente": "Mixkit · licencia gratuita (https://mixkit.co/license/#videoFree)",
+ "clips": [
+  {
+   "id": 41105,
+   "desde": 2,
+   "dur": 3,
+   "recorte": true
+  },
+  {
+   "id": 40998,
+   "desde": 8,
+   "dur": 4
+  },
+  {
+   "id": 40274,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 5050,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 49705,
+   "desde": 2,
+   "dur": 4,
+   "recorte": true
+  },
+  {
+   "id": 41001,
+   "desde": 2,
+   "dur": 4,
+   "recorte": true
+  },
+  {
+   "id": 40275,
+   "desde": 0.5,
+   "dur": 5
+  },
+  {
+   "id": 40273,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 41066,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 32807,
+   "desde": 0.5,
+   "dur": 4.5,
+   "recorte": true
+  },
+  {
+   "id": 40901,
+   "desde": 2,
+   "dur": 5
+  },
+  {
+   "id": 40272,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 49704,
+   "desde": 1,
+   "dur": 5,
+   "recorte": true
+  }
+ ]
+}

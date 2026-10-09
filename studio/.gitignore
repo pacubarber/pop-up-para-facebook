@@ -7,3 +7,7 @@ public/audio/*.wav
 public/vo/*.wav
 public/vo/pitch-*
 !public/vo/pitch-ejemplo.json
+
+# Material de Mixkit: se regenera con `python3 tools/stock.py bajar scripts/stock/*.json`
+public/stock/
+__pycache__/

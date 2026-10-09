@@ -1,0 +1,359 @@
+{
+ "name": "disciplina",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 22.856,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Son las cinco de la mañana.",
+   "start": 0.05,
+   "end": 1.712,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Son",
+     "start": 0.05,
+     "end": 0.47
+    },
+    {
+     "text": "las",
+     "start": 0.47,
+     "end": 0.75
+    },
+    {
+     "text": "cinco",
+     "start": 0.75,
+     "end": 1.01
+    },
+    {
+     "text": "de",
+     "start": 1.01,
+     "end": 1.17
+    },
+    {
+     "text": "la",
+     "start": 1.17,
+     "end": 1.33
+    },
+    {
+     "text": "mañana.",
+     "start": 1.33,
+     "end": 1.57
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Todos duermen.",
+   "start": 1.782,
+   "end": 3.187,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Todos",
+     "start": 1.782,
+     "end": 2.382
+    },
+    {
+     "text": "duermen.",
+     "start": 2.382,
+     "end": 3.022
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Tú no.",
+   "start": 3.257,
+   "end": 4.25,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Tú",
+     "start": 3.477,
+     "end": 3.917
+    },
+    {
+     "text": "no.",
+     "start": 3.917,
+     "end": 4.137
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Porque no necesitas motivación.",
+   "start": 4.32,
+   "end": 7.523,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Porque",
+     "start": 4.32,
+     "end": 4.82
+    },
+    {
+     "text": "no",
+     "start": 4.82,
+     "end": 5.42
+    },
+    {
+     "text": "necesitas",
+     "start": 5.42,
+     "end": 6.46
+    },
+    {
+     "text": "motivación.",
+     "start": 6.46,
+     "end": 7.38
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Necesitas disciplina.",
+   "start": 7.593,
+   "end": 9.521,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Necesitas",
+     "start": 7.593,
+     "end": 8.593
+    },
+    {
+     "text": "disciplina.",
+     "start": 8.593,
+     "end": 9.413
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "La motivación se va.",
+   "start": 9.591,
+   "end": 11.435,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "La",
+     "start": 9.591,
+     "end": 9.911
+    },
+    {
+     "text": "motivación",
+     "start": 9.911,
+     "end": 10.791
+    },
+    {
+     "text": "se",
+     "start": 10.791,
+     "end": 11.171
+    },
+    {
+     "text": "va.",
+     "start": 11.171,
+     "end": 11.251
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "La disciplina se queda.",
+   "start": 11.505,
+   "end": 12.956,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "La",
+     "start": 11.505,
+     "end": 11.785
+    },
+    {
+     "text": "disciplina",
+     "start": 11.785,
+     "end": 12.305
+    },
+    {
+     "text": "se",
+     "start": 12.305,
+     "end": 12.685
+    },
+    {
+     "text": "queda.",
+     "start": 12.685,
+     "end": 12.825
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Una repetición más.",
+   "start": 13.026,
+   "end": 14.852,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Una",
+     "start": 13.026,
+     "end": 13.486
+    },
+    {
+     "text": "repetición",
+     "start": 13.486,
+     "end": 14.266
+    },
+    {
+     "text": "más.",
+     "start": 14.266,
+     "end": 14.746
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Un kilómetro más.",
+   "start": 14.922,
+   "end": 16.483,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Un",
+     "start": 14.922,
+     "end": 15.322
+    },
+    {
+     "text": "kilómetro",
+     "start": 15.322,
+     "end": 15.962
+    },
+    {
+     "text": "más.",
+     "start": 15.962,
+     "end": 16.382
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Un día más.",
+   "start": 16.553,
+   "end": 17.559,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Un",
+     "start": 16.553,
+     "end": 16.973
+    },
+    {
+     "text": "día",
+     "start": 16.973,
+     "end": 17.133
+    },
+    {
+     "text": "más.",
+     "start": 17.133,
+     "end": 17.493
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "El dolor de hoy es la fuerza de mañana.",
+   "start": 17.629,
+   "end": 20.284,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "El",
+     "start": 17.629,
+     "end": 17.908
+    },
+    {
+     "text": "dolor",
+     "start": 17.908,
+     "end": 18.208
+    },
+    {
+     "text": "de",
+     "start": 18.208,
+     "end": 18.608
+    },
+    {
+     "text": "hoy",
+     "start": 18.608,
+     "end": 18.708
+    },
+    {
+     "text": "es",
+     "start": 18.708,
+     "end": 19.029
+    },
+    {
+     "text": "la",
+     "start": 19.029,
+     "end": 19.549
+    },
+    {
+     "text": "fuerza",
+     "start": 19.549,
+     "end": 19.609
+    },
+    {
+     "text": "de",
+     "start": 19.569,
+     "end": 19.908
+    },
+    {
+     "text": "mañana.",
+     "start": 19.908,
+     "end": 20.128
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Levántate.",
+   "start": 20.354,
+   "end": 21.181,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Levántate.",
+     "start": 20.354,
+     "end": 21.074
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Y hazlo otra vez.",
+   "start": 21.251,
+   "end": 22.456,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Y",
+     "start": 21.251,
+     "end": 21.391
+    },
+    {
+     "text": "hazlo",
+     "start": 21.391,
+     "end": 21.771
+    },
+    {
+     "text": "otra",
+     "start": 21.771,
+     "end": 22.051
+    },
+    {
+     "text": "vez.",
+     "start": 22.051,
+     "end": 22.331
+    }
+   ]
+  }
+ ]
+}

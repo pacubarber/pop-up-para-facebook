@@ -3,7 +3,7 @@ import {AbsoluteFill, Audio, interpolate, random, staticFile, useCurrentFrame} f
 import {font} from '../brand';
 import {clamp, easeOut, Flash, Grain, Music, prog, Sfx, useSpring, Vignette, VoData} from '../lib/core';
 import {Scene} from '../lib/Whip';
-import voJson from '../../public/vo/cafe.json';
+import voJson from '../../public/voz/cafe.json';
 
 // Anuncio vertical para una marca ficticia de café de especialidad: "Grano Alto".
 const vo = voJson as VoData;
@@ -22,12 +22,12 @@ const C = {
 const f = (s: number) => Math.round(s * 30);
 // La música entra a mitad de la intro para que el "drop" caiga en la revelación del producto.
 const DROP = f(vo.lines[1].start);
-const BEAT = 15;
+// Las escenas siguen a la locución (voz OpenAI sin silencios), no a un número fijo de tiempos.
 const S2 = DROP;
-const S3 = DROP + BEAT * 8;
-const S4 = DROP + BEAT * 13;
-const S5 = DROP + BEAT * 20;
-export const CAFE_DURATION = S5 + 75;
+const S3 = f(vo.lines[2].start) - 6;
+const S4 = f(vo.lines[3].start) - 6;
+const S5 = f(vo.lines[3].end) + 10;
+export const CAFE_DURATION = S5 + 60;
 const wordAt = (line: number, prefix: string) => f(vo.lines[line].words.find((w) => w.text.startsWith(prefix))!.start);
 const TOSTADO_AT = wordAt(1, 'tostado');
 const PCT_AT = wordAt(3, 'treinta') - 3;
@@ -357,7 +357,7 @@ export const Cafe: React.FC = () => {
       <Vignette strength={0.25} />
       <Grain opacity={0.07} />
 
-      <Audio src={staticFile('vo/cafe.wav')} />
+      <Audio src={staticFile('voz/cafe.wav')} />
       <Music name="pulse_120" volume={0.55} duration={CAFE_DURATION} vo={vo} duck={0.5} startFrom={120 - DROP} fadeIn={4} />
       <Sfx name="riser" at={S2 - 40} volume={0.35} />
       <Sfx name="impact" at={S2} volume={0.55} />

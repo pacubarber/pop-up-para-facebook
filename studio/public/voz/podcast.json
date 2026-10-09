@@ -1,0 +1,345 @@
+{
+ "name": "podcast",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 20.594,
+ "lines": [
+  {
+   "voice": "valeria",
+   "text": "¿Cuál fue el error que casi te hunde la empresa?",
+   "start": 0.05,
+   "end": 2.998,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Cuál",
+     "start": 0.05,
+     "end": 0.41
+    },
+    {
+     "text": "fue",
+     "start": 0.41,
+     "end": 0.69
+    },
+    {
+     "text": "el",
+     "start": 0.69,
+     "end": 0.97
+    },
+    {
+     "text": "error",
+     "start": 0.97,
+     "end": 1.25
+    },
+    {
+     "text": "que",
+     "start": 1.25,
+     "end": 1.59
+    },
+    {
+     "text": "casi",
+     "start": 1.59,
+     "end": 1.89
+    },
+    {
+     "text": "te",
+     "start": 1.89,
+     "end": 2.27
+    },
+    {
+     "text": "hunde",
+     "start": 2.27,
+     "end": 2.33
+    },
+    {
+     "text": "la",
+     "start": 2.33,
+     "end": 2.57
+    },
+    {
+     "text": "empresa?",
+     "start": 2.57,
+     "end": 2.83
+    }
+   ]
+  },
+  {
+   "voice": "diego",
+   "text": "Hablar del producto, y no del cliente.",
+   "start": 3.178,
+   "end": 5.362,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Hablar",
+     "start": 3.178,
+     "end": 3.598
+    },
+    {
+     "text": "del",
+     "start": 3.598,
+     "end": 3.958
+    },
+    {
+     "text": "producto,",
+     "start": 3.958,
+     "end": 4.398
+    },
+    {
+     "text": "y",
+     "start": 4.558,
+     "end": 4.718
+    },
+    {
+     "text": "no",
+     "start": 4.718,
+     "end": 4.778
+    },
+    {
+     "text": "del",
+     "start": 4.778,
+     "end": 4.918
+    },
+    {
+     "text": "cliente.",
+     "start": 4.918,
+     "end": 5.318
+    }
+   ]
+  },
+  {
+   "voice": "diego",
+   "text": "Durante un año dijimos: tenemos la mejor tecnología. Y nadie compraba.",
+   "start": 5.442,
+   "end": 9.6,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Durante",
+     "start": 5.442,
+     "end": 5.922
+    },
+    {
+     "text": "un",
+     "start": 5.922,
+     "end": 6.242
+    },
+    {
+     "text": "año",
+     "start": 6.242,
+     "end": 6.322
+    },
+    {
+     "text": "dijimos:",
+     "start": 6.322,
+     "end": 6.822
+    },
+    {
+     "text": "tenemos",
+     "start": 6.982,
+     "end": 7.242
+    },
+    {
+     "text": "la",
+     "start": 7.242,
+     "end": 7.622
+    },
+    {
+     "text": "mejor",
+     "start": 7.622,
+     "end": 7.842
+    },
+    {
+     "text": "tecnología.",
+     "start": 7.842,
+     "end": 8.422
+    },
+    {
+     "text": "Y",
+     "start": 8.582,
+     "end": 8.902
+    },
+    {
+     "text": "nadie",
+     "start": 8.902,
+     "end": 9.062
+    },
+    {
+     "text": "compraba.",
+     "start": 9.062,
+     "end": 9.562
+    }
+   ]
+  },
+  {
+   "voice": "diego",
+   "text": "Cambiamos una sola frase: te devolvemos diez horas a la semana.",
+   "start": 9.68,
+   "end": 13.242,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Cambiamos",
+     "start": 9.68,
+     "end": 10.26
+    },
+    {
+     "text": "una",
+     "start": 10.26,
+     "end": 10.48
+    },
+    {
+     "text": "sola",
+     "start": 10.48,
+     "end": 10.92
+    },
+    {
+     "text": "frase:",
+     "start": 10.92,
+     "end": 11.0
+    },
+    {
+     "text": "te",
+     "start": 11.18,
+     "end": 11.24
+    },
+    {
+     "text": "devolvemos",
+     "start": 11.24,
+     "end": 11.9
+    },
+    {
+     "text": "diez",
+     "start": 11.9,
+     "end": 12.38
+    },
+    {
+     "text": "horas",
+     "start": 12.38,
+     "end": 12.64
+    },
+    {
+     "text": "a",
+     "start": 12.64,
+     "end": 12.82
+    },
+    {
+     "text": "la",
+     "start": 12.82,
+     "end": 13.14
+    },
+    {
+     "text": "semana.",
+     "start": 13.14,
+     "end": 13.2
+    }
+   ]
+  },
+  {
+   "voice": "diego",
+   "text": "Las ventas se triplicaron.",
+   "start": 13.322,
+   "end": 15.12,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Las",
+     "start": 13.322,
+     "end": 13.682
+    },
+    {
+     "text": "ventas",
+     "start": 13.682,
+     "end": 14.122
+    },
+    {
+     "text": "se",
+     "start": 14.122,
+     "end": 14.482
+    },
+    {
+     "text": "triplicaron.",
+     "start": 14.482,
+     "end": 14.982
+    }
+   ]
+  },
+  {
+   "voice": "valeria",
+   "text": "¿Con una frase?",
+   "start": 15.3,
+   "end": 16.356,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Con",
+     "start": 15.3,
+     "end": 15.58
+    },
+    {
+     "text": "una",
+     "start": 15.58,
+     "end": 15.861
+    },
+    {
+     "text": "frase?",
+     "start": 15.861,
+     "end": 16.221
+    }
+   ]
+  },
+  {
+   "voice": "diego",
+   "text": "Con una frase. Mismo producto, mismo precio. Otra historia.",
+   "start": 16.536,
+   "end": 20.194,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Con",
+     "start": 16.536,
+     "end": 16.776
+    },
+    {
+     "text": "una",
+     "start": 16.776,
+     "end": 17.096
+    },
+    {
+     "text": "frase.",
+     "start": 17.096,
+     "end": 17.376
+    },
+    {
+     "text": "Mismo",
+     "start": 17.816,
+     "end": 17.896
+    },
+    {
+     "text": "producto,",
+     "start": 17.896,
+     "end": 18.336
+    },
+    {
+     "text": "mismo",
+     "start": 18.776,
+     "end": 18.916
+    },
+    {
+     "text": "precio.",
+     "start": 18.916,
+     "end": 19.256
+    },
+    {
+     "text": "Otra",
+     "start": 19.556,
+     "end": 19.796
+    },
+    {
+     "text": "historia.",
+     "start": 19.796,
+     "end": 20.056
+    }
+   ]
+  }
+ ]
+}

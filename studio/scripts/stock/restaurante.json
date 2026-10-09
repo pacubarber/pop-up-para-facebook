@@ -1,0 +1,121 @@
+{
+ "name": "restaurante",
+ "fuente": "Mixkit · licencia gratuita (https://mixkit.co/license/#videoFree)",
+ "clips": [
+  {
+   "id": 29050,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 42484,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 44001,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 41175,
+   "desde": 0.5,
+   "dur": 5,
+   "recorte": true
+  },
+  {
+   "id": 13168,
+   "desde": 1,
+   "dur": 5,
+   "x": 0.45
+  },
+  {
+   "id": 15875,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 4118,
+   "desde": 1,
+   "dur": 3,
+   "x": 0.45
+  },
+  {
+   "id": 47555,
+   "desde": 0.5,
+   "dur": 3
+  },
+  {
+   "id": 42478,
+   "desde": 0.5,
+   "dur": 3
+  },
+  {
+   "id": 43057,
+   "desde": 0.5,
+   "dur": 3
+  },
+  {
+   "id": 4678,
+   "desde": 1,
+   "dur": 3
+  },
+  {
+   "id": 13070,
+   "desde": 0.5,
+   "dur": 5,
+   "x": 0.4
+  },
+  {
+   "id": 24405,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 13261,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 44000,
+   "desde": 0.5,
+   "dur": 5,
+   "recorte": true
+  },
+  {
+   "id": 4853,
+   "desde": 0.5,
+   "dur": 5
+  },
+  {
+   "id": 42313,
+   "desde": 1,
+   "dur": 5
+  },
+  {
+   "id": 44019,
+   "desde": 0.5,
+   "dur": 5
+  },
+  {
+   "id": 44008,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 44012,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 44014,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 42487,
+   "desde": 0.5,
+   "dur": 4
+  }
+ ]
+}

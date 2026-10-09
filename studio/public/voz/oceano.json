@@ -1,0 +1,565 @@
+{
+ "name": "oceano",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 33.399,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Sabías que tenemos mejores mapas de Marte que del fondo de nuestro océano?",
+   "start": 0.05,
+   "end": 4.124,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Sabías",
+     "start": 0.05,
+     "end": 0.59
+    },
+    {
+     "text": "que",
+     "start": 0.59,
+     "end": 0.81
+    },
+    {
+     "text": "tenemos",
+     "start": 0.81,
+     "end": 1.17
+    },
+    {
+     "text": "mejores",
+     "start": 1.17,
+     "end": 1.71
+    },
+    {
+     "text": "mapas",
+     "start": 1.71,
+     "end": 2.07
+    },
+    {
+     "text": "de",
+     "start": 2.07,
+     "end": 2.29
+    },
+    {
+     "text": "Marte",
+     "start": 2.29,
+     "end": 2.57
+    },
+    {
+     "text": "que",
+     "start": 2.57,
+     "end": 2.75
+    },
+    {
+     "text": "del",
+     "start": 2.75,
+     "end": 2.97
+    },
+    {
+     "text": "fondo",
+     "start": 2.97,
+     "end": 3.25
+    },
+    {
+     "text": "de",
+     "start": 3.25,
+     "end": 3.49
+    },
+    {
+     "text": "nuestro",
+     "start": 3.49,
+     "end": 3.71
+    },
+    {
+     "text": "océano?",
+     "start": 3.71,
+     "end": 4.07
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Más del ochenta por ciento del océano nunca ha sido explorado.",
+   "start": 4.194,
+   "end": 8.384,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Más",
+     "start": 4.194,
+     "end": 4.695
+    },
+    {
+     "text": "del",
+     "start": 4.695,
+     "end": 4.995
+    },
+    {
+     "text": "ochenta",
+     "start": 4.995,
+     "end": 5.475
+    },
+    {
+     "text": "por",
+     "start": 5.475,
+     "end": 5.774
+    },
+    {
+     "text": "ciento",
+     "start": 5.774,
+     "end": 6.075
+    },
+    {
+     "text": "del",
+     "start": 6.075,
+     "end": 6.454
+    },
+    {
+     "text": "océano",
+     "start": 6.454,
+     "end": 6.835
+    },
+    {
+     "text": "nunca",
+     "start": 6.835,
+     "end": 7.355
+    },
+    {
+     "text": "ha",
+     "start": 7.355,
+     "end": 7.635
+    },
+    {
+     "text": "sido",
+     "start": 7.635,
+     "end": 7.775
+    },
+    {
+     "text": "explorado.",
+     "start": 7.775,
+     "end": 8.315
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "La mitad del oxígeno que respiras viene del mar, de un plancton tan pequeño que no lo puedes ver.",
+   "start": 8.454,
+   "end": 13.385,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "La",
+     "start": 8.454,
+     "end": 8.634
+    },
+    {
+     "text": "mitad",
+     "start": 8.634,
+     "end": 8.894
+    },
+    {
+     "text": "del",
+     "start": 8.894,
+     "end": 9.114
+    },
+    {
+     "text": "oxígeno",
+     "start": 9.114,
+     "end": 9.594
+    },
+    {
+     "text": "que",
+     "start": 9.594,
+     "end": 9.694
+    },
+    {
+     "text": "respiras",
+     "start": 9.694,
+     "end": 10.274
+    },
+    {
+     "text": "viene",
+     "start": 10.274,
+     "end": 10.554
+    },
+    {
+     "text": "del",
+     "start": 10.554,
+     "end": 10.754
+    },
+    {
+     "text": "mar,",
+     "start": 10.754,
+     "end": 10.934
+    },
+    {
+     "text": "de",
+     "start": 11.154,
+     "end": 11.214
+    },
+    {
+     "text": "un",
+     "start": 11.174,
+     "end": 11.334
+    },
+    {
+     "text": "plancton",
+     "start": 11.334,
+     "end": 11.714
+    },
+    {
+     "text": "tan",
+     "start": 11.714,
+     "end": 12.074
+    },
+    {
+     "text": "pequeño",
+     "start": 12.074,
+     "end": 12.374
+    },
+    {
+     "text": "que",
+     "start": 12.374,
+     "end": 12.634
+    },
+    {
+     "text": "no",
+     "start": 12.634,
+     "end": 12.794
+    },
+    {
+     "text": "lo",
+     "start": 12.794,
+     "end": 12.974
+    },
+    {
+     "text": "puedes",
+     "start": 12.974,
+     "end": 13.214
+    },
+    {
+     "text": "ver.",
+     "start": 13.214,
+     "end": 13.334
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Las medusas llevan más de quinientos millones de años aquí. Son más antiguas que los dinosaurios, y no tienen cerebro.",
+   "start": 13.455,
+   "end": 20.098,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Las",
+     "start": 13.455,
+     "end": 13.875
+    },
+    {
+     "text": "medusas",
+     "start": 13.875,
+     "end": 14.695
+    },
+    {
+     "text": "llevan",
+     "start": 14.695,
+     "end": 15.035
+    },
+    {
+     "text": "más",
+     "start": 15.035,
+     "end": 15.315
+    },
+    {
+     "text": "de",
+     "start": 15.315,
+     "end": 15.495
+    },
+    {
+     "text": "quinientos",
+     "start": 15.495,
+     "end": 16.015
+    },
+    {
+     "text": "millones",
+     "start": 16.015,
+     "end": 16.375
+    },
+    {
+     "text": "de",
+     "start": 16.375,
+     "end": 16.835
+    },
+    {
+     "text": "años",
+     "start": 16.835,
+     "end": 16.895
+    },
+    {
+     "text": "aquí.",
+     "start": 16.855,
+     "end": 17.055
+    },
+    {
+     "text": "Son",
+     "start": 17.375,
+     "end": 17.435
+    },
+    {
+     "text": "más",
+     "start": 17.395,
+     "end": 17.635
+    },
+    {
+     "text": "antiguas",
+     "start": 17.635,
+     "end": 18.135
+    },
+    {
+     "text": "que",
+     "start": 18.135,
+     "end": 18.235
+    },
+    {
+     "text": "los",
+     "start": 18.235,
+     "end": 18.415
+    },
+    {
+     "text": "dinosaurios,",
+     "start": 18.415,
+     "end": 18.995
+    },
+    {
+     "text": "y",
+     "start": 19.075,
+     "end": 19.235
+    },
+    {
+     "text": "no",
+     "start": 19.235,
+     "end": 19.415
+    },
+    {
+     "text": "tienen",
+     "start": 19.415,
+     "end": 19.675
+    },
+    {
+     "text": "cerebro.",
+     "start": 19.675,
+     "end": 20.035
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Las tortugas marinas cruzan miles de kilómetros para volver a la misma playa donde nacieron.",
+   "start": 20.168,
+   "end": 25.668,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Las",
+     "start": 20.168,
+     "end": 20.528
+    },
+    {
+     "text": "tortugas",
+     "start": 20.528,
+     "end": 21.208
+    },
+    {
+     "text": "marinas",
+     "start": 21.208,
+     "end": 21.648
+    },
+    {
+     "text": "cruzan",
+     "start": 21.648,
+     "end": 22.128
+    },
+    {
+     "text": "miles",
+     "start": 22.128,
+     "end": 22.468
+    },
+    {
+     "text": "de",
+     "start": 22.468,
+     "end": 23.068
+    },
+    {
+     "text": "kilómetros",
+     "start": 23.068,
+     "end": 23.148
+    },
+    {
+     "text": "para",
+     "start": 23.148,
+     "end": 23.468
+    },
+    {
+     "text": "volver",
+     "start": 23.468,
+     "end": 23.768
+    },
+    {
+     "text": "a",
+     "start": 23.768,
+     "end": 23.888
+    },
+    {
+     "text": "la",
+     "start": 23.888,
+     "end": 24.028
+    },
+    {
+     "text": "misma",
+     "start": 24.028,
+     "end": 24.508
+    },
+    {
+     "text": "playa",
+     "start": 24.508,
+     "end": 24.928
+    },
+    {
+     "text": "donde",
+     "start": 24.928,
+     "end": 25.168
+    },
+    {
+     "text": "nacieron.",
+     "start": 25.168,
+     "end": 25.568
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Y los delfines duermen con medio cerebro. La otra mitad se queda despierta.",
+   "start": 25.738,
+   "end": 30.578,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Y",
+     "start": 25.738,
+     "end": 25.858
+    },
+    {
+     "text": "los",
+     "start": 25.858,
+     "end": 26.158
+    },
+    {
+     "text": "delfines",
+     "start": 26.158,
+     "end": 26.758
+    },
+    {
+     "text": "duermen",
+     "start": 26.758,
+     "end": 27.418
+    },
+    {
+     "text": "con",
+     "start": 27.418,
+     "end": 27.798
+    },
+    {
+     "text": "medio",
+     "start": 27.798,
+     "end": 28.178
+    },
+    {
+     "text": "cerebro.",
+     "start": 28.178,
+     "end": 28.578
+    },
+    {
+     "text": "La",
+     "start": 28.778,
+     "end": 28.838
+    },
+    {
+     "text": "otra",
+     "start": 28.838,
+     "end": 29.118
+    },
+    {
+     "text": "mitad",
+     "start": 29.118,
+     "end": 29.458
+    },
+    {
+     "text": "se",
+     "start": 29.458,
+     "end": 29.858
+    },
+    {
+     "text": "queda",
+     "start": 29.858,
+     "end": 30.018
+    },
+    {
+     "text": "despierta.",
+     "start": 30.018,
+     "end": 30.518
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "¿Cuál no sabías? Te leo en los comentarios.",
+   "start": 30.648,
+   "end": 32.999,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Cuál",
+     "start": 30.648,
+     "end": 30.968
+    },
+    {
+     "text": "no",
+     "start": 30.968,
+     "end": 31.228
+    },
+    {
+     "text": "sabías?",
+     "start": 31.228,
+     "end": 31.648
+    },
+    {
+     "text": "Te",
+     "start": 31.728,
+     "end": 32.028
+    },
+    {
+     "text": "leo",
+     "start": 32.028,
+     "end": 32.128
+    },
+    {
+     "text": "en",
+     "start": 32.128,
+     "end": 32.228
+    },
+    {
+     "text": "los",
+     "start": 32.228,
+     "end": 32.448
+    },
+    {
+     "text": "comentarios.",
+     "start": 32.448,
+     "end": 32.788
+    }
+   ]
+  }
+ ]
+}

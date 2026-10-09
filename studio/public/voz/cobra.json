@@ -1,0 +1,302 @@
+{
+ "name": "cobra",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 19.619,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Cuánto dinero te deben tus clientes ahora mismo?",
+   "start": 0.05,
+   "end": 3.378,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Cuánto",
+     "start": 0.05,
+     "end": 0.61
+    },
+    {
+     "text": "dinero",
+     "start": 0.61,
+     "end": 0.97
+    },
+    {
+     "text": "te",
+     "start": 0.97,
+     "end": 1.37
+    },
+    {
+     "text": "deben",
+     "start": 1.37,
+     "end": 1.51
+    },
+    {
+     "text": "tus",
+     "start": 1.51,
+     "end": 1.89
+    },
+    {
+     "text": "clientes",
+     "start": 1.89,
+     "end": 2.47
+    },
+    {
+     "text": "ahora",
+     "start": 2.47,
+     "end": 2.93
+    },
+    {
+     "text": "mismo?",
+     "start": 2.93,
+     "end": 3.25
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Con Cobra, creas y envías una factura en diez segundos.",
+   "start": 3.448,
+   "end": 7.154,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Con",
+     "start": 3.448,
+     "end": 3.768
+    },
+    {
+     "text": "Cobra,",
+     "start": 3.768,
+     "end": 4.108
+    },
+    {
+     "text": "creas",
+     "start": 4.468,
+     "end": 4.688
+    },
+    {
+     "text": "y",
+     "start": 4.688,
+     "end": 4.908
+    },
+    {
+     "text": "envías",
+     "start": 4.908,
+     "end": 5.208
+    },
+    {
+     "text": "una",
+     "start": 5.208,
+     "end": 5.468
+    },
+    {
+     "text": "factura",
+     "start": 5.468,
+     "end": 5.828
+    },
+    {
+     "text": "en",
+     "start": 5.828,
+     "end": 6.208
+    },
+    {
+     "text": "diez",
+     "start": 6.208,
+     "end": 6.508
+    },
+    {
+     "text": "segundos.",
+     "start": 6.508,
+     "end": 6.928
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Y Cobra persigue el pago por ti, con recordatorios automáticos por WhatsApp y correo.",
+   "start": 7.224,
+   "end": 12.841,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Y",
+     "start": 7.224,
+     "end": 7.544
+    },
+    {
+     "text": "Cobra",
+     "start": 7.544,
+     "end": 7.884
+    },
+    {
+     "text": "persigue",
+     "start": 7.884,
+     "end": 8.524
+    },
+    {
+     "text": "el",
+     "start": 8.524,
+     "end": 8.944
+    },
+    {
+     "text": "pago",
+     "start": 8.944,
+     "end": 9.004
+    },
+    {
+     "text": "por",
+     "start": 8.964,
+     "end": 9.304
+    },
+    {
+     "text": "ti,",
+     "start": 9.304,
+     "end": 9.464
+    },
+    {
+     "text": "con",
+     "start": 9.644,
+     "end": 9.784
+    },
+    {
+     "text": "recordatorios",
+     "start": 9.784,
+     "end": 10.604
+    },
+    {
+     "text": "automáticos",
+     "start": 10.604,
+     "end": 11.384
+    },
+    {
+     "text": "por",
+     "start": 11.384,
+     "end": 11.744
+    },
+    {
+     "text": "WhatsApp",
+     "start": 11.744,
+     "end": 12.164
+    },
+    {
+     "text": "y",
+     "start": 12.164,
+     "end": 12.484
+    },
+    {
+     "text": "correo.",
+     "start": 12.484,
+     "end": 12.804
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Tu cliente paga con un clic, y el dinero llega a tu cuenta.",
+   "start": 12.911,
+   "end": 16.898,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Tu",
+     "start": 12.911,
+     "end": 13.131
+    },
+    {
+     "text": "cliente",
+     "start": 13.131,
+     "end": 13.691
+    },
+    {
+     "text": "paga",
+     "start": 13.691,
+     "end": 13.951
+    },
+    {
+     "text": "con",
+     "start": 13.951,
+     "end": 14.211
+    },
+    {
+     "text": "un",
+     "start": 14.211,
+     "end": 14.491
+    },
+    {
+     "text": "clic,",
+     "start": 14.491,
+     "end": 14.711
+    },
+    {
+     "text": "y",
+     "start": 15.111,
+     "end": 15.191
+    },
+    {
+     "text": "el",
+     "start": 15.191,
+     "end": 15.351
+    },
+    {
+     "text": "dinero",
+     "start": 15.351,
+     "end": 15.671
+    },
+    {
+     "text": "llega",
+     "start": 15.671,
+     "end": 16.091
+    },
+    {
+     "text": "a",
+     "start": 16.091,
+     "end": 16.251
+    },
+    {
+     "text": "tu",
+     "start": 16.251,
+     "end": 16.451
+    },
+    {
+     "text": "cuenta.",
+     "start": 16.451,
+     "end": 16.691
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Cobra. Factura hoy, cobra hoy.",
+   "start": 16.968,
+   "end": 19.219,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Cobra.",
+     "start": 16.968,
+     "end": 17.368
+    },
+    {
+     "text": "Factura",
+     "start": 17.608,
+     "end": 18.148
+    },
+    {
+     "text": "hoy,",
+     "start": 18.148,
+     "end": 18.308
+    },
+    {
+     "text": "cobra",
+     "start": 18.608,
+     "end": 18.728
+    },
+    {
+     "text": "hoy.",
+     "start": 18.728,
+     "end": 19.148
+    }
+   ]
+  }
+ ]
+}

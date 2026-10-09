@@ -1,0 +1,77 @@
+{
+ "name": "disciplina",
+ "fuente": "Mixkit · licencia gratuita (https://mixkit.co/license/#videoFree)",
+ "clips": [
+  {
+   "id": 32808,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 34561,
+   "desde": 0,
+   "dur": 4
+  },
+  {
+   "id": 40276,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 52079,
+   "desde": 0.5,
+   "dur": 3,
+   "recorte": true
+  },
+  {
+   "id": 52080,
+   "desde": 2,
+   "dur": 4,
+   "recorte": true
+  },
+  {
+   "id": 40973,
+   "desde": 1,
+   "dur": 3
+  },
+  {
+   "id": 40971,
+   "desde": 1,
+   "dur": 3.5,
+   "recorte": true
+  },
+  {
+   "id": 52082,
+   "desde": 1,
+   "dur": 4,
+   "recorte": true
+  },
+  {
+   "id": 40788,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 41065,
+   "desde": 0.5,
+   "dur": 4
+  },
+  {
+   "id": 32809,
+   "desde": 1.5,
+   "dur": 4,
+   "recorte": true
+  },
+  {
+   "id": 43321,
+   "desde": 1,
+   "dur": 4
+  },
+  {
+   "id": 34583,
+   "desde": 1,
+   "dur": 5,
+   "recorte": true
+  }
+ ]
+}

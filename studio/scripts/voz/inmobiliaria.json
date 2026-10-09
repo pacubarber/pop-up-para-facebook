@@ -1,0 +1,33 @@
+{
+ "name": "inmobiliaria",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "ash",
+   "speed": 1.05,
+   "instructions": "Español latinoamericano neutro (no de España). Voz masculina cálida y elegante de video inmobiliario, que invita a imaginar vivir ahí. Ritmo fluido, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Esto no es una casa más en Alameda."
+  },
+  {
+   "voice": "voz",
+   "text": "Tres habitaciones, dos baños, y una terraza que mira al atardecer."
+  },
+  {
+   "voice": "voz",
+   "text": "Ciento cuarenta y cinco metros cuadrados, a cinco minutos del parque."
+  },
+  {
+   "voice": "voz",
+   "text": "Agenda tu visita esta semana."
+  }
+ ]
+}

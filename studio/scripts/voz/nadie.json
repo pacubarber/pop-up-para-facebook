@@ -1,0 +1,65 @@
+{
+ "name": "nadie",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "marin",
+   "speed": 1.06,
+   "instructions": "Español latinoamericano neutro (no de España). Voz femenina firme y poderosa, intensa pero controlada, como una entrenadora que te habla de frente antes de una pelea. Ritmo rápido y decidido, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Nadie va a venir a salvarte."
+  },
+  {
+   "voice": "voz",
+   "text": "Ni tu jefe."
+  },
+  {
+   "voice": "voz",
+   "text": "Ni la suerte."
+  },
+  {
+   "voice": "voz",
+   "text": "Ni el lunes que viene."
+  },
+  {
+   "voice": "voz",
+   "text": "Eres tú."
+  },
+  {
+   "voice": "voz",
+   "text": "Solo tú."
+  },
+  {
+   "voice": "voz",
+   "text": "Cada vez que te rindes, le das la razón a quien dudó de ti."
+  },
+  {
+   "voice": "voz",
+   "text": "Cáete siete veces."
+  },
+  {
+   "voice": "voz",
+   "text": "Levántate ocho."
+  },
+  {
+   "voice": "voz",
+   "text": "Tu momento no llega."
+  },
+  {
+   "voice": "voz",
+   "text": "Se construye."
+  },
+  {
+   "voice": "voz",
+   "text": "Empieza hoy."
+  }
+ ]
+}

@@ -11,7 +11,10 @@
     "pitch": "node scripts/pitch.mjs",
     "frames": "bash scripts/frames.sh",
     "logos": "node scripts/build-logos.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "voz": "python3 tools/voz.py scripts/voz/*.json",
+    "stock": "python3 tools/stock.py bajar scripts/stock/*.json",
+    "entregar": "node scripts/entregar.mjs"
   },
   "dependencies": {
     "@fontsource/anton": "^5.3.0",

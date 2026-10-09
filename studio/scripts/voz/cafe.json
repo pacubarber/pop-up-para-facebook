@@ -1,0 +1,34 @@
+{
+ "name": "cafe",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "shimmer",
+   "speed": 1.17,
+   "instructions": "Español latinoamericano neutro (no de España). Voz femenina cálida y luminosa de anuncio de café de especialidad, cercana y con chispa. Ritmo ágil, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Tu café sabe a lunes?",
+   "gap": 0.15
+  },
+  {
+   "voice": "voz",
+   "text": "Grano Alto. Café de especialidad, tostado esta semana."
+  },
+  {
+   "voice": "voz",
+   "text": "De la finca a tu taza en cuarenta y ocho horas."
+  },
+  {
+   "voice": "voz",
+   "text": "Tu primera bolsa, con treinta por ciento de descuento."
+  }
+ ]
+}

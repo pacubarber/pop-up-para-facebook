@@ -1,0 +1,617 @@
+{
+ "name": "restaurante",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 40.06,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Tu restaurante está perdiendo clientes, y no es por la comida.",
+   "start": 0.05,
+   "end": 4.052,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Tu",
+     "start": 0.05,
+     "end": 0.25
+    },
+    {
+     "text": "restaurante",
+     "start": 0.25,
+     "end": 0.99
+    },
+    {
+     "text": "está",
+     "start": 0.99,
+     "end": 1.47
+    },
+    {
+     "text": "perdiendo",
+     "start": 1.47,
+     "end": 1.99
+    },
+    {
+     "text": "clientes,",
+     "start": 1.99,
+     "end": 2.63
+    },
+    {
+     "text": "y",
+     "start": 2.73,
+     "end": 2.91
+    },
+    {
+     "text": "no",
+     "start": 2.91,
+     "end": 3.11
+    },
+    {
+     "text": "es",
+     "start": 3.11,
+     "end": 3.33
+    },
+    {
+     "text": "por",
+     "start": 3.33,
+     "end": 3.45
+    },
+    {
+     "text": "la",
+     "start": 3.45,
+     "end": 3.77
+    },
+    {
+     "text": "comida.",
+     "start": 3.77,
+     "end": 3.93
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Error número uno: tus redes parecen abandonadas.",
+   "start": 4.112,
+   "end": 7.64,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Error",
+     "start": 4.112,
+     "end": 4.612
+    },
+    {
+     "text": "número",
+     "start": 4.612,
+     "end": 5.232
+    },
+    {
+     "text": "uno:",
+     "start": 5.232,
+     "end": 5.532
+    },
+    {
+     "text": "tus",
+     "start": 5.772,
+     "end": 5.912
+    },
+    {
+     "text": "redes",
+     "start": 5.912,
+     "end": 6.232
+    },
+    {
+     "text": "parecen",
+     "start": 6.232,
+     "end": 6.832
+    },
+    {
+     "text": "abandonadas.",
+     "start": 6.832,
+     "end": 7.492
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Hoy la gente elige dónde comer desde el celular, antes de salir de casa.",
+   "start": 7.7,
+   "end": 12.549,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Hoy",
+     "start": 7.7,
+     "end": 8.04
+    },
+    {
+     "text": "la",
+     "start": 8.04,
+     "end": 8.28
+    },
+    {
+     "text": "gente",
+     "start": 8.28,
+     "end": 8.66
+    },
+    {
+     "text": "elige",
+     "start": 8.66,
+     "end": 9.22
+    },
+    {
+     "text": "dónde",
+     "start": 9.22,
+     "end": 9.68
+    },
+    {
+     "text": "comer",
+     "start": 9.68,
+     "end": 10.08
+    },
+    {
+     "text": "desde",
+     "start": 10.08,
+     "end": 10.5
+    },
+    {
+     "text": "el",
+     "start": 10.5,
+     "end": 10.8
+    },
+    {
+     "text": "celular,",
+     "start": 10.8,
+     "end": 11.12
+    },
+    {
+     "text": "antes",
+     "start": 11.4,
+     "end": 11.56
+    },
+    {
+     "text": "de",
+     "start": 11.56,
+     "end": 11.86
+    },
+    {
+     "text": "salir",
+     "start": 11.86,
+     "end": 12.02
+    },
+    {
+     "text": "de",
+     "start": 12.02,
+     "end": 12.26
+    },
+    {
+     "text": "casa.",
+     "start": 12.26,
+     "end": 12.46
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Sube video de tu cocina: el fuego, el queso, el sonido de la plancha.",
+   "start": 12.609,
+   "end": 16.738,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Sube",
+     "start": 12.609,
+     "end": 13.029
+    },
+    {
+     "text": "video",
+     "start": 13.029,
+     "end": 13.449
+    },
+    {
+     "text": "de",
+     "start": 13.449,
+     "end": 13.609
+    },
+    {
+     "text": "tu",
+     "start": 13.609,
+     "end": 13.829
+    },
+    {
+     "text": "cocina:",
+     "start": 13.829,
+     "end": 14.149
+    },
+    {
+     "text": "el",
+     "start": 14.349,
+     "end": 14.489
+    },
+    {
+     "text": "fuego,",
+     "start": 14.489,
+     "end": 14.749
+    },
+    {
+     "text": "el",
+     "start": 15.009,
+     "end": 15.249
+    },
+    {
+     "text": "queso,",
+     "start": 15.249,
+     "end": 15.369
+    },
+    {
+     "text": "el",
+     "start": 15.589,
+     "end": 15.789
+    },
+    {
+     "text": "sonido",
+     "start": 15.789,
+     "end": 16.029
+    },
+    {
+     "text": "de",
+     "start": 16.029,
+     "end": 16.189
+    },
+    {
+     "text": "la",
+     "start": 16.189,
+     "end": 16.549
+    },
+    {
+     "text": "plancha.",
+     "start": 16.549,
+     "end": 16.629
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Error número dos: tu cliente no sabe qué pedir.",
+   "start": 16.798,
+   "end": 20.47,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Error",
+     "start": 16.798,
+     "end": 17.318
+    },
+    {
+     "text": "número",
+     "start": 17.318,
+     "end": 17.938
+    },
+    {
+     "text": "dos:",
+     "start": 17.938,
+     "end": 18.298
+    },
+    {
+     "text": "tu",
+     "start": 18.538,
+     "end": 18.598
+    },
+    {
+     "text": "cliente",
+     "start": 18.578,
+     "end": 19.098
+    },
+    {
+     "text": "no",
+     "start": 19.098,
+     "end": 19.478
+    },
+    {
+     "text": "sabe",
+     "start": 19.478,
+     "end": 19.758
+    },
+    {
+     "text": "qué",
+     "start": 19.758,
+     "end": 20.178
+    },
+    {
+     "text": "pedir.",
+     "start": 20.178,
+     "end": 20.398
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Un menú de cuarenta platos confunde. Destaca tus tres favoritos.",
+   "start": 20.53,
+   "end": 24.991,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Un",
+     "start": 20.53,
+     "end": 20.85
+    },
+    {
+     "text": "menú",
+     "start": 20.85,
+     "end": 21.23
+    },
+    {
+     "text": "de",
+     "start": 21.23,
+     "end": 21.45
+    },
+    {
+     "text": "cuarenta",
+     "start": 21.45,
+     "end": 21.97
+    },
+    {
+     "text": "platos",
+     "start": 21.97,
+     "end": 22.39
+    },
+    {
+     "text": "confunde.",
+     "start": 22.39,
+     "end": 23.05
+    },
+    {
+     "text": "Destaca",
+     "start": 23.47,
+     "end": 23.71
+    },
+    {
+     "text": "tus",
+     "start": 23.71,
+     "end": 23.95
+    },
+    {
+     "text": "tres",
+     "start": 23.95,
+     "end": 24.33
+    },
+    {
+     "text": "favoritos.",
+     "start": 24.33,
+     "end": 24.83
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Error número tres: no le pides nada al cliente feliz.",
+   "start": 25.051,
+   "end": 28.84,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Error",
+     "start": 25.051,
+     "end": 25.511
+    },
+    {
+     "text": "número",
+     "start": 25.511,
+     "end": 26.071
+    },
+    {
+     "text": "tres:",
+     "start": 26.071,
+     "end": 26.371
+    },
+    {
+     "text": "no",
+     "start": 26.731,
+     "end": 26.791
+    },
+    {
+     "text": "le",
+     "start": 26.751,
+     "end": 27.051
+    },
+    {
+     "text": "pides",
+     "start": 27.051,
+     "end": 27.211
+    },
+    {
+     "text": "nada",
+     "start": 27.211,
+     "end": 27.611
+    },
+    {
+     "text": "al",
+     "start": 27.611,
+     "end": 27.911
+    },
+    {
+     "text": "cliente",
+     "start": 27.911,
+     "end": 28.391
+    },
+    {
+     "text": "feliz.",
+     "start": 28.391,
+     "end": 28.731
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Ni una reseña, ni una foto, ni que te etiquete.",
+   "start": 28.9,
+   "end": 32.267,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Ni",
+     "start": 28.9,
+     "end": 29.2
+    },
+    {
+     "text": "una",
+     "start": 29.2,
+     "end": 29.52
+    },
+    {
+     "text": "reseña,",
+     "start": 29.52,
+     "end": 30.04
+    },
+    {
+     "text": "ni",
+     "start": 30.3,
+     "end": 30.46
+    },
+    {
+     "text": "una",
+     "start": 30.46,
+     "end": 30.76
+    },
+    {
+     "text": "foto,",
+     "start": 30.76,
+     "end": 31.06
+    },
+    {
+     "text": "ni",
+     "start": 31.42,
+     "end": 31.48
+    },
+    {
+     "text": "que",
+     "start": 31.44,
+     "end": 31.6
+    },
+    {
+     "text": "te",
+     "start": 31.6,
+     "end": 31.76
+    },
+    {
+     "text": "etiquete.",
+     "start": 31.76,
+     "end": 32.16
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Arregla estos tres, y las mesas se llenan solas.",
+   "start": 32.327,
+   "end": 35.86,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Arregla",
+     "start": 32.327,
+     "end": 33.047
+    },
+    {
+     "text": "estos",
+     "start": 33.047,
+     "end": 33.427
+    },
+    {
+     "text": "tres,",
+     "start": 33.427,
+     "end": 33.847
+    },
+    {
+     "text": "y",
+     "start": 33.967,
+     "end": 34.067
+    },
+    {
+     "text": "las",
+     "start": 34.067,
+     "end": 34.347
+    },
+    {
+     "text": "mesas",
+     "start": 34.347,
+     "end": 34.727
+    },
+    {
+     "text": "se",
+     "start": 34.727,
+     "end": 35.007
+    },
+    {
+     "text": "llenan",
+     "start": 35.007,
+     "end": 35.247
+    },
+    {
+     "text": "solas.",
+     "start": 35.247,
+     "end": 35.767
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Guarda este video. Tu restaurante te lo va a agradecer.",
+   "start": 35.92,
+   "end": 39.66,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Guarda",
+     "start": 35.92,
+     "end": 36.66
+    },
+    {
+     "text": "este",
+     "start": 36.66,
+     "end": 37.08
+    },
+    {
+     "text": "video.",
+     "start": 37.08,
+     "end": 37.42
+    },
+    {
+     "text": "Tu",
+     "start": 37.66,
+     "end": 37.72
+    },
+    {
+     "text": "restaurante",
+     "start": 37.7,
+     "end": 38.38
+    },
+    {
+     "text": "te",
+     "start": 38.38,
+     "end": 38.66
+    },
+    {
+     "text": "lo",
+     "start": 38.66,
+     "end": 38.84
+    },
+    {
+     "text": "va",
+     "start": 38.84,
+     "end": 38.98
+    },
+    {
+     "text": "a",
+     "start": 38.98,
+     "end": 39.2
+    },
+    {
+     "text": "agradecer.",
+     "start": 39.2,
+     "end": 39.62
+    }
+   ]
+  }
+ ]
+}

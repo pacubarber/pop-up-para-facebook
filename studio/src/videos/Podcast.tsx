@@ -6,7 +6,7 @@ import {font} from '../brand';
 import {Captions} from '../lib/Captions';
 import {Character, looks} from '../lib/Character';
 import {easeOut, Flash, Grain, Music, prog, Sfx, useSpring, Vignette, VoData} from '../lib/core';
-import voJson from '../../public/vo/podcast.json';
+import voJson from '../../public/voz/podcast.json';
 
 // Clip de podcast vertical para un cliente ficticio: "Mente Fundadora".
 const vo = voJson as VoData;
@@ -37,7 +37,7 @@ const speakerAt = (t: number) => L.find((l) => t >= l.start && t <= l.end)?.voic
 const useMouth = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const audio = useAudioData(staticFile('vo/podcast.wav'));
+  const audio = useAudioData(staticFile('voz/podcast.wav'));
   if (!audio) return 0;
   const bins = visualizeAudio({fps, frame, audioData: audio, numberOfSamples: 32, smoothing: true});
   const level = bins.slice(0, 10).reduce((a, b) => a + b, 0);
@@ -158,7 +158,7 @@ const NameTag: React.FC<{name: string; role: string; at: number; until: number}>
 const Waveform: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const audio = useAudioData(staticFile('vo/podcast.wav'));
+  const audio = useAudioData(staticFile('voz/podcast.wav'));
   if (!audio) return null;
   const bins = visualizeAudio({fps, frame, audioData: audio, numberOfSamples: 64, smoothing: true}).slice(0, 28);
   const bars = [...bins.slice().reverse(), ...bins];
@@ -296,7 +296,7 @@ export const Podcast: React.FC = () => {
       <Vignette strength={0.35} />
       <Grain opacity={0.05} />
 
-      <Audio src={staticFile('vo/podcast.wav')} />
+      <Audio src={staticFile('voz/podcast.wav')} />
       <Music name="chill_88" volume={0.32} duration={durationInFrames} vo={vo} duck={0.4} />
       <Sfx name="whoosh_short" at={0} volume={0.5} />
       <Sfx name="pop" at={hoursAt} volume={0.7} />

@@ -1,0 +1,53 @@
+{
+ "name": "podcast",
+ "lead": 0.05,
+ "gap": 0.08,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "valeria": {
+   "voice": "marin",
+   "speed": 1.05,
+   "instructions": "Español latinoamericano neutro (no de España). Conductora de podcast de negocios, curiosa y cercana; conversación natural, no de anuncio."
+  },
+  "diego": {
+   "voice": "cedar",
+   "speed": 1.06,
+   "instructions": "Español latinoamericano neutro (no de España). Fundador de una startup contando una anécdota en un podcast: natural, convencido, con ritmo de conversación real."
+  }
+ },
+ "lines": [
+  {
+   "voice": "valeria",
+   "text": "¿Cuál fue el error que casi te hunde la empresa?",
+   "gap": 0.18
+  },
+  {
+   "voice": "diego",
+   "text": "Hablar del producto, y no del cliente."
+  },
+  {
+   "voice": "diego",
+   "text": "Durante un año dijimos: tenemos la mejor tecnología. Y nadie compraba."
+  },
+  {
+   "voice": "diego",
+   "text": "Cambiamos una sola frase: te devolvemos diez horas a la semana."
+  },
+  {
+   "voice": "diego",
+   "text": "Las ventas se triplicaron.",
+   "gap": 0.18
+  },
+  {
+   "voice": "valeria",
+   "text": "¿Con una frase?",
+   "gap": 0.18
+  },
+  {
+   "voice": "diego",
+   "text": "Con una frase. Mismo producto, mismo precio. Otra historia."
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "name": "mexico",
+ "fuente": "Mixkit · licencia gratuita (https://mixkit.co/license/#videoFree)",
+ "clips": [
+  {
+   "id": 41541,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 42041,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 4106,
+   "desde": 0,
+   "dur": 6,
+   "cielo": "dia"
+  },
+  {
+   "id": 4107,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 4375,
+   "desde": 0,
+   "dur": 6
+  },
+  {
+   "id": 43088,
+   "desde": 0.5,
+   "dur": 5
+  },
+  {
+   "id": 4392,
+   "desde": 0,
+   "dur": 6,
+   "cielo": "noche"
+  },
+  {
+   "id": 3487,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 44276,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 41392,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 42390,
+   "desde": 0.5,
+   "dur": 5,
+   "recorte": true
+  },
+  {
+   "id": 2074,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 4487,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 4288,
+   "desde": 0.5,
+   "dur": 5
+  },
+  {
+   "id": 3088,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 3499,
+   "desde": 0,
+   "dur": 5
+  },
+  {
+   "id": 2387,
+   "desde": 0,
+   "dur": 5
+  }
+ ]
+}

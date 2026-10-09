@@ -1,0 +1,57 @@
+{
+ "name": "restaurante",
+ "lead": 0.05,
+ "gap": 0.06,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "ash",
+   "speed": 1.08,
+   "instructions": "Español latinoamericano neutro (no de España). Voz masculina cercana y enérgica de creador de contenido para dueños de negocios: directo, seguro, con chispa. Ritmo rápido de reel, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Tu restaurante está perdiendo clientes, y no es por la comida."
+  },
+  {
+   "voice": "voz",
+   "text": "Error número uno: tus redes parecen abandonadas."
+  },
+  {
+   "voice": "voz",
+   "text": "Hoy la gente elige dónde comer desde el celular, antes de salir de casa."
+  },
+  {
+   "voice": "voz",
+   "text": "Sube video de tu cocina: el fuego, el queso, el sonido de la plancha."
+  },
+  {
+   "voice": "voz",
+   "text": "Error número dos: tu cliente no sabe qué pedir."
+  },
+  {
+   "voice": "voz",
+   "text": "Un menú de cuarenta platos confunde. Destaca tus tres favoritos."
+  },
+  {
+   "voice": "voz",
+   "text": "Error número tres: no le pides nada al cliente feliz."
+  },
+  {
+   "voice": "voz",
+   "text": "Ni una reseña, ni una foto, ni que te etiquete."
+  },
+  {
+   "voice": "voz",
+   "text": "Arregla estos tres, y las mesas se llenan solas."
+  },
+  {
+   "voice": "voz",
+   "text": "Guarda este video. Tu restaurante te lo va a agradecer."
+  }
+ ]
+}

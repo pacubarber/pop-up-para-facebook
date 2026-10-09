@@ -1,0 +1,45 @@
+{
+ "name": "mexico",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "coral",
+   "speed": 1.07,
+   "instructions": "Español latinoamericano neutro (no de España). Voz femenina cálida y entusiasta de creadora de viajes, como si le recomendara un viaje a una amiga. Ritmo ágil de reel, sonriente, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Cinco lugares de México que tienes que ver al menos una vez."
+  },
+  {
+   "voice": "voz",
+   "text": "Uno: Chichén Itzá. Una pirámide que también es calendario: tiene trescientos sesenta y cinco escalones."
+  },
+  {
+   "voice": "voz",
+   "text": "Dos: los cenotes de Yucatán. Agua turquesa escondida bajo la selva."
+  },
+  {
+   "voice": "voz",
+   "text": "Tres: San Miguel de Allende. Calles de piedra y una parroquia que parece de cuento."
+  },
+  {
+   "voice": "voz",
+   "text": "Cuatro: Tequila, Jalisco. Campos de agave azul hasta donde alcanza la vista."
+  },
+  {
+   "voice": "voz",
+   "text": "Y cinco: la Ciudad de México. Lucha libre, tacos de madrugada y arte en cada esquina."
+  },
+  {
+   "voice": "voz",
+   "text": "¿Cuál visitarías primero? Guárdalo para tu próximo viaje."
+  }
+ ]
+}

@@ -1,0 +1,251 @@
+{
+ "name": "fresca",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 13.829,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Tu jugo de caja es puro azúcar?",
+   "start": 0.05,
+   "end": 2.135,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Tu",
+     "start": 0.05,
+     "end": 0.23
+    },
+    {
+     "text": "jugo",
+     "start": 0.23,
+     "end": 0.59
+    },
+    {
+     "text": "de",
+     "start": 0.59,
+     "end": 0.77
+    },
+    {
+     "text": "caja",
+     "start": 0.77,
+     "end": 1.07
+    },
+    {
+     "text": "es",
+     "start": 1.07,
+     "end": 1.49
+    },
+    {
+     "text": "puro",
+     "start": 1.49,
+     "end": 1.67
+    },
+    {
+     "text": "azúcar?",
+     "start": 1.67,
+     "end": 2.05
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Fresca. Prensado en frío, sin azúcar añadida.",
+   "start": 2.195,
+   "end": 5.138,
+   "match": 0.909,
+   "words": [
+    {
+     "text": "Fresca.",
+     "start": 2.195,
+     "end": 2.315
+    },
+    {
+     "text": "Prensado",
+     "start": 2.215,
+     "end": 3.235
+    },
+    {
+     "text": "en",
+     "start": 3.235,
+     "end": 3.415
+    },
+    {
+     "text": "frío,",
+     "start": 3.415,
+     "end": 3.675
+    },
+    {
+     "text": "sin",
+     "start": 4.055,
+     "end": 4.115
+    },
+    {
+     "text": "azúcar",
+     "start": 4.075,
+     "end": 4.495
+    },
+    {
+     "text": "añadida.",
+     "start": 4.495,
+     "end": 5.075
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Seis frutas en cada botella.",
+   "start": 5.198,
+   "end": 7.256,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Seis",
+     "start": 5.198,
+     "end": 5.738
+    },
+    {
+     "text": "frutas",
+     "start": 5.738,
+     "end": 6.278
+    },
+    {
+     "text": "en",
+     "start": 6.278,
+     "end": 6.578
+    },
+    {
+     "text": "cada",
+     "start": 6.578,
+     "end": 6.798
+    },
+    {
+     "text": "botella.",
+     "start": 6.798,
+     "end": 7.138
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Hecho hoy, en tu puerta mañana.",
+   "start": 7.316,
+   "end": 9.469,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Hecho",
+     "start": 7.316,
+     "end": 7.756
+    },
+    {
+     "text": "hoy,",
+     "start": 7.756,
+     "end": 8.096
+    },
+    {
+     "text": "en",
+     "start": 8.256,
+     "end": 8.336
+    },
+    {
+     "text": "tu",
+     "start": 8.336,
+     "end": 8.536
+    },
+    {
+     "text": "puerta",
+     "start": 8.536,
+     "end": 8.856
+    },
+    {
+     "text": "mañana.",
+     "start": 8.856,
+     "end": 9.356
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Pide tu primer pack con dos por uno.",
+   "start": 9.529,
+   "end": 11.757,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Pide",
+     "start": 9.529,
+     "end": 9.829
+    },
+    {
+     "text": "tu",
+     "start": 9.829,
+     "end": 10.029
+    },
+    {
+     "text": "primer",
+     "start": 10.029,
+     "end": 10.329
+    },
+    {
+     "text": "pack",
+     "start": 10.329,
+     "end": 10.749
+    },
+    {
+     "text": "con",
+     "start": 10.749,
+     "end": 11.049
+    },
+    {
+     "text": "dos",
+     "start": 11.049,
+     "end": 11.349
+    },
+    {
+     "text": "por",
+     "start": 11.349,
+     "end": 11.569
+    },
+    {
+     "text": "uno.",
+     "start": 11.569,
+     "end": 11.669
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Fresca. Toma algo de verdad.",
+   "start": 11.817,
+   "end": 13.429,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Fresca.",
+     "start": 11.817,
+     "end": 12.337
+    },
+    {
+     "text": "Toma",
+     "start": 12.637,
+     "end": 12.757
+    },
+    {
+     "text": "algo",
+     "start": 12.757,
+     "end": 12.977
+    },
+    {
+     "text": "de",
+     "start": 12.977,
+     "end": 13.157
+    },
+    {
+     "text": "verdad.",
+     "start": 13.157,
+     "end": 13.337
+    }
+   ]
+  }
+ ]
+}

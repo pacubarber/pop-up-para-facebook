@@ -3,7 +3,7 @@ import {AbsoluteFill, Audio, interpolate, staticFile, useCurrentFrame} from 'rem
 import {font} from '../brand';
 import {clamp, easeInOut, easeOut, Flash, Grain, Music, prog, Sfx, useSpring, VoData} from '../lib/core';
 import {Scene} from '../lib/Whip';
-import voJson from '../../public/vo/saas.json';
+import voJson from '../../public/voz/saas.json';
 
 // Promo horizontal para una app ficticia de reservas: "Flujo".
 const vo = voJson as VoData;
@@ -316,7 +316,7 @@ export const Saas: React.FC = () => (
     <Flash at={S4 + 4} max={0.35} />
     <Grain opacity={0.035} />
 
-    <Audio src={staticFile('vo/saas.wav')} />
+    <Audio src={staticFile('voz/saas.wav')} />
     <Music name="tech_112" volume={0.55} duration={SAAS_DURATION} vo={vo} duck={0.5} fadeIn={20} delay={S2 - 36} />
     {MSG_TIMES.map((t, i) => (
       <Sfx key={i} name={i % 2 ? 'pop' : 'ding'} at={t} volume={i % 2 ? 0.35 : 0.18} />

@@ -1,0 +1,45 @@
+{
+ "name": "oceano",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "cedar",
+   "speed": 1.07,
+   "instructions": "Español latinoamericano neutro (no de España). Voz masculina de narrador de documental, cálida y con asombro, pero con ritmo ágil de reel. Sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Sabías que tenemos mejores mapas de Marte que del fondo de nuestro océano?"
+  },
+  {
+   "voice": "voz",
+   "text": "Más del ochenta por ciento del océano nunca ha sido explorado."
+  },
+  {
+   "voice": "voz",
+   "text": "La mitad del oxígeno que respiras viene del mar, de un plancton tan pequeño que no lo puedes ver."
+  },
+  {
+   "voice": "voz",
+   "text": "Las medusas llevan más de quinientos millones de años aquí. Son más antiguas que los dinosaurios, y no tienen cerebro."
+  },
+  {
+   "voice": "voz",
+   "text": "Las tortugas marinas cruzan miles de kilómetros para volver a la misma playa donde nacieron."
+  },
+  {
+   "voice": "voz",
+   "text": "Y los delfines duermen con medio cerebro. La otra mitad se queda despierta."
+  },
+  {
+   "voice": "voz",
+   "text": "¿Cuál no sabías? Te leo en los comentarios."
+  }
+ ]
+}

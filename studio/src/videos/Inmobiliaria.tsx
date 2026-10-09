@@ -5,7 +5,7 @@ import {font} from '../brand';
 import {Captions} from '../lib/Captions';
 import {clamp, easeInOut, easeOut, Grain, Music, prog, Sfx, useSpring, VoData} from '../lib/core';
 import {Scene} from '../lib/Whip';
-import voJson from '../../public/vo/inmobiliaria.json';
+import voJson from '../../public/voz/inmobiliaria.json';
 
 // Video de propiedad para una inmobiliaria ficticia: "Casa Alameda" · Roble Inmobiliaria.
 const vo = voJson as VoData;
@@ -308,7 +308,7 @@ export const Inmobiliaria: React.FC = () => (
     </div>
     <Grain opacity={0.05} />
 
-    <Audio src={staticFile('vo/inmobiliaria.wav')} />
+    <Audio src={staticFile('voz/inmobiliaria.wav')} />
     <Music name="chill_88" volume={0.5} duration={INMO_DURATION} vo={vo} duck={0.45} fadeIn={20} />
     <Sfx name="whoosh_short" at={S2} volume={0.4} />
     <Sfx name="whoosh_short" at={S3} volume={0.4} />

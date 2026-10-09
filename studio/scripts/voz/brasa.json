@@ -1,0 +1,41 @@
+{
+ "name": "brasa",
+ "lead": 0.05,
+ "gap": 0.06,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "verse",
+   "speed": 1.08,
+   "instructions": "Español latinoamericano neutro (no de España). Voz masculina con actitud, cálida y antojadora, de anuncio de hamburguesería urbana. Ritmo rápido, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Otra hamburguesa seca y sin sabor?"
+  },
+  {
+   "voice": "voz",
+   "text": "Brasa. Smash burgers a la plancha."
+  },
+  {
+   "voice": "voz",
+   "text": "Carne fresca, aplastada al momento."
+  },
+  {
+   "voice": "voz",
+   "text": "Queso doble, pan brioche y salsa de la casa."
+  },
+  {
+   "voice": "voz",
+   "text": "Este viernes, la segunda a mitad de precio."
+  },
+  {
+   "voice": "voz",
+   "text": "Brasa. Sabor que se escucha."
+  }
+ ]
+}

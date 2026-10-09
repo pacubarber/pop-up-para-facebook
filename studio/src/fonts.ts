@@ -10,6 +10,7 @@ const faces: Array<[family: string, file: string, weight: string, style?: string
   ['Inter Tight', 'inter-tight-latin-800-normal.woff2', '800'],
   ['Inter Tight', 'inter-tight-latin-900-normal.woff2', '900'],
   ['Inter Tight', 'inter-tight-latin-800-italic.woff2', '800', 'italic'],
+  ['Inter Tight', 'inter-tight-latin-900-italic.woff2', '900', 'italic'],
   ['JetBrains Mono', 'jetbrains-mono-latin-400-normal.woff2', '400'],
   ['JetBrains Mono', 'jetbrains-mono-latin-500-normal.woff2', '500'],
   ['JetBrains Mono', 'jetbrains-mono-latin-700-normal.woff2', '700'],

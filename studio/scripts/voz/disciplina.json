@@ -1,0 +1,69 @@
+{
+ "name": "disciplina",
+ "lead": 0.05,
+ "gap": 0.07,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "onyx",
+   "speed": 1.06,
+   "instructions": "Español latinoamericano neutro (no de España). Voz masculina grave, intensa y contenida, como el narrador de un video motivacional de alto rendimiento. Frases cortas dichas con convicción, golpeando la última palabra. Ritmo rápido, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "Son las cinco de la mañana."
+  },
+  {
+   "voice": "voz",
+   "text": "Todos duermen."
+  },
+  {
+   "voice": "voz",
+   "text": "Tú no."
+  },
+  {
+   "voice": "voz",
+   "text": "Porque no necesitas motivación."
+  },
+  {
+   "voice": "voz",
+   "text": "Necesitas disciplina."
+  },
+  {
+   "voice": "voz",
+   "text": "La motivación se va."
+  },
+  {
+   "voice": "voz",
+   "text": "La disciplina se queda."
+  },
+  {
+   "voice": "voz",
+   "text": "Una repetición más."
+  },
+  {
+   "voice": "voz",
+   "text": "Un kilómetro más."
+  },
+  {
+   "voice": "voz",
+   "text": "Un día más."
+  },
+  {
+   "voice": "voz",
+   "text": "El dolor de hoy es la fuerza de mañana."
+  },
+  {
+   "voice": "voz",
+   "text": "Levántate."
+  },
+  {
+   "voice": "voz",
+   "text": "Y hazlo otra vez."
+  }
+ ]
+}

@@ -459,18 +459,284 @@ def sfx_cash(name="cash.wav"):
     write_wav(os.path.join(OUT, name), reverb(clack + bell, 0.9, 0.3, 0.18), -5)
 
 
+# ---------------------------------------------------------------- pistas v2 (más rápidas / épicas)
+def _reseed(seed):
+    """Cada pista nueva usa su propia semilla: sale igual aunque se genere sola."""
+    global rng
+    rng = np.random.default_rng(seed)
+
+
+def piano(m, dur, vel=1.0):
+    """Piano suave: parciales levemente inarmónicos con caída rápida y golpe de martillo."""
+    n = n_of(dur)
+    t = np.arange(n) / SR
+    f = midi(m)
+    x = np.zeros(n)
+    for k, amp in enumerate((1.0, 0.5, 0.28, 0.16, 0.09, 0.05), start=1):
+        fk = f * k * np.sqrt(1 + 0.0004 * k * k)
+        if fk > SR / 2:
+            break
+        x += amp * np.sin(2 * np.pi * fk * t) * np.exp(-t * (1.6 + 0.9 * k))
+    hammer = lp(rng.standard_normal(n), 2500) * np.exp(-t * 160) * 0.08
+    return (x + hammer) * vel * np.clip(t / 0.002, 0, 1) * np.clip((dur - t) / 0.08, 0, 1)
+
+
+def taiko(punch=1.0):
+    n = n_of(1.1)
+    t = np.arange(n) / SR
+    f = 52 + 70 * punch * np.exp(-t * 22)
+    body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 4.2)
+    skin = bp(rng.standard_normal(n), 120, 900) * np.exp(-t * 28) * 0.7
+    return np.tanh((body + skin) * 1.8)
+
+
+def braam(notes, dur, peak=0.35):
+    """Bloque de metales graves con filtro que se abre y se cierra (tráiler)."""
+    n = n_of(dur)
+    t = np.arange(n) / SR
+    x = np.zeros(n)
+    for m in notes:
+        for cents in (-9, 0, 9):
+            x += saw(midi(m) * 2 ** (cents / 1200), n, 50)
+    x /= len(notes) * 3
+    out = np.zeros(n)
+    block = 1024
+    for i in range(0, n, block):
+        p = i / n
+        fc = 160 + 2400 * (p / peak if p < peak else np.exp(-(p - peak) * 3.2))
+        out[i : i + block] = lp(x[max(0, i - 2048) : i + block], fc, 2)[-len(x[i : i + block]) :]
+    env = env_adsr(n, 0.05, 0.4, 0.8, 0.6)
+    return np.tanh(out * env * 2.2)
+
+
+def stab(notes, dur=0.18, bright=3800):
+    """Acorde corto tipo house para contratiempos."""
+    n = n_of(dur)
+    t = np.arange(n) / SR
+    x = np.zeros(n)
+    for m in notes:
+        x += saw(midi(m), n, 24) * 0.6 + tri(midi(m) * 2, n) * 0.3
+    x = lp(x / len(notes), bright, 2)
+    return x * np.exp(-t * 14) * np.clip(t / 0.003, 0, 1)
+
+
+def marimba(m, dur=0.35):
+    n = n_of(dur)
+    t = np.arange(n) / SR
+    f = midi(m)
+    x = np.sin(2 * np.pi * f * t) * np.exp(-t * 9) + 0.35 * np.sin(2 * np.pi * 3.9 * f * t) * np.exp(-t * 30)
+    return x * np.clip(t / 0.002, 0, 1)
+
+
+def track_epic(bpm=95, bars=13, drop_bar=6, prog=None, seed=11, name="epic_95.wav"):
+    """Épica motivacional: piano solo → cuerdas y pulso → drop con taikos y braams."""
+    _reseed(seed)
+    beat = 60 / bpm
+    bar = beat * 4
+    total = bars * bar + 4
+    n = n_of(total)
+    drums = np.zeros((n, 2))
+    music = np.zeros((n, 2))
+    low = np.zeros((n, 2))
+    # Dm - Bb - F - C  (i - VI - III - VII)
+    prog = prog or [(38, [62, 65, 69]), (34, [62, 65, 70]), (41, [60, 65, 69]), (36, [60, 64, 67])]
+    kicks = []
+    for b in range(bars):
+        t0 = b * bar
+        root, chord = prog[b % len(prog)]
+        last = b == bars - 1
+        full = b >= drop_bar and not last
+        build = 2 <= b < drop_bar
+        if last:
+            place(drums, taiko(1.3), t0, 1.0)
+            place(drums, kick(1.3, 1.2), t0, 0.9)
+            place(low, braam([root - 12, root - 5, root], 3.5, 0.15), t0, 0.7)
+            place(music, piano(chord[0] + 12, 3.5), t0, 0.5)
+            kicks.append(t0)
+            continue
+        # piano: arpegio de corcheas (intro con más aire)
+        arp = [chord[0], chord[1], chord[2], chord[1] + 12, chord[2], chord[1], chord[0] + 12, chord[2]]
+        for e in range(8):
+            if b < 2 and e % 2:
+                continue
+            place(music, piano(arp[e], beat * 1.4, 0.9 if e == 0 else 0.6), t0 + e * beat / 2, 0.38, pan=-0.25 if e % 2 else 0.25)
+        # cuerdas
+        if b >= 2:
+            place(music, pad_chord([c - 12 for c in chord] + [chord[0]], bar + 0.5, 1200 if build else 2600, 10), t0, 0.5 if build else 0.7)
+        # ostinato de cuerdas en semicorcheas
+        if b >= 3:
+            for s in range(16):
+                m = (chord[0] - 12) if s % 4 != 3 else (chord[2] - 12)
+                place(music, pluck(m, 0.16, 1800 if build else 3000), t0 + s * beat / 4, 0.14 if build else 0.2, pan=0.35 if s % 2 else -0.35)
+        # pulso grave tipo latido en la intro
+        if b < drop_bar:
+            place(low, kick(0.5, 0.5), t0, 0.45)
+            place(low, kick(0.4, 0.5), t0 + beat * 0.45, 0.3)
+            if b >= 4:
+                place(low, kick(0.5, 0.5), t0 + beat * 2, 0.4)
+        if b == drop_bar - 1:  # redoble de taikos antes del drop
+            for s in range(8):
+                place(drums, taiko(0.6 + s * 0.08), t0 + 2 * beat + s * beat / 4, 0.2 + s * 0.07, pan=-0.3 if s % 2 else 0.3)
+        if full:
+            if (b - drop_bar) % 2 == 0:
+                place(low, braam([root - 12, root - 5, root], bar * 1.6), t0, 0.55)
+            for q in range(4):
+                if q in (0, 2):
+                    place(drums, kick(1.1, 0.6), t0 + q * beat, 0.95)
+                    place(drums, taiko(1.0), t0 + q * beat, 0.45)
+                    kicks.append(t0 + q * beat)
+                if q in (1, 3):
+                    place(drums, clap(), t0 + q * beat, 0.6)
+                    place(drums, taiko(0.8), t0 + q * beat, 0.25, pan=0.2)
+                for s in range(4):
+                    place(drums, hat(), t0 + q * beat + s * beat / 4, 0.1 if s % 2 else 0.16, pan=0.3)
+            place(drums, kick(0.9, 0.5), t0 + 2.75 * beat, 0.6)
+            kicks.append(t0 + 2.75 * beat)
+            for e in range(8):
+                place(low, bass_note(root - 12 + (12 if e % 4 == 3 else 0), beat / 2 * 0.9, 380), t0 + e * beat / 2, 0.42)
+    duck = ducking(n, kicks, 0.45, 0.18)[:, None]
+    mix = drums + (reverb(music, 3.0, 1.1, 0.33)[:n] + reverb(low, 1.6, 0.6, 0.18)[:n]) * duck
+    write_wav(os.path.join(OUT, name), master(mix * 0.85, 1.6))
+
+
+def track_drive(bpm=128, bars=9, prog=None, grit=False, seed=21, name="drive_128.wav"):
+    """Pop-house rápido y luminoso para anuncios de producto (versión 'grit' más sucia)."""
+    _reseed(seed)
+    beat = 60 / bpm
+    bar = beat * 4
+    total = bars * bar + 2.5
+    n = n_of(total)
+    drums = np.zeros((n, 2))
+    music = np.zeros((n, 2))
+    bass = np.zeros((n, 2))
+    # C - G - Am - F  (I V vi IV)
+    prog = prog or [(48, [60, 64, 67, 72]), (43, [59, 62, 67, 71]), (45, [60, 64, 69, 72]), (41, [60, 65, 69, 72])]
+    hook = [12, 7, 9, 7, 12, 14, 12, 7]  # semitonos sobre la tónica de la pieza
+    kicks = []
+    for b in range(bars):
+        t0 = b * bar
+        root, chord = prog[b % len(prog)]
+        last = b == bars - 1
+        if last:
+            place(drums, kick(1.2, 0.9), t0, 1.0)
+            place(drums, clap(), t0, 0.5)
+            place(music, stab(chord, 1.2, 5000), t0, 0.5)
+            kicks.append(t0)
+            continue
+        intro = b == 0
+        # acordes en contratiempo (filtrados en la intro)
+        for q in range(4):
+            place(music, stab(chord, 0.2, 1400 if intro else 4200), t0 + q * beat + beat / 2, 0.42, pan=-0.2 if q % 2 else 0.2)
+        # gancho de marimba
+        if not intro:
+            for e, st in enumerate(hook):
+                if (e + b) % 3 == 2:
+                    continue
+                place(music, marimba(prog[0][0] + 12 + st + (0 if not grit else -12), 0.3), t0 + e * beat / 2 + (beat / 4 if e % 2 else 0), 0.26, pan=0.35 if e % 2 else -0.35)
+        for q in range(4):
+            if not intro or q in (0, 2):
+                place(drums, kick(1.0 if not grit else 1.2), t0 + q * beat, 0.95)
+                kicks.append(t0 + q * beat)
+            if q in (1, 3) and not intro:
+                place(drums, clap(), t0 + q * beat, 0.55)
+            place(drums, hat(True), t0 + q * beat + beat / 2, 0.1 if intro else 0.16, pan=0.25)
+            for s in (1, 3):
+                place(drums, hat(), t0 + q * beat + s * beat / 4, 0.08, pan=-0.25)
+        if not intro:
+            for q in range(4):
+                note = root - 12 + (12 if q == 3 else 0)
+                place(bass, bass_note(note, beat / 2 * 0.85, 700 if grit else 480), t0 + q * beat + beat / 2, 0.6)
+        if b == 0:  # redoble corto hacia el primer drop
+            for s in range(4):
+                place(drums, clap(), t0 + 3 * beat + s * beat / 4, 0.18 + s * 0.08)
+    if grit:
+        bass = np.tanh(bass * 3.0) * 0.55
+    duck = ducking(n, kicks, 0.6, 0.12)[:, None]
+    mix = drums + (reverb(music, 1.4, 0.45, 0.2)[:n] + bass) * duck
+    write_wav(os.path.join(OUT, name), master(mix * 0.9, 1.8 if grit else 1.4))
+
+
+def sfx_sizzle(dur=1.6, name="sizzle.wav"):
+    _reseed(31)
+    n = n_of(dur)
+    t = np.arange(n) / SR
+    x = hp(rng.standard_normal(n), 2500, 2) * 0.25
+    pops = np.zeros(n)
+    idx = rng.integers(0, n, int(dur * 220))
+    pops[idx] = rng.uniform(-1, 1, len(idx))
+    pops = bp(pops, 1800, 9000) * 3
+    e = np.clip(t / 0.03, 0, 1) * np.exp(-t * 0.9)
+    sig = (x + pops) * e
+    write_wav(os.path.join(OUT, name), np.stack([sig, np.roll(sig, 211)], 1), -6)
+
+
+def sfx_heartbeat(name="heartbeat.wav"):
+    _reseed(41)
+    out = np.zeros(n_of(1.1))
+    for at, g in ((0.0, 1.0), (0.22, 0.75)):
+        k = kick(0.35, 0.35)
+        i = n_of(at)
+        out[i : i + len(k)] += lp(k, 180) * g
+    write_wav(os.path.join(OUT, name), out, -3)
+
+
+def sfx_hit(name="hit.wav"):
+    """Golpe cinematográfico: sub + taiko + chasquido, con cola larga."""
+    _reseed(51)
+    n = n_of(2.6)
+    t = np.arange(n) / SR
+    sub = np.sin(2 * np.pi * np.cumsum(30 + 70 * np.exp(-t * 10)) / SR) * np.exp(-t * 1.6)
+    tk = np.zeros(n)
+    tk[: n_of(1.1)] = taiko(1.4)
+    crack = hp(rng.standard_normal(n), 1500) * np.exp(-t * 60) * 0.5
+    sig = np.tanh((sub * 1.1 + tk * 0.8 + crack) * 1.6)
+    write_wav(os.path.join(OUT, name), reverb(sig, 3.0, 1.0, 0.35), -1)
+
+
+def sfx_swish(name="swish.wav"):
+    """Barrido corto y agudo para textos que entran rápido."""
+    n = n_of(0.22)
+    t = np.arange(n) / SR
+    x = sweep_noise(n, 2500, 9000, 1.6, seed=13)
+    e = np.sin(np.pi * t / t[-1]) ** 2
+    write_wav(os.path.join(OUT, name), x * e, -6)
+
+
+ALL = {
+    "pulse_120": track_pulse,
+    "chill_88": track_chill,
+    "tech_112": track_tech,
+    "sfx_v1": lambda: [sfx_whoosh(), sfx_whoosh(0.35, "whoosh_short.wav"), sfx_impact(), sfx_pop(), sfx_click(),
+                       sfx_typing(), sfx_ding(), sfx_riser(), sfx_glitch(), sfx_cash()],
+    # v2: música y efectos de los videos rápidos
+    "epic_95": lambda: track_epic(),
+    "epic_100": lambda: track_epic(
+        100, 9, 3,
+        [(33, [57, 60, 64]), (29, [57, 60, 65]), (36, [55, 60, 64]), (31, [55, 59, 62])],  # Am F C G
+        seed=12, name="epic_100.wav"),
+    "drive_128": lambda: track_drive(128, 8),
+    "grit_126": lambda: track_drive(
+        126, 9,
+        [(45, [57, 60, 64, 69]), (41, [57, 60, 65, 69]), (43, [55, 59, 62, 67]), (40, [55, 59, 64, 67])],  # Am F G Em
+        grit=True, seed=22, name="grit_126.wav"),
+    "tech_122": lambda: track_tech(11, 122, "tech_122.wav"),
+    "viaje_116": lambda: track_drive(
+        116, 17,
+        [(41, [57, 60, 65, 69]), (36, [55, 60, 64, 67]), (38, [57, 62, 65, 69]), (34, [58, 62, 65, 70])],  # F C Dm Bb
+        seed=23, name="viaje_116.wav"),
+    "resto_124": lambda: track_drive(
+        124, 22,
+        [(45, [57, 60, 64, 69]), (41, [57, 60, 65, 69]), (36, [55, 60, 64, 67]), (43, [55, 59, 62, 67])],  # Am F C G
+        seed=24, name="resto_124.wav"),
+    "curioso_104": lambda: track_tech(19, 104, "curioso_104.wav"),
+    "sfx_v2": lambda: [sfx_sizzle(), sfx_heartbeat(), sfx_hit(), sfx_swish()],
+}
+
+
 if __name__ == "__main__":
+    import sys
+
     os.makedirs(OUT, exist_ok=True)
-    track_pulse()
-    track_chill()
-    track_tech()
-    sfx_whoosh()
-    sfx_whoosh(0.35, "whoosh_short.wav")
-    sfx_impact()
-    sfx_pop()
-    sfx_click()
-    sfx_typing()
-    sfx_ding()
-    sfx_riser()
-    sfx_glitch()
-    sfx_cash()
+    # Sin argumentos genera todo; con nombres (p. ej. `epic_95 sfx_v2`) solo esas piezas.
+    for key in sys.argv[1:] or list(ALL):
+        ALL[key]()

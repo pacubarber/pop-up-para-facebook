@@ -1,0 +1,41 @@
+{
+ "name": "fresca",
+ "lead": 0.05,
+ "gap": 0.06,
+ "tail": 0.4,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "voices": {
+  "voz": {
+   "voice": "nova",
+   "speed": 1.08,
+   "instructions": "Español latinoamericano neutro (no de España). Voz femenina luminosa, fresca y sonriente de anuncio de bebida. Ritmo rápido y alegre, sin pausas largas."
+  }
+ },
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Tu jugo de caja es puro azúcar?"
+  },
+  {
+   "voice": "voz",
+   "text": "Fresca. Prensado en frío, sin azúcar añadida."
+  },
+  {
+   "voice": "voz",
+   "text": "Seis frutas en cada botella."
+  },
+  {
+   "voice": "voz",
+   "text": "Hecho hoy, en tu puerta mañana."
+  },
+  {
+   "voice": "voz",
+   "text": "Pide tu primer pack con dos por uno."
+  },
+  {
+   "voice": "voz",
+   "text": "Fresca. Toma algo de verdad."
+  }
+ ]
+}

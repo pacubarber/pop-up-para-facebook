@@ -1,0 +1,256 @@
+{
+ "name": "brasa",
+ "engine": "openai:gpt-4o-mini-tts-2025-12-15+whisper-1",
+ "duration": 15.537,
+ "lines": [
+  {
+   "voice": "voz",
+   "text": "¿Otra hamburguesa seca y sin sabor?",
+   "start": 0.05,
+   "end": 2.422,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "¿Otra",
+     "start": 0.05,
+     "end": 0.43
+    },
+    {
+     "text": "hamburguesa",
+     "start": 0.43,
+     "end": 1.37
+    },
+    {
+     "text": "seca",
+     "start": 1.37,
+     "end": 1.53
+    },
+    {
+     "text": "y",
+     "start": 1.53,
+     "end": 1.83
+    },
+    {
+     "text": "sin",
+     "start": 1.83,
+     "end": 2.01
+    },
+    {
+     "text": "sabor?",
+     "start": 2.01,
+     "end": 2.29
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Brasa. Smash burgers a la plancha.",
+   "start": 2.482,
+   "end": 4.808,
+   "match": 0.898,
+   "words": [
+    {
+     "text": "Brasa.",
+     "start": 2.482,
+     "end": 3.222
+    },
+    {
+     "text": "Smash",
+     "start": 3.222,
+     "end": 3.702
+    },
+    {
+     "text": "burgers",
+     "start": 3.702,
+     "end": 4.082
+    },
+    {
+     "text": "a",
+     "start": 4.082,
+     "end": 4.242
+    },
+    {
+     "text": "la",
+     "start": 4.242,
+     "end": 4.402
+    },
+    {
+     "text": "plancha.",
+     "start": 4.402,
+     "end": 4.662
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Carne fresca, aplastada al momento.",
+   "start": 4.868,
+   "end": 7.456,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Carne",
+     "start": 4.868,
+     "end": 5.228
+    },
+    {
+     "text": "fresca,",
+     "start": 5.228,
+     "end": 5.788
+    },
+    {
+     "text": "aplastada",
+     "start": 6.008,
+     "end": 6.588
+    },
+    {
+     "text": "al",
+     "start": 6.588,
+     "end": 6.968
+    },
+    {
+     "text": "momento.",
+     "start": 6.968,
+     "end": 7.308
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Queso doble, pan brioche y salsa de la casa.",
+   "start": 7.516,
+   "end": 10.538,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Queso",
+     "start": 7.516,
+     "end": 7.976
+    },
+    {
+     "text": "doble,",
+     "start": 7.976,
+     "end": 8.316
+    },
+    {
+     "text": "pan",
+     "start": 8.676,
+     "end": 8.736
+    },
+    {
+     "text": "brioche",
+     "start": 8.736,
+     "end": 9.196
+    },
+    {
+     "text": "y",
+     "start": 9.196,
+     "end": 9.536
+    },
+    {
+     "text": "salsa",
+     "start": 9.536,
+     "end": 9.856
+    },
+    {
+     "text": "de",
+     "start": 9.856,
+     "end": 10.056
+    },
+    {
+     "text": "la",
+     "start": 10.056,
+     "end": 10.216
+    },
+    {
+     "text": "casa.",
+     "start": 10.216,
+     "end": 10.436
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Este viernes, la segunda a mitad de precio.",
+   "start": 10.598,
+   "end": 13.231,
+   "match": 1.0,
+   "words": [
+    {
+     "text": "Este",
+     "start": 10.598,
+     "end": 10.978
+    },
+    {
+     "text": "viernes,",
+     "start": 10.978,
+     "end": 11.418
+    },
+    {
+     "text": "la",
+     "start": 11.658,
+     "end": 11.818
+    },
+    {
+     "text": "segunda",
+     "start": 11.818,
+     "end": 12.138
+    },
+    {
+     "text": "a",
+     "start": 12.138,
+     "end": 12.498
+    },
+    {
+     "text": "mitad",
+     "start": 12.498,
+     "end": 12.658
+    },
+    {
+     "text": "de",
+     "start": 12.658,
+     "end": 13.018
+    },
+    {
+     "text": "precio.",
+     "start": 13.018,
+     "end": 13.118
+    }
+   ]
+  },
+  {
+   "voice": "voz",
+   "text": "Brasa. Sabor que se escucha.",
+   "start": 13.291,
+   "end": 15.137,
+   "match": 0.872,
+   "words": [
+    {
+     "text": "Brasa.",
+     "start": 13.291,
+     "end": 13.671
+    },
+    {
+     "text": "Sabor",
+     "start": 13.671,
+     "end": 14.311
+    },
+    {
+     "text": "que",
+     "start": 14.311,
+     "end": 14.471
+    },
+    {
+     "text": "se",
+     "start": 14.471,
+     "end": 14.771
+    },
+    {
+     "text": "escucha.",
+     "start": 14.771,
+     "end": 15.091
+    }
+   ]
+  }
+ ]
+}
