@@ -48,7 +48,7 @@ def donut(ctx, t, upto, label, color, value, t0, t1, cy=CY, show_center=True):
         q = prog(t, t0 + 0.15, t0 + 0.85)
         val = int(round(value * ease_out(q, 2)))
         ctx.text(f"{val}%", F, int(170 * sc), CX, cy - 22 * sc, color=WHITE, wght=900, opacity=op)
-        ctx.text(label, F, int(46 * sc), CX, cy + 108 * sc, color=color, wght=800, tracking=round(6 * sc), opacity=op * prog(t, t0 + 0.4, t0 + 0.7))
+        ctx.text(label, F, int(36 * sc), CX, cy + 104 * sc, color=color, wght=800, tracking=round(3 * sc), opacity=op * prog(t, t0 + 0.4, t0 + 0.7))
 
 
 def bullet_list(ctx, t, items, color, title, title_t):
@@ -293,10 +293,10 @@ def build():
             fx.slam_text(ctx, "GUÁRDALO", F, 150, W / 2, 1000, q - 0.05, color=WHITE, wght=900, shadow=12, frm=1.6)
         pg = caption_pages(L[8][3:], max_chars=20, max_words=4)
         for p in pg:
-            if p["t0"] - 0.02 <= t < 33.6:
+            if p["t0"] - 0.02 <= t < 33.5:
                 fx.karaoke(ctx, p, t, fname=F, wght=900, size=78, y=1200, active=NEED)
-        if t >= 33.4:   # cierre: dona completa en miniatura
-            donut(ctx, t, 3, "", WHITE, 0, 33.4, 99, cy=1500, show_center=False)
+        if t >= 33.5:   # cierre: dona completa en miniatura
+            donut(ctx, t, 3, "", WHITE, 0, 33.5, 99, cy=1500, show_center=False)
             fx.rise(ctx, "50 · 30 · 20", F, 64, W / 2, 1500, t - 33.6, color=WHITE, wght=900, shadow=8)
 
     def cierre_pre(ctx):
