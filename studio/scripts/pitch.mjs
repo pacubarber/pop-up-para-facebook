@@ -7,6 +7,7 @@
 //   npm run pitch -- --csv ../prospeccion/leads.csv
 //
 // Salida: prospeccion/videos/<slug>.mp4 (+ .jpg) y prospeccion/mensajes/<slug>.md
+// El enlace al portafolio de los mensajes sale de PITCH_PORTAFOLIO (si no, queda un marcador para pegarlo).
 import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -78,7 +79,7 @@ const jobs = leads.map((l) => {
       {voice: 'voz', text: 'Así se verían tus videos con edición profesional:', gap: 0.25},
       {voice: 'voz', text: 'subtítulos que enganchan, cortes con ritmo, y tu marca en cada segundo.', gap: 0.5},
       {voice: 'voz', text: `Te dejo tres ideas de contenido para ${negocio}.`, gap: 2.6},
-      {voice: 'voz', text: 'Tu primer video te lo edito gratis. Responde a este mensaje y empezamos.'},
+      {voice: 'voz', text: 'Reels desde cinco dólares. Responde a este mensaje y empezamos.'},
     ],
   };
   const specPath = path.join(specDir, `${slug}.json`);
@@ -122,6 +123,7 @@ for (const {lead: l, slug} of jobs) {
 
   // ---------------------------------------------------------------- 3) mensaje
   const ideas = nichos[nicho].ideas;
+  const portafolio = process.env.PITCH_PORTAFOLIO || '[enlace al portafolio]';
   const msg = `# ${l.negocio} — mensaje de prospección
 
 Video: \`prospeccion/videos/${slug}.mp4\` (${mb(video)})
@@ -135,7 +137,9 @@ Además se me ocurrieron 3 ideas para tu cuenta:
 2. ${ideas[1]}
 3. ${ideas[2]}
 
-Si te interesa, edito tu primer video gratis, sin compromiso. ¿Te lo mando? Solo responde «QUIERO».
+Si te interesa, te edito tus reels desde 5 USD cada uno, o 6 videos por 50 USD. Aquí puedes ver más trabajos: ${portafolio}
+
+¿Te paso los detalles? Solo responde «QUIERO».
 
 ## Email
 
@@ -150,16 +154,16 @@ Tres ideas que creo que funcionarían muy bien en tu cuenta:
 - ${ideas[1]}
 - ${ideas[2]}
 
-Te propongo algo simple: me mandas un video en bruto y te lo devuelvo editado en 72 horas, gratis. Si te gusta, hablamos de un plan mensual; si no, te lo quedas igual.
+Mis precios son simples: reels desde 5 USD, 6 videos por 50 USD y videos largos de YouTube por 20 USD. Me mandas el video en bruto y te lo devuelvo editado en 72 horas. Más ejemplos aquí: ${portafolio}
 
-¿Te parece?
+¿Te interesa?
 
 — ${inputProps.firma === 'el equipo de CORTE' ? 'CORTE · Estudio de edición de video' : `${inputProps.firma} · CORTE`}
 cortestudio.co · @corte.studio
 
 ## Seguimiento (si no responde en 3 días)
 
-Hola ${l.nombre}, ¿alcanzaste a ver el video que te hice para ${l.negocio}? La oferta del primer video gratis sigue en pie 🙌
+Hola ${l.nombre}, ¿alcanzaste a ver el video que te hice para ${l.negocio}? 🙌 Si quieres ver más ejemplos, aquí está el portafolio: ${portafolio}
 `;
   fs.writeFileSync(path.join(prosp, 'mensajes', `${slug}.md`), msg);
   console.log(`✓ ${l.negocio} → prospeccion/videos/${slug}.mp4 (${mb(video)}) + mensajes/${slug}.md`);

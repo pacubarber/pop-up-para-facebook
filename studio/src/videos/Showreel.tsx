@@ -263,9 +263,9 @@ const Offer: React.FC = () => {
   const b = useSpring(BEAT * 2, {damping: 10, stiffness: 200});
   return (
     <AbsoluteFill style={{background: color.bone, alignItems: 'center', justifyContent: 'center'}}>
-      <div style={{fontFamily: font.display, fontWeight: 900, fontSize: 170, letterSpacing: -8, color: color.ink, lineHeight: 1, transform: `scale(${a})`}}>Tu primer video,</div>
-      <div style={{fontFamily: font.serif, fontStyle: 'italic', fontSize: 230, color: color.red, lineHeight: 1, transform: `scale(${b})`, marginTop: 10}}>gratis.</div>
-      <div style={{position: 'absolute', bottom: 90, fontFamily: font.mono, fontSize: 26, letterSpacing: 5, color: color.muted, opacity: prog(frame, 40, 10)}}>SIN COMPROMISO · ENTREGA EN 72 H</div>
+      <div style={{fontFamily: font.display, fontWeight: 900, fontSize: 170, letterSpacing: -8, color: color.ink, lineHeight: 1, transform: `scale(${a})`}}>Reels desde</div>
+      <div style={{fontFamily: font.serif, fontStyle: 'italic', fontSize: 230, color: color.red, lineHeight: 1, transform: `scale(${b})`, marginTop: 10}}>5 USD.</div>
+      <div style={{position: 'absolute', bottom: 90, fontFamily: font.mono, fontSize: 26, letterSpacing: 5, color: color.muted, opacity: prog(frame, 40, 10)}}>6 VIDEOS POR 50 USD · ENTREGA EN 72 H</div>
     </AbsoluteFill>
   );
 };

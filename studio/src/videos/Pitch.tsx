@@ -216,8 +216,8 @@ const Offer: React.FC<PitchProps> = ({firma}) => {
   return (
     <AbsoluteFill style={{background: color.ink, alignItems: 'center'}}>
       <div style={{position: 'absolute', top: 260, textAlign: 'center'}}>
-        <div style={{fontFamily: font.display, fontWeight: 900, fontSize: 120, letterSpacing: -5, color: color.bone, opacity: prog(frame, 0, 10)}}>Tu primer video</div>
-        <div style={{fontFamily: font.serif, fontStyle: 'italic', fontSize: 280, color: color.red, lineHeight: 1, transform: `scale(${big}) rotate(${(1 - big) * -10}deg)`}}>gratis.</div>
+        <div style={{fontFamily: font.display, fontWeight: 900, fontSize: 120, letterSpacing: -5, color: color.bone, opacity: prog(frame, 0, 10)}}>Reels desde</div>
+        <div style={{fontFamily: font.serif, fontStyle: 'italic', fontSize: 280, color: color.red, lineHeight: 1, transform: `scale(${big}) rotate(${(1 - big) * -10}deg)`}}>5 USD.</div>
       </div>
       <div style={{position: 'absolute', top: 900, transform: `scale(${cta})`, textAlign: 'center'}}>
         <div style={{background: color.bone, color: color.ink, fontFamily: font.display, fontWeight: 900, fontSize: 64, padding: '40px 64px', borderRadius: 999}}>Responde «QUIERO» →</div>

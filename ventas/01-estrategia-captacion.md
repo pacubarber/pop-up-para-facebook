@@ -4,10 +4,10 @@
 
 ## La idea central
 
-Una agencia nueva no tiene testimonios, así que **el portafolio y la muestra gratis hacen de testimonio**. Nunca escribimos "¿necesitas un editor?". Mandamos **un video hecho para esa persona** (`npm run pitch`) y ofrecemos **el primer video editado gratis**. Así el cliente decide viendo el resultado, no leyendo una promesa.
+Una agencia nueva no tiene testimonios, así que **el portafolio y el video personalizado hacen de testimonio**. Nunca escribimos "¿necesitas un editor?". Mandamos **un video hecho para esa persona** (`npm run pitch`), el **enlace al portafolio** y precios claros desde el primer mensaje: **reels desde 5 USD**. Así el cliente decide viendo el resultado, no leyendo una promesa. No regalamos videos de prueba: con precios tan bajos, la prueba es pagar un solo reel.
 
 ```
-Investigar 20 cuentas → video personalizado → DM o email → «QUIERO» → video gratis en 72 h → propuesta mensual → cliente
+Investigar 20 cuentas → video personalizado → DM o email con el portafolio → «QUIERO» → primer pedido (un reel o el paquete de 6) → cliente que repite
 ```
 
 ## 1. Elegir nicho (los primeros 90 días)
@@ -40,17 +40,17 @@ Elige **1 nicho principal y 1 de respaldo**. Especializarte hace que el portafol
 
 ### 3) Contenido propio (marketing que trabaja solo)
 - Publica en el Instagram y TikTok de CORTE **3 piezas por semana**: antes y después de una edición, "cómo editaría el video de X", y clips del showreel.
-- Cada pieza termina con: *"¿Quieres que edite uno tuyo gratis? Escribe EDITA por DM."*
+- Cada pieza termina con: *"¿Quieres que edite los tuyos? Reels desde 5 USD. Escribe EDITA por DM."*
 
 ### 4) Alianzas con agencias de marketing y community managers
 - Muchas agencias de redes **no editan video** y lo subcontratan. Ofréceles edición *white label* (sin tu marca) con un 15–20 % de descuento por volumen.
 - Un socio puede traer de 3 a 10 clientes. Busca "agencia de marketing digital + ciudad" en Google Maps y en Instagram.
 
 ### 5) Plataformas freelance (para las primeras reseñas)
-- Workana (LatAm), Upwork, Fiverr y Malt (España). Úsalas el primer mes para conseguir **reseñas y casos reales**, y luego pásalos a trato directo con un plan mensual.
+- Workana (LatAm), Upwork, Fiverr y Malt (España). Úsalas el primer mes para conseguir **reseñas y casos reales**, y luego pásalos a trato directo con el paquete de 6 videos.
 
 ### 6) Referidos
-- A cada cliente: *"Si me recomiendas a alguien que contrate, tu próximo mes tiene un 20 % de descuento."*
+- A cada cliente: *"Si me recomiendas a alguien que contrate, tu próximo paquete tiene un 20 % de descuento."*
 
 ### 7) LinkedIn (solo B2B)
 - Para SaaS, consultoras y podcasts de negocios. Comenta en sus publicaciones 3 días seguidos y luego manda el video personalizado por mensaje.
@@ -81,24 +81,25 @@ cd studio && npm run pitch -- --csv ../prospeccion/leads.csv
 | 1 | Investigar y calificar 20 cuentas → `leads.csv` | 45 min |
 | 2 | Generar videos personalizados (`npm run pitch`) | 10 min (corre solo) |
 | 3 | Enviar DMs y emails + seguimientos del día | 45 min |
-| 4 | Editar las muestras gratis que pidieron | 30–60 min |
+| 4 | Editar los pedidos pagados | 30–60 min |
 | 5 | Publicar 1 pieza de contenido propio | 15 min |
 
-Al enviar, actualiza la columna `estado`: `por_contactar → contactado → respondio → prueba_enviada → cliente / descartado`.
+Al enviar, actualiza la columna `estado`: `por_contactar → contactado → respondio → primer_pedido → cliente / descartado`.
 
 ## 5. Números a vigilar (estimaciones para calibrar, no garantías)
 
 | Métrica | Meta inicial | Si estás por debajo… |
 |---|---|---|
 | Respuesta a DM/email | 10–20 % | Mejora el gancho del video y el nicho |
-| Respuesta → pide muestra | 40–60 % | La oferta no se entiende: simplifícala |
-| Muestra → cliente | 25–40 % | Mejora la calidad o haz la llamada de cierre |
+| Respuesta → primer pedido | 25–40 % | Los precios no se entienden o el portafolio no convence: muestra piezas de su nicho |
+| Primer pedido → vuelve a comprar | 40–60 % | Mejora la calidad o haz la llamada de cierre |
 
-Con **100 contactos por semana** deberías cerrar de 2 a 4 clientes al mes. Con 5 clientes en el plan Crecimiento ya facturas unos 2.100 USD al mes.
+Con **100 contactos por semana** deberías cerrar de 2 a 4 clientes al mes. Haz las cuentas con los precios actuales: cada paquete son 50 USD, así que para facturar 1.000 USD al mes necesitas vender 20 paquetes (120 videos).
 
 ## 6. Lo que NO hacer
 
 - Comprar listas de emails o seguidores.
 - Mandar el mismo DM a 200 cuentas: Instagram bloquea la cuenta y quema tu marca.
-- Bajar precios en la primera conversación. Mejor regala **una** muestra, no descuentos.
+- Bajar precios en la primera conversación: ya son precios de entrada.
+- Editar videos gratis "de prueba". Para eso están el portafolio y el reel de 5 USD.
 - Usar música con copyright en los videos de clientes (usa bibliotecas con licencia o la música propia de `studio/tools/audio.py`).

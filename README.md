@@ -68,9 +68,10 @@ Nichos disponibles (con 3 ideas de contenido cada uno): `restaurante, cafeteria,
 ## Web
 
 `web/index.html` es estático: se puede abrir directamente o publicar.
+- **Variantes nuevas:** `web/ritmo/`, `web/croma/` y `web/barras/`, cada una con su inicio y su `portafolio.html` (el enlace para mandar a prospectos). Precios, contacto y lista de videos salen de `web/assets/datos.js`.
 - **GitHub Pages:** en Settings → Pages elige "GitHub Actions". El workflow `.github/workflows/pages.yml` publica `web/` en cada push a `main`.
 - **Antes de publicar:** cambia los datos de contacto (busca `CONFIGURA AQUÍ` en `web/index.html`).
 
 ## Ventas
 
-Empieza por `ventas/01-estrategia-captacion.md`. Resumen: elige un nicho, investiga 20 cuentas al día, manda un video personalizado con la oferta del **primer video gratis** y convierte las muestras en planes mensuales (240 / 420 / 850 USD).
+Empieza por `ventas/01-estrategia-captacion.md`. Resumen: elige un nicho, investiga 20 cuentas al día y manda un video personalizado con el enlace al portafolio y precios claros: **reel 5–8 USD, paquete de 6 videos 50 USD y video largo 20 USD** (detalle en `ventas/03-precios-y-paquetes.md`). No hay video de prueba gratis.

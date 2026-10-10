@@ -20,23 +20,30 @@
 > 2. {idea 2}
 > 3. {idea 3}
 >
-> Si te interesa, edito tu primer video gratis, sin compromiso. ¿Te lo mando? Solo responde «QUIERO».
+> Si te interesa, te edito tus reels desde 5 USD cada uno, o 6 videos por 50 USD. Aquí puedes ver más trabajos: {enlace al portafolio}
+>
+> ¿Te paso los detalles? Solo responde «QUIERO».
 
 ### Día 3: seguimiento 1
-> {nombre}, ¿alcanzaste a ver el video que te hice? 🙌 La oferta del primer video gratis sigue en pie.
+> {nombre}, ¿alcanzaste a ver el video que te hice? 🙌 Si quieres ver más ejemplos, aquí está el portafolio: {enlace al portafolio}
 
 ### Día 7: seguimiento 2 (aporta valor)
-> Te dejo un tip rápido para tus reels: los 2 primeros segundos tienen que decir de qué va el video, con texto en pantalla. Solo con eso la retención sube mucho. Si quieres, te muestro cómo con uno de tus videos, gratis 😉
+> Te dejo un tip rápido para tus reels: los 2 primeros segundos tienen que decir de qué va el video, con texto en pantalla. Solo con eso la retención sube mucho. Si quieres, lo aplico en tu próximo reel por 5 USD 😉
 
 ### Día 14: cierre (último mensaje)
 > No te escribo más para no molestar 🙏 Si algún día quieres probar cómo quedan tus videos editados, aquí estoy. ¡Éxitos con {negocio}!
 
 ### Cuando responde «QUIERO»
-> ¡Genial! 🙌 Mándame un video en bruto (lo que grabes con el celular está perfecto, de 30 s a 3 min) por aquí o por WeTransfer/Drive. Dime también:
+> ¡Genial! 🙌 Así funciona:
+> - Reel: 5–8 USD según la duración
+> - Paquete de 6 videos: 50 USD
+> - Video largo para YouTube: 20 USD
+>
+> Todo lleva subtítulos, música y 2 rondas de cambios. Dime cuál te sirve y mándame el video en bruto (lo que grabes con el celular está perfecto, de 30 s a 3 min) por aquí o por WeTransfer/Drive. Cuéntame también:
 > 1. ¿Qué quieres que haga la gente después de verlo? (escribirte, reservar, comprar…)
 > 2. ¿Tienes logo o tipografía de marca? (si no, uso tus colores)
 >
-> Te lo devuelvo editado en 72 horas.
+> Con el pago confirmado, te lo devuelvo editado en 72 horas.
 
 ---
 
@@ -56,9 +63,9 @@
 > - {idea 2}
 > - {idea 3}
 >
-> Te propongo algo simple: me mandas un video en bruto y te lo devuelvo editado en 72 horas, gratis. Si te gusta, hablamos; si no, te lo quedas igual.
+> Mis precios son simples: reels desde 5 USD, 6 videos por 50 USD y videos largos de YouTube por 20 USD. Me mandas el video en bruto y te lo devuelvo editado en 72 horas. Más ejemplos aquí: {enlace al portafolio}
 >
-> ¿Te parece?
+> ¿Te interesa?
 >
 > {tu nombre} · CORTE
 > cortestudio.co
@@ -77,7 +84,7 @@
 
 > {nombre}, para que veas el estilo, este es un ejemplo de nuestro portafolio: {enlace al portafolio}
 >
-> Si quieres uno así para {negocio}, el primero corre por nuestra cuenta.
+> Si quieres uno así para {negocio}, son 5–8 USD por reel o 50 USD el paquete de 6.
 
 ### Correo 4: día 16 (despedida)
 **Asunto:** ¿Cierro tu carpeta?
@@ -90,20 +97,20 @@
 
 | Te dicen… | Respondes… |
 |---|---|
-| **"¿Cuánto cuesta?"** | "Depende de cuántos videos al mes. La mayoría empieza con 8 reels por 240 USD (30 por video). Pero antes te edito uno gratis para que veas si te gusta, ¿te parece?" |
-| **"Ya tengo a alguien"** | "¡Perfecto! Si en algún momento necesitas más volumen o que alguien te cubra, aquí estoy. Igual te dejo el video gratis por si quieres comparar." |
+| **"¿Cuánto cuesta?"** | "Un reel cuesta entre 5 y 8 USD según la duración. Si publicas cada semana, el paquete de 6 videos sale en 50 USD. Y los videos largos de YouTube, 20 USD cada uno." |
+| **"Ya tengo a alguien"** | "¡Perfecto! Si en algún momento necesitas más volumen o que alguien te cubra, aquí estoy. Te dejo el portafolio por si quieres comparar: {enlace}." |
 | **"No tengo tiempo de grabar"** | "Con 30 minutos a la semana basta: te mando un guion de 4 tomas y tú grabas con el celular. El resto lo hago yo." |
-| **"Lo hace mi sobrino / lo hago yo"** | "Totalmente válido. La diferencia es el tiempo: editar un reel bien toma de 1 a 2 horas. Pruébalo con uno gratis y decides." |
-| **"Está caro"** | "Entiendo. Podemos empezar con menos videos al mes y subir cuando veas resultados. Lo que no cambio es la calidad." |
+| **"Lo hace mi sobrino / lo hago yo"** | "Totalmente válido. La diferencia es el tiempo: editar un reel bien toma de 1 a 2 horas. Por 5 USD te ahorras ese tiempo; prueba con uno y decides." |
+| **"Está caro"** | "Entiendo. Podemos empezar con un solo reel y seguir cuando veas resultados. Lo que no cambio es la calidad." |
 | **"Mándame info"** | "¡Claro! Aquí está el portafolio: {enlace}. ¿Qué tipo de video publicas más? Así te mando el ejemplo que más se parece." |
-| **Silencio después de la muestra** | A los 2 días: "{nombre}, ¿qué te pareció el video? Si quieres un cambio, lo ajusto. Y si te gustó, ¿lo seguimos con 8 al mes?" |
+| **Silencio después del primer video** | A los 2 días: "{nombre}, ¿qué te pareció el video? Si quieres un cambio, lo ajusto. Y si te gustó, ¿seguimos con el paquete de 6?" |
 
 ---
 
-## Después de entregar la muestra gratis
+## Después de entregar el primer video
 
 > ¡Aquí está tu video, {nombre}! 🎬 {enlace}
 >
-> Si quieres seguir, estos son los planes: {enlace a la web, sección de precios}. El más popular es **Crecimiento: 16 reels al mes por 420 USD**, con entrega en 48–72 h y 2 rondas de cambios por video.
+> Si quieres seguir, el **paquete de 6 videos por 50 USD** te deja varias semanas resueltas, con entrega en 48–72 h y 2 rondas de cambios por video. Todos los precios: {enlace a la web, sección de precios}.
 >
-> ¿Agendamos 15 minutos esta semana para armar tu calendario de contenido?
+> ¿Te armo el calendario de los próximos 6 esta semana?

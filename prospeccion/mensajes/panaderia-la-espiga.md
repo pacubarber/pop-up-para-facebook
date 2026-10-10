@@ -11,7 +11,9 @@ Además se me ocurrieron 3 ideas para tu cuenta:
 2. Clientes probando algo nuevo
 3. Un día en la cocina, de la apertura al cierre
 
-Si te interesa, edito tu primer video gratis, sin compromiso. ¿Te lo mando? Solo responde «QUIERO».
+Si te interesa, te edito tus reels desde 5 USD cada uno, o 6 videos por 50 USD. Aquí puedes ver más trabajos: [enlace al portafolio]
+
+¿Te paso los detalles? Solo responde «QUIERO».
 
 ## Email
 
@@ -26,13 +28,13 @@ Tres ideas que creo que funcionarían muy bien en tu cuenta:
 - Clientes probando algo nuevo
 - Un día en la cocina, de la apertura al cierre
 
-Te propongo algo simple: me mandas un video en bruto y te lo devuelvo editado en 72 horas, gratis. Si te gusta, hablamos de un plan mensual; si no, te lo quedas igual.
+Mis precios son simples: reels desde 5 USD, 6 videos por 50 USD y videos largos de YouTube por 20 USD. Me mandas el video en bruto y te lo devuelvo editado en 72 horas. Más ejemplos aquí: [enlace al portafolio]
 
-¿Te parece?
+¿Te interesa?
 
 — CORTE · Estudio de edición de video
 cortestudio.co · @corte.studio
 
 ## Seguimiento (si no responde en 3 días)
 
-Hola Laura, ¿alcanzaste a ver el video que te hice para Panadería La Espiga? La oferta del primer video gratis sigue en pie 🙌
+Hola Laura, ¿alcanzaste a ver el video que te hice para Panadería La Espiga? 🙌 Si quieres ver más ejemplos, aquí está el portafolio: [enlace al portafolio]

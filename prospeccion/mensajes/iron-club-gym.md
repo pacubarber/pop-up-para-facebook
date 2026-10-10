@@ -11,7 +11,9 @@ Además se me ocurrieron 3 ideas para tu cuenta:
 2. Rutina de 3 ejercicios para principiantes
 3. Mitos del gym que hay que olvidar
 
-Si te interesa, edito tu primer video gratis, sin compromiso. ¿Te lo mando? Solo responde «QUIERO».
+Si te interesa, te edito tus reels desde 5 USD cada uno, o 6 videos por 50 USD. Aquí puedes ver más trabajos: [enlace al portafolio]
+
+¿Te paso los detalles? Solo responde «QUIERO».
 
 ## Email
 
@@ -26,13 +28,13 @@ Tres ideas que creo que funcionarían muy bien en tu cuenta:
 - Rutina de 3 ejercicios para principiantes
 - Mitos del gym que hay que olvidar
 
-Te propongo algo simple: me mandas un video en bruto y te lo devuelvo editado en 72 horas, gratis. Si te gusta, hablamos de un plan mensual; si no, te lo quedas igual.
+Mis precios son simples: reels desde 5 USD, 6 videos por 50 USD y videos largos de YouTube por 20 USD. Me mandas el video en bruto y te lo devuelvo editado en 72 horas. Más ejemplos aquí: [enlace al portafolio]
 
-¿Te parece?
+¿Te interesa?
 
 — CORTE · Estudio de edición de video
 cortestudio.co · @corte.studio
 
 ## Seguimiento (si no responde en 3 días)
 
-Hola Marco, ¿alcanzaste a ver el video que te hice para Iron Club Gym? La oferta del primer video gratis sigue en pie 🙌
+Hola Marco, ¿alcanzaste a ver el video que te hice para Iron Club Gym? 🙌 Si quieres ver más ejemplos, aquí está el portafolio: [enlace al portafolio]
