@@ -1,0 +1,30 @@
+{
+ "name": "nocturna",
+ "voice": "echo",
+ "model": "gpt-4o-mini-tts-2025-12-15",
+ "speed": 1.04,
+ "instructions": "Español latinoamericano neutro (no de España), pronunciación clara. Voz masculina grave y magnética de tráiler de festival de música electrónica: intensa, con aire de misterio y emoción contenida que va creciendo. Frases cortas, cada una como un golpe. Sin pausas largas.",
+ "lead": 0.0,
+ "gap": 0.1,
+ "tail": 0.5,
+ "pause_max": 0.12,
+ "pause_keep": 0.05,
+ "lines": [
+  "Hay noches que se olvidan.",
+  "Y hay noches que te cambian.",
+  {
+   "text": "Nocturna.",
+   "gap": 0.22
+  },
+  "Doce horas. Tres escenarios. Treinta artistas.",
+  "Una sola noche.",
+  "Catorce de noviembre.",
+  "Preventa: solo mil boletos.",
+  "Cuando se acaben, se acabó.",
+  {
+   "text": "Nocturna.",
+   "gap": 0.12
+  },
+  "Bailamos hasta que salga el sol."
+ ]
+}

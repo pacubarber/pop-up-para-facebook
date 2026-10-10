@@ -1,0 +1,23 @@
+{
+ "name": "regla-50-30-20",
+ "voice": "coral",
+ "model": "gpt-4o-mini-tts-2025-12-15",
+ "speed": 1.07,
+ "instructions": "Español latinoamericano neutro (no de España), pronunciación clara. Voz femenina cercana, segura y con energía de creadora de contenido de finanzas personales que le explica algo útil a una amiga. Ritmo ágil de reel, sonriente, enfatiza los números. Sin pausas largas.",
+ "lead": 0.0,
+ "gap": 0.07,
+ "tail": 0.5,
+ "pause_max": 0.12,
+ "pause_keep": 0.05,
+ "lines": [
+  "¿Ganas bien y aun así no te alcanza?",
+  "El problema no es cuánto ganas, es a dónde se va.",
+  "Prueba la regla cincuenta, treinta, veinte.",
+  "El cincuenta por ciento, para lo que necesitas: renta, comida y transporte.",
+  "El treinta, para lo que quieres: salidas, viajes y caprichos.",
+  "Y el veinte, para tu futuro: ahorro y deudas.",
+  "Si ganas mil dólares: quinientos, trescientos y doscientos.",
+  "El truco: el veinte se aparta primero, el mismo día que cobras.",
+  "Guarda este video y empieza este mes."
+ ]
+}
