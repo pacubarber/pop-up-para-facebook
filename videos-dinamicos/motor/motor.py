@@ -163,7 +163,6 @@ def sprite(txt: str, fname: str, size: int, wght: int | None = None, tracking: f
            stroke: int = 0, shadow: float = 0.0) -> Sprite:
     fnt = font(fname, size, wght)
     asc, desc = fnt.getmetrics()
-    n = len(txt)
     adv = track_width(fnt, txt, tracking)
     sh = int(math.ceil(shadow * 2.5)) if shadow else 0
     pad = int(size * 0.25) + stroke + sh

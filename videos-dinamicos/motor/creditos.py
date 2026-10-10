@@ -36,10 +36,13 @@ def main(paths):
             m = v.music_spec
             out += ["", f"**Música:** Mixkit #{m['id']} desde el segundo {m['start']:.2f} "
                         f"([mp3](https://assets.mixkit.co/music/{m['id']}/{m['id']}.mp3))"]
-        sfx = sorted({s["id"] for s in v.sfx_list})
-        if sfx:
+        mix_sfx = sorted({s["id"] for s in v.sfx_list if not isinstance(s["id"], str)})
+        syn_sfx = sorted({s["id"] for s in v.sfx_list if isinstance(s["id"], str)})
+        if mix_sfx:
             out += ["", "**Efectos de sonido (Mixkit):** " + ", ".join(
-                f"[#{i}](https://assets.mixkit.co/active_storage/sfx/{i}/{i}-preview.mp3)" for i in sfx)]
+                f"[#{i}](https://assets.mixkit.co/active_storage/sfx/{i}/{i}-preview.mp3)" for i in mix_sfx)]
+        if syn_sfx:
+            out += ["", "**Efectos sintetizados (`motor/sonido.py`):** " + ", ".join(f"`{i}`" for i in syn_sfx)]
         if v.vo:
             import json
             g = os.path.join(ROOT, "guiones", f"{v.vo['name']}.json")
