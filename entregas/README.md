@@ -1,18 +1,18 @@
 # Entregas · videos v2 (voz OpenAI sin silencios)
 
-Todos los videos son verticales 1080×1920 a 30 fps, con el audio normalizado a −14 LUFS (el estándar de Reels, TikTok y Shorts). Cada uno viene con su portada `.jpg`.
+Todos son verticales 1080×1920 a 30 fps, salvo Flujo, que es horizontal 1920×1080. El audio está normalizado a −14 LUFS (el estándar de Reels, TikTok y Shorts) y cada video trae su portada `.jpg`.
 
-| Carpeta | Video | Qué es |
-|---|---|---|
-| `motivacionales/` | `disciplina.mp4` | Motivacional con video real: texto detrás de la persona, video dentro de la palabra "DOLOR", contadores, letras que se deshacen y foto final congelada con contorno |
-| `motivacionales/` | `nadie-va-a-venir-a-salvarte.mp4` | Motivacional con voz femenina y video real: "TÚ", "8" y "HOY" detrás de las atletas, palabras que caen, "SE CONSTRUYE" armándose letra por letra |
-| `biblioteca/` | `restaurante-3-errores.mp4` | Idea #1 · "3 errores que te hacen perder clientes" (restaurantes) |
-| `biblioteca/` | `sabias-que-oceano.mp4` | Idea #2 · "¿Sabías que…?" sobre el océano: 6 datos |
-| `biblioteca/` | `guia-mexico-5-lugares.mp4` | Idea #4 · Guía de destino: 5 lugares de México con mapa animado |
-| `estilo-cafe/` | `fresca-jugos.mp4` | Estilo Grano Alto, más rápido: jugos prensados en frío |
-| `estilo-cafe/` | `brasa-smash-burgers.mp4` | Estilo Grano Alto, más rápido: hamburguesas smash |
-| `saas/` | `cobra-facturas.mp4` | Marca SaaS: app de facturas y cobros |
-| `portafolio-voz-nueva/` | 4 videos | El portafolio anterior (Grano Alto, Flujo, Casa Alameda, Mente Fundadora) con la voz nueva |
+| Carpeta | Video | Duración | Qué es |
+|---|---|---|---|
+| `motivacionales/` | `disciplina.mp4` | 25 s | Video real con texto detrás de la persona, video dentro de la palabra "DOLOR", contadores, letras que se deshacen y foto final congelada con contorno |
+| `motivacionales/` | `nadie-va-a-venir-a-salvarte.mp4` | 20 s | Voz femenina y video real: "NADIE" en vertical, y "TÚ", "8" y "HOY" detrás de las atletas; "SE CONSTRUYE" se arma letra por letra |
+| `biblioteca/` | `restaurante-3-errores.mp4` | 41 s | Idea #1 · "3 errores que te hacen perder clientes" (restaurantes) |
+| `biblioteca/` | `sabias-que-oceano.mp4` | 34 s | Idea #2 · "¿Sabías que…?" sobre el océano, con 6 datos |
+| `biblioteca/` | `guia-mexico-5-lugares.mp4` | 34 s | Idea #4 · Guía de destino con mapa animado; el texto queda detrás de la pirámide y de la parroquia |
+| `estilo-cafe/` | `fresca-jugos.mp4` | 15 s | Estilo Grano Alto, más rápido (una escena cada ~1,3 s): jugos prensados en frío |
+| `estilo-cafe/` | `brasa-smash-burgers.mp4` | 17 s | Estilo Grano Alto, más rápido: hamburguesas smash |
+| `saas/` | `cobra-facturas.mp4` | 21 s | Marca SaaS: app de facturas y cobros |
+| `portafolio-voz-nueva/` | Grano Alto · Flujo · Casa Alameda · Mente Fundadora | 14–22 s | El portafolio anterior con la voz nueva, sin silencios |
 
 `web/media` no se tocó: si la landing quiere usar las versiones nuevas del portafolio, están en `portafolio-voz-nueva/`.
 
