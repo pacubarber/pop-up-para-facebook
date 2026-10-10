@@ -4,7 +4,7 @@ Video: `prospeccion/videos/panaderia-la-espiga.mp4` (2.0 MB)
 
 ## DM de Instagram (enviar el video primero, luego este texto)
 
-Hola Laura 👋 Vi el perfil de Panadería La Espiga y te preparé este video de 28 segundos para mostrarte cómo se verían tus reels con edición profesional (subtítulos, ritmo y tu color de marca).
+Hola Laura 👋 Vi el perfil de Panadería La Espiga y te preparé este video de 27 segundos para mostrarte cómo se verían tus reels con edición profesional (subtítulos, ritmo y tu color de marca).
 
 Además se me ocurrieron 3 ideas para tu cuenta:
 1. Tu plato estrella en 15 segundos
