@@ -1,6 +1,6 @@
 {
  "name": "pitch-ejemplo",
- "duration": 25.9,
+ "duration": 25.75,
  "lines": [
   {
    "voice": "voz",
@@ -15,7 +15,7 @@
     },
     {
      "text": "Laura.",
-     "start": 0.92,
+     "start": 0.89,
      "end": 1.4
     }
    ]
@@ -24,7 +24,7 @@
    "voice": "voz",
    "text": "Vi el perfil de Panadería La Espiga y preparé este video solo para ti.",
    "start": 1.75,
-   "end": 6.13,
+   "end": 6.14,
    "words": [
     {
      "text": "Vi",
@@ -34,314 +34,299 @@
     {
      "text": "el",
      "start": 1.959,
-     "end": 2.167
+     "end": 2.168
     },
     {
      "text": "perfil",
-     "start": 2.167,
-     "end": 2.584
+     "start": 2.168,
+     "end": 2.586
     },
     {
      "text": "de",
-     "start": 2.584,
-     "end": 2.793
+     "start": 2.586,
+     "end": 2.795
     },
     {
      "text": "Panadería",
-     "start": 2.793,
-     "end": 3.366
+     "start": 2.795,
+     "end": 3.37
     },
     {
      "text": "La",
-     "start": 3.366,
-     "end": 3.575
+     "start": 3.37,
+     "end": 3.579
     },
     {
      "text": "Espiga",
-     "start": 3.575,
-     "end": 3.992
+     "start": 3.579,
+     "end": 3.997
     },
     {
      "text": "y",
-     "start": 3.992,
-     "end": 4.149
+     "start": 3.997,
+     "end": 4.154
     },
     {
      "text": "preparé",
-     "start": 4.149,
-     "end": 4.618
+     "start": 4.154,
+     "end": 4.624
     },
     {
      "text": "este",
-     "start": 4.618,
-     "end": 4.931
+     "start": 4.624,
+     "end": 4.938
     },
     {
      "text": "video",
-     "start": 4.931,
-     "end": 5.296
+     "start": 4.938,
+     "end": 5.304
     },
     {
      "text": "solo",
-     "start": 5.296,
-     "end": 5.609
+     "start": 5.304,
+     "end": 5.617
     },
     {
      "text": "para",
-     "start": 5.609,
-     "end": 5.921
+     "start": 5.617,
+     "end": 5.931
     },
     {
      "text": "ti.",
-     "start": 5.921,
-     "end": 6.13
+     "start": 5.931,
+     "end": 6.14
     }
    ]
   },
   {
    "voice": "voz",
    "text": "Así se verían tus videos con edición profesional:",
-   "start": 6.68,
-   "end": 9.85,
+   "start": 6.69,
+   "end": 9.79,
    "words": [
     {
      "text": "Así",
-     "start": 6.68,
-     "end": 6.958
+     "start": 6.69,
+     "end": 6.962
     },
     {
      "text": "se",
-     "start": 6.958,
-     "end": 7.181
+     "start": 6.962,
+     "end": 7.179
     },
     {
      "text": "verían",
-     "start": 7.181,
-     "end": 7.625
+     "start": 7.179,
+     "end": 7.615
     },
     {
      "text": "tus",
-     "start": 7.625,
-     "end": 7.904
+     "start": 7.615,
+     "end": 7.886
     },
     {
      "text": "videos",
-     "start": 7.904,
-     "end": 8.348
+     "start": 7.886,
+     "end": 8.322
     },
     {
      "text": "con",
-     "start": 8.348,
-     "end": 8.626
+     "start": 8.322,
+     "end": 8.594
     },
     {
      "text": "edición",
-     "start": 8.626,
-     "end": 9.127
+     "start": 8.594,
+     "end": 9.083
     },
     {
      "text": "profesional:",
-     "start": 9.127,
-     "end": 9.85
+     "start": 9.083,
+     "end": 9.79
     }
    ]
   },
   {
    "voice": "voz",
    "text": "subtítulos que enganchan, cortes con ritmo, y tu marca en cada segundo.",
-   "start": 10.1,
-   "end": 14.5,
+   "start": 10.04,
+   "end": 14.57,
    "words": [
     {
      "text": "subtítulos",
-     "start": 10.1,
-     "end": 10.713
+     "start": 10.04,
+     "end": 10.67
     },
     {
      "text": "que",
-     "start": 10.713,
-     "end": 10.968
+     "start": 10.67,
+     "end": 10.932
     },
     {
      "text": "enganchan,",
-     "start": 10.968,
-     "end": 11.53
+     "start": 10.932,
+     "end": 11.51
     },
     {
      "text": "cortes",
-     "start": 11.61,
-     "end": 12.038
+     "start": 11.6,
+     "end": 12.04
     },
     {
      "text": "con",
-     "start": 12.038,
-     "end": 12.306
+     "start": 12.04,
+     "end": 12.315
     },
     {
      "text": "ritmo,",
-     "start": 12.306,
-     "end": 12.68
+     "start": 12.315,
+     "end": 12.7
     },
     {
      "text": "y",
-     "start": 12.75,
-     "end": 12.909
+     "start": 12.77,
+     "end": 12.934
     },
     {
      "text": "tu",
-     "start": 12.909,
-     "end": 13.121
+     "start": 12.934,
+     "end": 13.152
     },
     {
      "text": "marca",
-     "start": 13.121,
-     "end": 13.492
+     "start": 13.152,
+     "end": 13.534
     },
     {
      "text": "en",
-     "start": 13.492,
-     "end": 13.705
+     "start": 13.534,
+     "end": 13.752
     },
     {
      "text": "cada",
-     "start": 13.705,
-     "end": 14.023
+     "start": 13.752,
+     "end": 14.079
     },
     {
      "text": "segundo.",
-     "start": 14.023,
-     "end": 14.5
+     "start": 14.079,
+     "end": 14.57
     }
    ]
   },
   {
    "voice": "voz",
    "text": "Te dejo tres ideas de contenido para Panadería La Espiga.",
-   "start": 15.0,
-   "end": 18.32,
+   "start": 15.07,
+   "end": 18.44,
    "words": [
     {
      "text": "Te",
-     "start": 15.0,
-     "end": 15.198
+     "start": 15.07,
+     "end": 15.271
     },
     {
      "text": "dejo",
-     "start": 15.198,
-     "end": 15.496
+     "start": 15.271,
+     "end": 15.573
     },
     {
      "text": "tres",
-     "start": 15.496,
-     "end": 15.793
+     "start": 15.573,
+     "end": 15.875
     },
     {
      "text": "ideas",
-     "start": 15.793,
-     "end": 16.14
+     "start": 15.875,
+     "end": 16.227
     },
     {
      "text": "de",
-     "start": 16.14,
-     "end": 16.338
+     "start": 16.227,
+     "end": 16.428
     },
     {
      "text": "contenido",
-     "start": 16.338,
-     "end": 16.883
+     "start": 16.428,
+     "end": 16.981
     },
     {
      "text": "para",
-     "start": 16.883,
-     "end": 17.18
+     "start": 16.981,
+     "end": 17.283
     },
     {
      "text": "Panadería",
-     "start": 17.18,
-     "end": 17.725
+     "start": 17.283,
+     "end": 17.836
     },
     {
      "text": "La",
-     "start": 17.725,
-     "end": 17.924
+     "start": 17.836,
+     "end": 18.038
     },
     {
      "text": "Espiga.",
-     "start": 17.924,
-     "end": 18.32
+     "start": 18.038,
+     "end": 18.44
     }
    ]
   },
   {
    "voice": "voz",
-   "text": "Tu primer video te lo edito gratis. Responde a este mensaje y empezamos.",
-   "start": 20.92,
-   "end": 25.4,
+   "text": "Reels desde cinco dólares. Responde a este mensaje y empezamos.",
+   "start": 21.04,
+   "end": 25.25,
    "words": [
     {
-     "text": "Tu",
-     "start": 20.92,
-     "end": 21.134
+     "text": "Reels",
+     "start": 21.04,
+     "end": 21.409
     },
     {
-     "text": "primer",
-     "start": 21.134,
-     "end": 21.563
+     "text": "desde",
+     "start": 21.409,
+     "end": 21.777
     },
     {
-     "text": "video",
-     "start": 21.563,
-     "end": 21.938
+     "text": "cinco",
+     "start": 21.777,
+     "end": 22.146
     },
     {
-     "text": "te",
-     "start": 21.938,
-     "end": 22.152
-    },
-    {
-     "text": "lo",
-     "start": 22.152,
-     "end": 22.366
-    },
-    {
-     "text": "edito",
-     "start": 22.366,
-     "end": 22.741
-    },
-    {
-     "text": "gratis.",
-     "start": 22.741,
-     "end": 23.17
+     "text": "dólares.",
+     "start": 22.146,
+     "end": 22.62
     },
     {
      "text": "Responde",
-     "start": 23.27,
-     "end": 23.777
+     "start": 22.87,
+     "end": 23.437
     },
     {
      "text": "a",
-     "start": 23.777,
-     "end": 23.929
+     "start": 23.437,
+     "end": 23.607
     },
     {
      "text": "este",
-     "start": 23.929,
-     "end": 24.234
+     "start": 23.607,
+     "end": 23.947
     },
     {
      "text": "mensaje",
-     "start": 24.234,
-     "end": 24.69
+     "start": 23.947,
+     "end": 24.457
     },
     {
      "text": "y",
-     "start": 24.69,
-     "end": 24.842
+     "start": 24.457,
+     "end": 24.627
     },
     {
      "text": "empezamos.",
-     "start": 24.842,
-     "end": 25.4
+     "start": 24.627,
+     "end": 25.25
     }
    ]
   }
