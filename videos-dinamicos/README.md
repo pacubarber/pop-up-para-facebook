@@ -4,7 +4,7 @@ Carpeta independiente: no toca nada de `studio/`, `web/` ni de las landings. Tod
 
 Flujo: **librería pública (Mixkit + Coverr) → guion → voz con OpenAI → tiempos por palabra con Whisper → edición por fotograma en Python → FFmpeg (color, encuadre, mezcla y exportación)**.
 
-## Los 3 videos (9:16, 1080×1920, 30 fps, −14 LUFS)
+## Los videos (9:16, 1080×1920, 30 fps, −14 LUFS)
 
 | Video | Duración | Qué tiene |
 |---|---|---|
