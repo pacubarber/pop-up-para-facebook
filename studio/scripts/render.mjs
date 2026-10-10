@@ -86,6 +86,8 @@ for (const id of ids) {
     inputProps,
     browserExecutable,
     concurrency: 4,
+    // margen amplio: los clips con recorte (webm con alfa) tardan más en decodificarse si la CPU está ocupada
+    timeoutInMilliseconds: 120000,
     imageFormat: 'jpeg',
     jpegQuality: 92,
     onProgress: ({progress}) => {

@@ -19,7 +19,7 @@ export const OCEANO_DURATION = t.end + 30;
 const C = {
   open: 0,
   mapas: t.w(0, 'mapas') - 2,
-  fondo: t.w(0, 'que', 1) - 2,
+  fondo: t.w(0, 'fondo') - 4,
   ochenta: t.ls(1),
   nunca: t.w(1, 'océano') - 2,
   oxigeno: t.ls(2),
@@ -110,8 +110,8 @@ const HalfInner: React.FC<{dur: number}> = ({dur}) => {
         <div style={{fontFamily: font.mono, fontWeight: 700, fontSize: 40, letterSpacing: '0.16em', color: '#fff', marginTop: 10}}>DUERME</div>
       </div>
       <div style={{position: 'absolute', left: 540, width: 540, top: 1130, textAlign: 'center', opacity: interpolate(frame, [6, 14], [0, 1], clamp)}}>
-        <Icon name="sun" size={110} color={AQUA} stroke={1.6} />
-        <div style={{fontFamily: font.mono, fontWeight: 700, fontSize: 40, letterSpacing: '0.16em', color: AQUA, marginTop: 10}}>DESPIERTA</div>
+        <Icon name="sun" size={110} color="#fff" stroke={1.6} />
+        <div style={{fontFamily: font.mono, fontWeight: 700, fontSize: 40, letterSpacing: '0.16em', color: '#fff', marginTop: 10, textShadow: '0 3px 14px rgba(0,0,0,0.6)'}}>DESPIERTA</div>
       </div>
     </AbsoluteFill>
   );
@@ -138,7 +138,7 @@ export const Oceano: React.FC = () => {
       <Shot id={27693} from={C.tortugas} to={C.miles} zoom={[1.05, 1.2]} grade="teal" enter="wipe" />
       <Shot id={25916} from={C.miles} to={C.playa} zoom={[1.1, 1.25]} grade="teal" enter="whipL" />
       <Shot id={32551} from={C.playa} to={C.delfines} zoom={[1.1, 1.25]} grade="warm" enter="punch" />
-      <Shot id={11032} from={C.delfines} to={C.mitad} zoom={[1.1, 1.3]} grade="teal" enter="whipD" />
+      <Shot id={11058} from={C.delfines} to={C.mitad} zoom={[1.05, 1.2]} grade="teal" enter="whipD" />
       <Shot id={4133} from={C.mitad} to={C.cta} zoom={[1.05, 1.18]} grade="teal" enter="punch" />
       <Shot id={44868} from={C.cta} to={C.end} zoom={[1.1, 1.25]} grade="teal" enter="iris" />
 
@@ -148,7 +148,7 @@ export const Oceano: React.FC = () => {
       <Giant from={8} to={C.mapas} text="QUE…?" y={1010} width={560} enter="rise" color={AQUA} shadow />
       <Contours from={C.mapas} to={C.fondo} />
       <Scramble from={C.mapas} to={C.fondo} text="MAPAS DE" y={330 + 70} size={50} />
-      <Mars from={t.w(0, 'marte') - 4} to={C.fondo} />
+      <Mars from={C.mapas + 4} to={C.fondo} />
       <Giant from={t.w(0, 'marte') - 2} to={C.fondo} text="MARTE" y={1120} width={760} enter="scale" color="#fff" shadow />
       <Reveal from={C.fondo} to={C.ochenta} lines={['que del fondo', 'del océano.']} y={1120} size={120} face="serif" stagger={5} exit="fade" />
 
@@ -167,6 +167,7 @@ export const Oceano: React.FC = () => {
       </Sequence>
       <Reveal from={C.plancton} to={t.w(2, 'plancton') - 2} lines={['viene del mar.']} y={1150} size={110} face="serif" exit="up" />
       <Shrink from={t.w(2, 'plancton') - 3} to={C.medusas} text="PLANCTON" shrinkAt={t.w(2, 'pequeño') - t.w(2, 'plancton') + 3} />
+      <Label from={t.w(2, 'pequeño') + 24} to={C.medusas} text="↑ AHÍ ESTÁ" y={1010} align="center" size={44} color={AQUA} />
 
       {/* ---------- 04 · medusas ---------- */}
       <Dato from={C.medusas} to={C.tortugas} n={4} />

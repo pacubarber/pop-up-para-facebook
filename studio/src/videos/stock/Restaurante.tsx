@@ -21,6 +21,7 @@ const C = {
   e1: t.ls(1),
   redes: t.w(1, 'redes') - 2,
   gente: t.ls(2),
+  celular: t.w(2, 'desde') - 2,
   casa: t.w(2, 'antes') - 2,
   cocina: t.ls(3),
   fuego: t.w(3, 'fuego') - 2,
@@ -63,21 +64,8 @@ export const Restaurante: React.FC = () => {
         {/* error 1: redes abandonadas */}
         <ErrorTitle from={C.e1} to={C.redes} n="01" clip={13168} />
         <Shot id={13168} from={C.redes} to={C.gente} trim={1.2} zoom={[1.0, 1.12]} grade="dim" />
-        <Shot
-          id={41175}
-          from={C.gente}
-          to={C.casa}
-          zoom={[1.0, 1.1]}
-          grade="punch"
-          enter="punch"
-          cutout
-          behind={
-            <>
-              <Giant from={t.w(2, 'dónde') - C.gente - 3} to={C.casa - C.gente} text="¿DÓNDE" y={330} width={820} enter="rise" color={ACC} />
-              <Giant from={t.w(2, 'comer') - C.gente - 3} to={C.casa - C.gente} text="COMEMOS?" y={560} width={980} enter="rise" />
-            </>
-          }
-        />
+        <Shot id={41175} from={C.gente} to={C.celular} zoom={[1.0, 1.08]} grade="punch" enter="punch" />
+        <Shot id={41175} from={C.celular} to={C.casa} trim={2.5} zoom={[1.3, 1.45]} y={[120, 160]} grade="punch" enter="punch" />
         <Shot id={4853} from={C.casa} to={C.cocina} zoom={[1.1, 1.2]} grade="warm" enter="whipL" />
         {/* sube video de tu cocina: ráfaga de planos con interfaz de cámara */}
         <Shot id={15875} from={C.cocina} to={C.fuego} zoom={[1.05, 1.18]} grade="warm" enter="punch" />
@@ -91,20 +79,11 @@ export const Restaurante: React.FC = () => {
         <Favoritos from={C.destaca} to={C.e3} />
         {/* error 3: no pides nada */}
         <ErrorTitle from={C.e3} to={C.pides} n="03" clip={44000} />
-        <Shot
-          id={44000}
-          from={C.pides}
-          to={C.resena}
-          trim={0.6}
-          zoom={[1.0, 1.08]}
-          grade="warm"
-          cutout
-          behind={<Giant from={t.w(6, 'feliz') - C.pides - 3} to={C.resena - C.pides} text="FELIZ" y={460} width={900} enter="scale" color="#FFD23F" />}
-        />
+        <Shot id={44000} from={C.pides} to={C.resena} trim={0.6} zoom={[1.0, 1.08]} grade="warm" />
         <Shot id={4853} from={C.resena} to={C.foto} trim={1.5} zoom={[1.2, 1.3]} grade="warm" enter="whipL" />
         <Shot id={42313} from={C.foto} to={C.arregla} zoom={[1.0, 1.12]} grade="punch" enter="punch" />
         {/* arréglalos */}
-        <Shot id={44019} from={C.arregla} to={C.mesas} zoom={[1.05, 1.15]} grade="warm" enter="wipe" />
+        <Shot id={44019} from={C.arregla} to={C.mesas} zoom={[1.05, 1.15]} grade="dim" enter="wipe" />
         <Shot id={44008} from={C.mesas} to={C.guarda} zoom={[1.1, 1.22]} grade="warm" enter="punch" />
         <Shot id={42487} from={C.guarda} to={C.final} zoom={[1.15, 1.3]} grade="warm" enter="whipU" />
         <Shot id={44014} from={C.final} to={C.end} zoom={[1.05, 1.18]} grade="warm" enter="punch" />
@@ -117,7 +96,8 @@ export const Restaurante: React.FC = () => {
 
         <Reveal from={C.redes + 2} to={C.gente} lines={['TUS REDES', 'PARECEN', 'ABANDONADAS']} y={560} size={140} face="anton" stagger={4} color={['#fff', '#fff', ACC]} />
         <Scramble from={t.w(1, 'abandonadas')} to={C.gente} text="ÚLTIMO POST · HACE 38 SEMANAS" y={1120} size={36} bg="rgba(0,0,0,0.6)" />
-        <Reveal from={t.w(2, 'celular') - 3} to={C.casa} lines={['DESDE EL CELULAR']} y={1420} size={96} face="anton" exit="up" />
+        <Reveal from={t.w(2, 'dónde') - 3} to={C.celular} lines={['¿DÓNDE', 'COMEMOS?']} y={300} size={170} face="anton" stagger={4} color={[ACC, '#fff']} />
+        <Reveal from={C.celular} to={C.casa} lines={['DESDE EL', 'CELULAR']} y={1250} size={150} face="anton" stagger={3} color={['#fff', '#FFD23F']} exit="up" />
         <Reveal from={C.casa + 2} to={C.cocina} lines={['antes de', 'salir de casa.']} y={1120} size={120} face="serif" stagger={5} exit="fade" />
 
         <RecUI from={C.cocina} to={C.e2} />
@@ -134,6 +114,7 @@ export const Restaurante: React.FC = () => {
         <Reveal from={t.w(5, 'tres') - 3} to={C.e3} lines={['DESTACA TUS', '3 FAVORITOS']} y={1460} size={110} face="anton" stagger={3} color={['#fff', '#FFD23F']} />
 
         <Reveal from={C.pides + 2} to={C.resena} lines={['NO LE PIDES', 'NADA AL CLIENTE']} y={1180} size={110} face="anton" stagger={3} />
+        <Giant from={t.w(6, 'feliz') - 3} to={C.resena} text="FELIZ" y={1575} width={620} enter="scale" color="#FFD23F" shadow />
         <Stars from={t.w(7, 'reseña') - 4} to={C.foto} y={820} size={150} />
         <Reveal from={t.w(7, 'reseña') - 4} to={C.foto} lines={['NI UNA RESEÑA']} y={1100} size={120} face="anton" />
         <PopIcon from={t.w(7, 'foto') - 3} to={C.etiqueta} name="camera" x={540} y={820} size={220} />

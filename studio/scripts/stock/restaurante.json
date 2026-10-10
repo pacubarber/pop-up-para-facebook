@@ -20,8 +20,7 @@
   {
    "id": 41175,
    "desde": 0.5,
-   "dur": 5,
-   "recorte": true
+   "dur": 5
   },
   {
    "id": 13168,
@@ -79,8 +78,7 @@
   {
    "id": 44000,
    "desde": 0.5,
-   "dur": 5,
-   "recorte": true
+   "dur": 5
   },
   {
    "id": 4853,
