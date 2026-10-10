@@ -15,8 +15,10 @@ Flujo: **librería pública (Mixkit + Coverr) → guion → voz con OpenAI → t
 | `salida/corte-reto.mp4` · Video de la agencia CORTE | 19.6 s | Estilo ilustrado (como Grano Alto), **sin librerías**: todo dibujado en código y sonido 100 % sintetizado, sin música. Video "meta": el zoom, el ¡PUM! y la pregunta aparecen justo cuando la voz los nombra, la línea de tiempo marca los tres trucos donde ocurrieron y se corta en diagonal como el logo. Tic-tac que se corta en "¿sigues aquí?", risers, golpes y un final que empalma con el inicio (bucle). |
 | `salida/corte-4-trucos.mp4` · Video de la agencia CORTE | 47.4 s | Locución de **ElevenLabs** (voz Stanley – Trailer, Eleven v3) con pausas recortadas y tiempos de Whisper. Bucle abierto: el truco 4 se promete al inicio y se revela al final; lista de 4 casillas que se marcan (con candado en la 4, que se rompe en "Ya lo viste"); corte, zoom y sonido aplicados sobre su propia palabra; subtítulos que aparecen en el celular cuando se explica el truco 3; rebobinado final que empalma con el inicio. Sin librerías ni música. |
 | `salida/corte-4-trucos-b.mp4` · Variante en **Remotion + JSON** | 47.4 s | La misma locución de ElevenLabs, editada de otra forma y descrita entera en `remotion/videos/corte-4-trucos-b.json`: tipografía cinética sobre papel hueso que entra palabra por palabra con la voz, escenas que alternan a negro y rojo con transiciones (empuje, círculo, corte en diagonal como el logo, zoom), regla de progreso arriba con una marca por truco (la 4 es un "?"), tarjeta sellada con cinta "NO ABRIR HASTA EL FINAL" que se arranca en "Ya lo viste", "FINAL" y "UN CORTE." que se parten en diagonal, feed que el pulgar desliza, celular en silencio con y sin subtítulos, cronómetro con lo que llevas viendo, comentario que se escribe y se envía, y rebobinado final que empalma con el inicio. |
+| `salida/inmo-red-flags.mp4` · Inmobiliaria en inglés (KEYLINE HOMES, ficticia) · **con librerías** | 48.6 s | Locución de ElevenLabs (Bella). Cinco "red flags" con una bandera cada una arriba (la 5 con candado hasta que se revela). Gancho con congelado + sello DON'T SIGN, "5" detrás de la agente (recorte de persona), grieta que se dibuja en la esquina de un vano y la sigue aunque la cámara se mueva (template matching), lupa que revela la humedad bajo la pintura fresca, pantalla dividida lavamanos + regadera, manómetro que cae justo cuando baja el chorro, batería que carga y la que no (parpadeo + glitch), candado que se rompe, checklist de papeles, contrato que se rompe en "isn't yours", banderas que se vuelven palomitas y cierre con guardar / compartir. Subtítulos karaoke. Música "Greed" (Mixkit) con sus drops en "flags" y en "cost you". |
+| `salida/inmo-myth-or-fact.mp4` · Inmobiliaria en inglés · **solo motion graphics** (Remotion + JSON) | 55.3 s | «Myth or Fact», cinco creencias sobre comprar casa. Pausa para adivinar antes de cada respuesta (insertada en el silencio real de la locución) con un selector MYTH / FACT que salta al ritmo del tic-tac y se fija en la respuesta; sello MYTH/FACT con chicharra o acierto y fondo que se abre en círculo desde el botón; marcador de 5 casillas que se llena y vuelve al centro con el resultado; un gráfico por respuesta (chips de costos que salen volando, etiqueta de precio tachada, casa en plano que "aún no existe", casa que no se puede mover, pared que al rasparse muestra humedad y la miniatura del otro video). Base rítmica sintetizada, sin librerías. |
 
-Las marcas (Nocturna, Aura) son ficticias. Los guiones están en `guiones/` y la edición de cada video en `ediciones/`.
+Las marcas (Nocturna, Aura, KEYLINE HOMES) son ficticias. Los guiones están en `guiones/` y la edición de cada video en `ediciones/`.
 
 ## Remotion + JSON (`remotion/`)
 
@@ -33,11 +35,11 @@ npx remotion studio                                    # editar viendo los cambi
 
 Cómo se escribe el JSON:
 
-- **Tiempos atados a la voz.** Cualquier tiempo puede ser segundos o una referencia que se resuelve con Whisper antes de renderizar: `"@L3"` (inicio de la línea 3 del guion), `"@L3.fin"`, `"@L3/cuarto"` (esa palabra dentro de la línea), `"@L3/cuarto#2"`, `"@cuarto#2"` (segunda vez en todo el video), `"@fin"`, todas con desfase: `"@L5/final+0.32"`. Si se cambia la locución, todo se vuelve a sincronizar solo.
+- **Tiempos atados a la voz.** Cualquier tiempo puede ser segundos o una referencia que se resuelve con Whisper antes de renderizar: `"@L3"` (inicio de la línea 3 del guion), `"@L3.fin"`, `"@L3/cuarto"` (esa palabra dentro de la línea), `"@L3/cuarto#2"`, `"@cuarto#2"` (segunda vez en todo el video), `"@fin"` (las palabras pueden llevar guion: `"@L11/pre-construction"`), todas con desfase: `"@L5/final+0.32"`. Si se cambia la locución, todo se vuelve a sincronizar solo.
 - **`escenas`**: `desde` (y `hasta`, o hasta la siguiente), `fondo`, `entrada` (`corte`, `barrido`, `empuje`, `zoom`, `circulo`, `diagonal`), `camara` (zoom lento) y:
   - `textos`: bloques con `fuente` (display, serif, mono), `tam` (o automático al `ancho`), `anim` (`golpe`, `sube`, `aparece`, `escribe`, `desliza`), `sync: true` para que cada palabra entre cuando la voz la dice, `acentos`, `etiqueta` (pastilla), `contorno`, `tachar`, `subrayar` y `partir` (se parte en diagonal).
-  - `graficos`: `anillo`, `caja`, `sello`, `segmentos`, `ondas`, `feed`, `celular` (con subtítulos karaoke de la voz), `cronometro`, `logo`, `comentario`, `estampa`, `rebobinar`, `flecha`.
-- **`capas`** por encima de todo: `regla` (progreso con marcas), `rotulo`, `grano`, `vineta`.
+  - `graficos`: `anillo`, `caja`, `sello`, `segmentos`, `ondas`, `feed`, `celular` (con subtítulos karaoke de la voz), `cronometro`, `logo`, `comentario`, `estampa`, `rebobinar`, `flecha`; y para concursos e inmobiliaria `votacion` (selector de dos opciones), `tarjetas`, `casa` (sólida, en plano, con pin, que no se puede mover), `chips`, `precio`, `pared`, `tarjetaVideo`, `boton`, `logoCasa`.
+- **`capas`** por encima de todo: `regla` (progreso con marcas), `marcador` (casillas de concurso que se llenan con ✕ o ✓), `rotulo`, `grano`, `vineta`.
 - **`golpes`** de cámara (`zoom`, `sacudida`, `flash`, `invertir`) y **`sonidos`** (`id` de `motor/sonido.py`, `vol`, y `alinear` al `ataque` o al `pico` para que el golpe caiga justo en la palabra).
 
 ```
@@ -48,6 +50,8 @@ remotion/
   src/motor/      tiempo.ts (referencias a la voz), Video.tsx (composición), Escena.tsx (transiciones),
                   Texto.tsx (textos animados), graficos.tsx, capas.tsx
 ```
+
+**Estilo:** no se usa la etiqueta de texto fino con un punto que parpadea al lado (tipo «● REC» o «● TRUCO 1»); se quitó de todos los videos.
 
 ## Requisitos
 
@@ -99,7 +103,8 @@ motor/
   ilustraciones.py  Ilustraciones de la marca CORTE (celular, pulgar, logo, candado, casillas…) para los videos de la agencia
   ritmo.py      BPM, rejilla de beats y curva de energía para cortar al ritmo y ubicar el drop
   sonido.py     Efectos sintetizados sin librerías: tic-tac, risers, swells, golpes sub, whooshes, zoom,
-                latido, ding, tecleo, tijera, sello, glitch, cinta que se arranca, marcador (python3 motor/sonido.py los genera)
+                latido, ding, tecleo, tijera, sello, glitch, cinta que se arranca, marcador, chicharra y acierto de concurso,
+                base rítmica (python3 motor/sonido.py los genera)
   recorte.py    Robust Video Matting (ONNX, CPU): alfa de la persona para poner texto detrás
   motor.py      Escenas ilustradas (Video.scene: se dibujan en código, sin clips) y conform con FFmpeg (encuadre 9:16, gradación de color, 30 fps), lectura por fotograma,
                 transiciones (whip, zoom, glitch, iris, persianas, destello, desenfoque), Ken Burns,

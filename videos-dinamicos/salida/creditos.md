@@ -121,6 +121,38 @@ Sin material de librerías: escenas dibujadas en código y efectos sintetizados 
 
 Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).
 
+## inmo-red-flags
+
+| Clip | Tramo usado | Enlace |
+|---|---|---|
+| `mixkit:17050` | 1.8–2.8 s | [mixkit](https://assets.mixkit.co/videos/17050/17050-1080.mp4) |
+| `mixkit:13106` | 4.4–6.0 s | [mixkit](https://assets.mixkit.co/videos/13106/13106-1080.mp4) |
+| `mixkit:22513` | 7.2–8.6, 12.0–15.2 s | [mixkit](https://assets.mixkit.co/videos/22513/22513-1080.mp4) |
+| `coverr:coverr-woman-painting-white-walls-8969` | 1.5–6.5 s | [coverr](https://cdn.coverr.co/videos/coverr-woman-painting-white-walls-8969/1080p.mp4) |
+| `mixkit:5301` | 6.0–9.0 s | [mixkit](https://assets.mixkit.co/videos/5301/5301-1080.mp4) |
+| `mixkit:3891` | 1.0–3.0 s | [mixkit](https://assets.mixkit.co/videos/3891/3891-1080.mp4) |
+| `mixkit:20718` | 30.0–32.2, 51.9–53.7 s | [mixkit](https://assets.mixkit.co/videos/20718/20718-1080.mp4) |
+| `mixkit:17694` | 2.4–5.6 s | [mixkit](https://assets.mixkit.co/videos/17694/17694-1080.mp4) |
+| `mixkit:6021` | 6.6–9.0 s | [mixkit](https://assets.mixkit.co/videos/6021/6021-1080.mp4) |
+| `mixkit:36087` | 6.0–8.5 s | [mixkit](https://assets.mixkit.co/videos/36087/36087-1080.mp4) |
+| `mixkit:34051` | 0.1–2.8 s | [mixkit](https://assets.mixkit.co/videos/34051/34051-1080.mp4) |
+| `mixkit:47071` | 4.4–5.6 s | [mixkit](https://assets.mixkit.co/videos/47071/47071-1080.mp4) |
+| `mixkit:49024` | 2.0–3.6 s | [mixkit](https://assets.mixkit.co/videos/49024/49024-1080.mp4) |
+| `coverr:coverr-close-up-of-a-dual-power-outlet` | 9.0–12.2 s | [coverr](https://cdn.coverr.co/videos/coverr-close-up-of-a-dual-power-outlet/1080p.mp4) |
+| `mixkit:48027` | 3.0–6.1 s | [mixkit](https://assets.mixkit.co/videos/48027/48027-1080.mp4) |
+| `mixkit:45923` | 1.0–4.8 s | [mixkit](https://assets.mixkit.co/videos/45923/45923-1080.mp4) |
+| `mixkit:46977` | 7.0–11.0 s | [mixkit](https://assets.mixkit.co/videos/46977/46977-1080.mp4) |
+| `mixkit:30357` | 1.5–3.1 s | [mixkit](https://assets.mixkit.co/videos/30357/30357-1080.mp4) |
+| `mixkit:36159` | 1.0–3.8 s | [mixkit](https://assets.mixkit.co/videos/36159/36159-1080.mp4) |
+| `mixkit:36136` | 2.0–4.4 s | [mixkit](https://assets.mixkit.co/videos/36136/36136-1080.mp4) |
+| `mixkit:4805` | 3.0–6.0 s | [mixkit](https://assets.mixkit.co/videos/4805/4805-1080.mp4) |
+
+**Música:** Mixkit #404 desde el segundo 8.38 ([mp3](https://assets.mixkit.co/music/404/404.mp3))
+
+**Efectos sintetizados (`motor/sonido.py`):** `boom`, `boom_suave`, `check`, `ding`, `error`, `glitch`, `pop`, `quiebre`, `rasgado`, `riser_corto`, `sello`, `swell`, `tick`, `tijera`, `tock`, `trazo`, `whoosh`, `whoosh_abajo`, `whoosh_corto`, `zoom`
+
+**Voz:** ElevenLabs · voz Bella (Professional, Bright, Warm) · Multilingual v2 · velocidad 1.10 · estabilidad 30 · similitud 75 · estilo 10, guion en `guiones/inmo-red-flags.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
+
 ## corte-4-trucos-b (Remotion)
 
 Descrito en `remotion/videos/corte-4-trucos-b.json` y renderizado con Remotion.
@@ -128,5 +160,15 @@ Descrito en `remotion/videos/corte-4-trucos-b.json` y renderizado con Remotion.
 **Efectos sintetizados (`motor/sonido.py`):** `boom`, `boom_suave`, `candado`, `check`, `ding`, `glitch`, `latido`, `pop`, `rasgado`, `rebobinado`, `riser_corto`, `sello`, `swell`, `swell_largo`, `tecla`, `tick`, `tijera`, `tock`, `trazo`, `trazo_largo`, `whoosh`, `whoosh_abajo`, `whoosh_corto`, `zoom`
 
 **Voz:** ElevenLabs · voz Stanley (Trailer) · Eleven v3 · velocidad 1.15 · estabilidad 35 · similitud 75, guion en `guiones/corte-4-trucos.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
+
+Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).
+
+## inmo-myth-or-fact (Remotion)
+
+Descrito en `remotion/videos/inmo-myth-or-fact.json` y renderizado con Remotion.
+
+**Efectos sintetizados (`motor/sonido.py`):** `acierto`, `boom`, `boom_suave`, `buzzer`, `check`, `ding`, `error`, `glitch`, `pop`, `pulso_100`, `rasgado`, `riser_corto`, `sello`, `tecla`, `tick`, `tijera`, `tock`, `trazo`, `trazo_largo`, `whoosh`, `whoosh_abajo`, `whoosh_corto`, `zoom`
+
+**Voz:** ElevenLabs · voz Bella (Professional, Bright, Warm) · Multilingual v2 · velocidad 1.10 · estabilidad 30 · similitud 75 · estilo 20, guion en `guiones/inmo-myth-or-fact.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
 
 Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).

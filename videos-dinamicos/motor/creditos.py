@@ -48,15 +48,16 @@ def main(paths):
             continue
         v = load(p)
         out += [f"## {v.name}", "", "| Clip | Tramo usado | Enlace |", "|---|---|---|"]
-        seen = set()
+        tramos: dict[str, list[str]] = {}
         for c in v.clips:
-            if c.ref in seen:
-                continue
-            seen.add(c.ref)
-            src, key = c.ref.split(":", 1)
+            t = f"{c.desde:.1f}–{c.desde + c.dur:.1f}"
+            if t not in tramos.setdefault(c.ref, []):
+                tramos[c.ref].append(t)
+        for ref, ts in tramos.items():
+            src, key = ref.split(":", 1)
             link = (f"https://assets.mixkit.co/videos/{key}/{key}-1080.mp4" if src == "mixkit"
                     else f"https://cdn.coverr.co/videos/{key}/1080p.mp4")
-            out.append(f"| `{c.ref}` | {c.desde:.1f}–{c.desde + c.dur:.1f} s | [{src}]({link}) |")
+            out.append(f"| `{ref}` | {', '.join(sorted(ts, key=lambda x: float(x.split('–')[0])))} s | [{src}]({link}) |")
         if v.music_spec:
             m = v.music_spec
             out += ["", f"**Música:** Mixkit #{m['id']} desde el segundo {m['start']:.2f} "

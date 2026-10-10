@@ -3,7 +3,7 @@ import React from 'react';
 import {staticFile} from 'remotion';
 import {familia} from './fuentes';
 import type {Capa as CapaT, Ctx} from './tipos';
-import {clamp, col, easeIn, easeOut, lerp, prog} from './util';
+import {back, clamp, col, easeIO, easeIn, easeOut, lerp, prog} from './util';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type C = Record<string, any>;
@@ -137,7 +137,67 @@ const Vineta: React.FC<{c: C; ctx: Ctx}> = ({c}) => (
   <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(12,12,14,1) 130%)', opacity: c.opacidad ?? 0.35}} />
 );
 
-const CAPAS: Record<string, React.FC<{c: C; ctx: Ctx}>> = {regla: Regla, rotulo: Rotulo, grano: Grano, vineta: Vineta};
+/** Marcador de concurso: una casilla por pregunta que se llena con ✕ (mito) o ✓ (hecho).
+ *  "intro" lo trae del centro a su lugar arriba; "foco" lo devuelve al centro para el resultado final. */
+const Marcador: React.FC<{c: C; ctx: Ctx}> = ({c, ctx}) => {
+  const {t, tema} = ctx;
+  const {y = 200, gap = 124, r = 46, yCentro = 900, escala = 1.8} = c;
+  const resultados: {t: number; tipo: string}[] = c.resultados;
+  const activos: number[] = c.activos ?? [];
+  const n = resultados.length;
+  if (t < (c.en ?? 0)) return null;
+  let centro = 0;
+  if (c.intro) centro = 1 - easeIO(prog(t, c.intro[0], c.intro[1] - c.intro[0]));
+  if (c.foco && t >= c.foco[0]) centro = easeIO(prog(t, c.foco[0], c.foco[1] - c.foco[0]));
+  const yy = lerp(y, yCentro, centro);
+  const s = lerp(1, escala, centro);
+  const entra = c.en !== undefined ? back(prog(t, c.en, 0.35), 1.6) : 1;
+  const tinta = ctx.tinta;
+  return (
+    <div style={{position: 'absolute', left: 0, top: yy, width: ctx.W, height: 0, transform: `scale(${s * entra})`, transformOrigin: '50% 0'}}>
+      {resultados.map((res, i) => {
+        const x = ctx.W / 2 + (i - (n - 1) / 2) * gap;
+        const hecho = t >= res.t;
+        const activo = !hecho && activos[i] !== undefined && t >= activos[i];
+        const q = t - res.t;
+        const pop = hecho ? 1 + 0.4 * Math.exp(-q * 8) * Math.cos(q * 18) : 1;
+        const colRes = col(res.tipo === 'hecho' ? 'verde' : 'acento', tema);
+        return (
+          <React.Fragment key={i}>
+            {activo ? (
+              <div style={{position: 'absolute', left: x - r - 12, top: -r - 12, width: 2 * r + 24, height: 2 * r + 24, borderRadius: '50%', border: `5px solid ${col('oro', tema)}`, boxSizing: 'border-box', opacity: 0.5 + 0.5 * Math.sin(t * 8), transform: `scale(${1 + 0.06 * Math.sin(t * 8)})`}} />
+            ) : null}
+            <div
+              style={{
+                position: 'absolute',
+                left: x - r,
+                top: -r,
+                width: 2 * r,
+                height: 2 * r,
+                borderRadius: '50%',
+                boxSizing: 'border-box',
+                border: `6px solid ${hecho ? tinta : activo ? col('oro', tema) : tinta}`,
+                background: hecho ? colRes : 'transparent',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: familia.display,
+                fontWeight: 900,
+                fontSize: r * (hecho ? 1.05 : 0.9),
+                color: hecho ? col('hueso', tema) : activo ? col('oro', tema) : tinta,
+                transform: `scale(${pop})`,
+              }}
+            >
+              {hecho ? (res.tipo === 'hecho' ? '✓' : '✕') : i + 1}
+            </div>
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+const CAPAS: Record<string, React.FC<{c: C; ctx: Ctx}>> = {regla: Regla, rotulo: Rotulo, grano: Grano, vineta: Vineta, marcador: Marcador};
 
 export const Capa: React.FC<{c: CapaT; ctx: Ctx}> = ({c, ctx}) => {
   const K = CAPAS[c.tipo];

@@ -3,6 +3,7 @@
 import React from 'react';
 import {familia} from './fuentes';
 import type {Ctx} from './tipos';
+import {GRAFICOS2} from './graficos2';
 import {back, clamp, col, easeIO, easeIn, easeOut, lerp, prog, spring, wobble} from './util';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -478,7 +479,7 @@ const Comentario: React.FC<GProps> = ({g, ctx}) => {
       {enviado
         ? fila(
             <div style={{position: 'absolute', left: 128, top: 0, right: 0}}>
-              <div style={{fontFamily: familia.mono, fontWeight: 600, fontSize: 30, color: col('gris', tema)}}>tú · ahora</div>
+              <div style={{fontFamily: familia.display, fontWeight: 800, fontSize: 30, color: col('gris', tema)}}>{g.autor ?? 'tú · ahora'}</div>
               <div style={{fontFamily: familia.display, fontWeight: 800, fontSize: 64, letterSpacing: '-0.03em', color: ctx.tinta}}>{texto}</div>
               <svg width={56} height={56} viewBox="0 0 24 24" style={{position: 'absolute', right: 10, top: 30, transform: `scale(${1 + 0.4 * Math.exp(-(t - envia - 0.5) * 8) * (t > envia + 0.5 ? 1 : 0)})`}}>
                 <path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 3 5 6.4 5c2 0 3.6 1.2 4.6 2.8C12 6.2 13.6 5 15.6 5 19 5 21 8.6 19.6 11.8 17.5 16.4 12 21 12 21z" fill={t > envia + 0.5 ? col('acento', tema) : 'none'} stroke={col('acento', tema)} strokeWidth={2} />
@@ -490,7 +491,7 @@ const Comentario: React.FC<GProps> = ({g, ctx}) => {
         : null}
       {fila(
         <div style={{position: 'absolute', left: 128, right: 0, top: 4, height: 120, borderRadius: 60, background: fondo, display: 'flex', alignItems: 'center', paddingLeft: 44, fontFamily: familia.display, fontWeight: 700, fontSize: 52, color: letra}}>
-          {n === 0 || enviado ? <span style={{color: col('gris', tema), fontWeight: 500}}>Añade un comentario…</span> : texto.slice(0, n)}
+          {n === 0 || enviado ? <span style={{color: col('gris', tema), fontWeight: 600}}>{g.placeholder ?? 'Añade un comentario…'}</span> : texto.slice(0, n)}
           {!enviado && n > 0 ? <span style={{display: 'inline-block', width: 4, height: 56, marginLeft: 6, background: col('acento', tema), opacity: Math.floor(t * 2.5) % 2 ? 0 : 1}} /> : null}
           <div style={{position: 'absolute', right: 12, top: 12, width: 96, height: 96, borderRadius: 48, background: col('acento', tema), transform: `scale(${boton})`}}>
             <svg width={96} height={96} viewBox="0 0 96 96">
@@ -606,6 +607,7 @@ export const GRAFICOS: Record<string, React.FC<GProps>> = {
   estampa: Estampa,
   rebobinar: Rebobinar,
   flecha: Flecha,
+  ...GRAFICOS2,
 };
 
 export const Grafico: React.FC<GProps> = ({g, ctx}) => {

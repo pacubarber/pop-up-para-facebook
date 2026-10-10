@@ -334,6 +334,50 @@ def trazo(dur=0.5):
     return x * wobble * np.clip(u / 0.05, 0, 1) * np.clip((1 - u) / 0.12, 0, 1) * 0.7
 
 
+def buzzer(dur=0.5):
+    """Chicharra de concurso (respuesta incorrecta): dos ondas cuadradas graves desafinadas."""
+    t = t_axis(dur)
+    x = np.sign(np.sin(2 * np.pi * 98 * t)) + 0.8 * np.sign(np.sin(2 * np.pi * 104 * t + 0.4))
+    x = lowpass(x * (np.clip(t / 0.01, 0, 1) * np.clip((dur - t) / 0.06, 0, 1)), 1800)
+    return stereo(np.tanh(x * 0.9) * 0.8, 0.3)
+
+
+def acierto():
+    """Respuesta correcta: tres notas que suben (arpegio mayor) con brillo."""
+    x = np.zeros(int(0.7 * SR))
+    for k, f in enumerate((784, 988, 1175)):
+        d = 0.3
+        n = (np.sin(2 * np.pi * f * t_axis(d)) + 0.3 * np.sin(2 * np.pi * 2 * f * t_axis(d))) * env_exp(d, 0.12, 0.003)
+        i = int(k * 0.08 * SR)
+        x[i:i + len(n)] += n
+    return stereo(reverb(x, 0.8, 0.2)[: int(0.9 * SR)], 0.5)
+
+
+def pulso(dur=56.0, bpm=100.0):
+    """Base rítmica mínima para sostener el ritmo bajo la voz: bombo en cada tiempo, hi-hat en corcheas
+    y un bajo suave que cambia cada dos compases. Sin melodía para no competir con la locución."""
+    n = int(dur * SR)
+    x = np.zeros(n)
+    beat = 60 / bpm
+    kick = sweep(120, 45, 0.25) * env_exp(0.25, 0.08, 0.002)
+    hat = highpass(RNG.normal(0, 1, int(0.05 * SR)), 7000) * env_exp(0.05, 0.012)
+    for k in range(int(dur / beat * 2)):
+        i = int(k * beat / 2 * SR)
+        if k % 2 == 0:
+            seg = kick[: n - i]
+            x[i:i + len(seg)] += seg * 0.9
+        seg = hat[: n - i]
+        x[i:i + len(seg)] += seg * (0.22 if k % 2 else 0.12)
+    t = np.arange(n) / SR
+    roots = (55.0, 55.0, 49.0, 41.2)
+    bar = (t / (beat * 8)).astype(int) % len(roots)
+    f = np.array(roots)[bar]
+    bass = np.sin(2 * np.pi * np.cumsum(f) / SR) * (0.55 + 0.45 * np.cos(2 * np.pi * t / beat) ** 2) * 0.35
+    x += lowpass(bass, 300)
+    x *= np.clip(t / 0.5, 0, 1) * np.clip((dur - t) / 1.5, 0, 1)
+    return stereo(x, 0.4)
+
+
 EFFECTS = {
     "tick": lambda: tick(True), "tock": lambda: tick(False), "riser": riser, "riser_corto": lambda: riser(1.0),
     "swell": reverse_swell, "swell_largo": lambda: reverse_swell(1.4), "boom": boom,
@@ -342,6 +386,7 @@ EFFECTS = {
     "tecla": key_click, "tijera": snip, "sello": stamp, "glitch": glitch, "dron": drone,
     "dron_largo": lambda: drone(6.0), "check": check, "candado": clack, "quiebre": quiebre, "rebobinado": rebobinado,
     "error": error, "rasgado": rasgado, "trazo": trazo, "trazo_largo": lambda: trazo(0.9),
+    "buzzer": buzzer, "acierto": acierto, "pulso_100": pulso,
 }
 
 

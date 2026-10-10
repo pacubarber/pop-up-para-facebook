@@ -1,0 +1,1775 @@
+{
+ "nombre": "inmo-myth-or-fact",
+ "descripcion": "Inmobiliaria KEYLINE HOMES (marca ficticia): «Myth or Fact», cinco creencias sobre comprar casa. Solo motion graphics, sin librerías: selector MYTH | FACT que salta mientras adivinas, sellos, marcador de 5 casillas y un gráfico por respuesta.",
+ "fps": 30,
+ "ancho": 1080,
+ "alto": 1920,
+ "duracion": "@fin+0.05",
+ "poster": 0.9,
+ "tema": {
+  "hueso": "#F5F1EA",
+  "papel": "#E3DCCF",
+  "tinta": "#0E1116",
+  "panel": "#1A1F27",
+  "linea": "#2A303A",
+  "gris": "#8C8A84",
+  "acento": "#FF3B1F",
+  "verde": "#1FB868",
+  "oro": "#FFC94A",
+  "cielo": "#7FD3FF"
+ },
+ "voz": {
+  "guion": "../../guiones/inmo-myth-or-fact.json",
+  "archivo": "voz/inmo-myth-or-fact.wav",
+  "volumen": 1.0
+ },
+ "escenas": [
+  {
+   "id": "cinco",
+   "desde": 0,
+   "fondo": "tinta",
+   "camara": {
+    "zoom": [
+     1.0,
+     1.06
+    ]
+   },
+   "textos": [
+    {
+     "texto": "5",
+     "y": 640,
+     "en": -0.1,
+     "tam": 760,
+     "peso": 900,
+     "color": "acento",
+     "anim": "golpe",
+     "tracking": -0.05
+    },
+    {
+     "texto": "THINGS EVERYONE BELIEVES",
+     "y": 1110,
+     "en": "@L1/things",
+     "ancho": 920,
+     "tamMax": 96,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube"
+    },
+    {
+     "texto": "about buying a home.",
+     "y": 1250,
+     "en": "@L1/about",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 100,
+     "sync": true,
+     "anim": "aparece"
+    }
+   ]
+  },
+  {
+   "id": "solo-una",
+   "desde": "@L2-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "ONLY ONE",
+     "y": 500,
+     "tam": 180,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe"
+    },
+    {
+     "texto": "of them is true.",
+     "y": 690,
+     "en": "@L2/of",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 120,
+     "sync": true,
+     "anim": "aparece",
+     "acentos": [
+      "true"
+     ],
+     "colorAcento": "verde"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "tarjetas",
+     "en": "@L2+0.05",
+     "y": 1180,
+     "buena": 2,
+     "brilla": "@L2/true"
+    }
+   ]
+  },
+  {
+   "id": "adivina",
+   "desde": "@L3-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "barrido",
+    "dir": "izq"
+   },
+   "textos": [
+    {
+     "texto": "GUESS",
+     "y": 520,
+     "en": "@L3",
+     "tam": 300,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe",
+     "tracking": -0.05
+    },
+    {
+     "texto": "before I tell you…",
+     "y": 740,
+     "en": "@L3/before",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 100,
+     "sync": true,
+     "anim": "aparece"
+    },
+    {
+     "texto": "AND KEEP SCORE.",
+     "y": 1560,
+     "en": "@L3/and",
+     "ancho": 900,
+     "tamMax": 120,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe"
+    }
+   ]
+  },
+  {
+   "id": "afirmacion-1",
+   "desde": "@L4-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "zoom",
+    "dur": 0.26
+   },
+   "camara": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "textos": [
+    {
+     "texto": "#1",
+     "y": 430,
+     "en": "@L4",
+     "tam": 190,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe"
+    },
+    {
+     "texto": "RENTING IS THROWING MONEY AWAY.",
+     "y": 820,
+     "en": "@L4/renting",
+     "tam": 112,
+     "ancho": 920,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "votacion",
+     "en": 8.5,
+     "decide": "@L5",
+     "respuesta": "mito",
+     "y": 1360
+    }
+   ]
+  },
+  {
+   "id": "veredicto-1",
+   "desde": "@L5",
+   "fondo": "acento",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 540,
+    "y": 1360,
+    "dur": 0.32
+   },
+   "camara": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "textos": [
+    {
+     "texto": "Renting is throwing money away",
+     "y": 1240,
+     "en": "@L5+0.05",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 60,
+     "ancho": 900,
+     "color": "hueso",
+     "anim": "aparece",
+     "opacidad": 0.9,
+     "tachar": "@L5+0.3"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "estampa",
+     "en": "@L5",
+     "texto": "MYTH",
+     "y": 880,
+     "tam": 230,
+     "rot": -8,
+     "color": "hueso"
+    }
+   ]
+  },
+  {
+   "id": "renta",
+   "desde": "@L6-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "RENT BUYS YOU",
+     "y": 430,
+     "tam": 130,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "chips",
+     "y": 960,
+     "gap": 180,
+     "tam": 80,
+     "items": [
+      {
+       "texto": "FLEXIBILITY",
+       "en": "@L6/flexibility",
+       "color": "tinta",
+       "icono": "ok"
+      },
+      {
+       "texto": "$0 REPAIR BILLS",
+       "en": "@L6/zero",
+       "color": "tinta",
+       "icono": "ok"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "duenos",
+   "desde": "@L7-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "barrido",
+    "dir": "izq"
+   },
+   "textos": [
+    {
+     "texto": "OWNERS PAY",
+     "y": 420,
+     "tam": 150,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube"
+    },
+    {
+     "texto": "money they never get back.",
+     "y": 1520,
+     "en": "@L7/money",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 96,
+     "sync": true,
+     "anim": "aparece",
+     "acentos": [
+      "never"
+     ]
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "chips",
+     "y": 960,
+     "gap": 160,
+     "tam": 80,
+     "vuela": "@L7/never",
+     "items": [
+      {
+       "texto": "INTEREST",
+       "en": "@L7/interest",
+       "color": "acento",
+       "icono": "$"
+      },
+      {
+       "texto": "TAXES",
+       "en": "@L7/taxes",
+       "color": "acento",
+       "icono": "$"
+      },
+      {
+       "texto": "MAINTENANCE",
+       "en": "@L7/maintenance",
+       "color": "acento",
+       "icono": "$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "afirmacion-2",
+   "desde": "@L8-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "zoom",
+    "dur": 0.26
+   },
+   "camara": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "textos": [
+    {
+     "texto": "#2",
+     "y": 430,
+     "en": "@L8",
+     "tam": 190,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe"
+    },
+    {
+     "texto": "THE ASKING PRICE IS THE FINAL PRICE.",
+     "y": 820,
+     "en": "@L8/the",
+     "tam": 112,
+     "ancho": 920,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "votacion",
+     "en": 19.75,
+     "decide": "@L9",
+     "respuesta": "mito",
+     "y": 1360
+    }
+   ]
+  },
+  {
+   "id": "veredicto-2",
+   "desde": "@L9",
+   "fondo": "acento",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 540,
+    "y": 1360,
+    "dur": 0.32
+   },
+   "camara": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "textos": [
+    {
+     "texto": "The asking price is the final price",
+     "y": 1240,
+     "en": "@L9+0.05",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 60,
+     "ancho": 900,
+     "color": "hueso",
+     "anim": "aparece",
+     "opacidad": 0.9,
+     "tachar": "@L9+0.3"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "estampa",
+     "en": "@L9",
+     "texto": "MYTH",
+     "y": 880,
+     "tam": 230,
+     "rot": -8,
+     "color": "hueso"
+    }
+   ]
+  },
+  {
+   "id": "negociable",
+   "desde": "@L10-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "ALMOST EVERYTHING IS NEGOTIABLE.",
+     "y": 1580,
+     "en": "@L10/almost",
+     "ancho": 900,
+     "tam": 96,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe",
+     "acentos": [
+      "negotiable."
+     ],
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "precio",
+     "en": "@L10",
+     "x": 540,
+     "y": 640,
+     "tachar": "@L10/negotiable"
+    },
+    {
+     "tipo": "chips",
+     "y": 1210,
+     "gap": 125,
+     "tam": 62,
+     "items": [
+      {
+       "texto": "PRICE",
+       "en": "@L10/price",
+       "color": "tinta",
+       "icono": "ok"
+      },
+      {
+       "texto": "CLOSING DATE",
+       "en": "@L10/closing",
+       "color": "tinta",
+       "icono": "ok"
+      },
+      {
+       "texto": "EVEN THE APPLIANCES",
+       "en": "@L10/appliances",
+       "color": "tinta",
+       "icono": "ok"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "afirmacion-3",
+   "desde": "@L11-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "zoom",
+    "dur": 0.26
+   },
+   "camara": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "textos": [
+    {
+     "texto": "#3",
+     "y": 430,
+     "en": "@L11",
+     "tam": 190,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe"
+    },
+    {
+     "texto": "PRE-CONSTRUCTION IS ALWAYS CHEAPER.",
+     "y": 820,
+     "en": "@L11/pre-construction",
+     "tam": 92,
+     "ancho": 920,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "votacion",
+     "en": 27.95,
+     "decide": "@L12",
+     "respuesta": "mito",
+     "y": 1360
+    }
+   ]
+  },
+  {
+   "id": "veredicto-3",
+   "desde": "@L12",
+   "fondo": "acento",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 540,
+    "y": 1360,
+    "dur": 0.32
+   },
+   "camara": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "textos": [
+    {
+     "texto": "Pre-construction is always cheaper",
+     "y": 1240,
+     "en": "@L12+0.05",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 60,
+     "ancho": 900,
+     "color": "hueso",
+     "anim": "aparece",
+     "opacidad": 0.9,
+     "tachar": "@L12+0.3"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "estampa",
+     "en": "@L12",
+     "texto": "MYTH",
+     "y": 880,
+     "tam": 230,
+     "rot": -8,
+     "color": "hueso"
+    }
+   ]
+  },
+  {
+   "id": "plano",
+   "desde": "@L13-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "CHEAPER ON PAPER…",
+     "y": 380,
+     "en": "@L13/cheaper",
+     "ancho": 920,
+     "tamMax": 120,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "acentos": [
+      "paper"
+     ],
+     "colorAcento": "cielo"
+    },
+    {
+     "texto": "you're paying for something that doesn't exist yet.",
+     "y": 1530,
+     "en": "@L13/you're",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 76,
+     "ancho": 900,
+     "sync": true,
+     "anim": "aparece",
+     "acentos": [
+      "doesn't",
+      "exist",
+      "yet."
+     ],
+     "colorAcento": "cielo"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "casa",
+     "modo": "plano",
+     "en": "@L13",
+     "dibuja": 1.6,
+     "x": 540,
+     "y": 940,
+     "tam": 600,
+     "fantasma": "@L13/doesn't"
+    }
+   ]
+  },
+  {
+   "id": "riesgo",
+   "desde": "@L14-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "barrido",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "ARE YOUR RISK.",
+     "y": 1360,
+     "en": "@L14/are",
+     "tam": 140,
+     "peso": 900,
+     "color": "acento",
+     "sync": true,
+     "anim": "golpe"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "chips",
+     "y": 820,
+     "gap": 190,
+     "tam": 96,
+     "items": [
+      {
+       "texto": "DELAYS",
+       "en": "@L14/delays",
+       "color": "tinta",
+       "icono": "alerta"
+      },
+      {
+       "texto": "CHANGES",
+       "en": "@L14/changes",
+       "color": "tinta",
+       "icono": "alerta"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "afirmacion-4",
+   "desde": "@L15-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "zoom",
+    "dur": 0.26
+   },
+   "camara": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "textos": [
+    {
+     "texto": "#4",
+     "y": 430,
+     "en": "@L15",
+     "tam": 190,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe"
+    },
+    {
+     "texto": "LOCATION MATTERS MORE THAN THE HOUSE.",
+     "y": 820,
+     "en": "@L15/location",
+     "tam": 112,
+     "ancho": 920,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "votacion",
+     "en": 37.95,
+     "decide": "@L16",
+     "respuesta": "hecho",
+     "y": 1360
+    }
+   ]
+  },
+  {
+   "id": "veredicto-4",
+   "desde": "@L16",
+   "fondo": "verde",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 760,
+    "y": 1360,
+    "dur": 0.32
+   },
+   "camara": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "textos": [
+    {
+     "texto": "Location matters more than the house",
+     "y": 1240,
+     "en": "@L16+0.05",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 60,
+     "ancho": 900,
+     "color": "hueso",
+     "anim": "aparece",
+     "opacidad": 0.9,
+     "subrayar": "@L16+0.3"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "estampa",
+     "en": "@L16",
+     "texto": "FACT",
+     "y": 880,
+     "tam": 230,
+     "rot": 6,
+     "color": "hueso"
+    }
+   ]
+  },
+  {
+   "id": "ubicacion",
+   "desde": "@L17-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "YOU CAN REMODEL A KITCHEN…",
+     "y": 380,
+     "ancho": 940,
+     "tamMax": 88,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "acentos": [
+      "kitchen…"
+     ]
+    },
+    {
+     "texto": "YOU CAN'T MOVE THE HOUSE.",
+     "y": 1480,
+     "en": "@L17/you#2",
+     "ancho": 940,
+     "tamMax": 100,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe",
+     "acentos": [
+      "can't"
+     ]
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "casa",
+     "en": "@L17",
+     "x": 540,
+     "y": 930,
+     "tam": 540,
+     "remodela": "@L17/remodel",
+     "pin": "@L17/you#2",
+     "mover": "@L17/move"
+    }
+   ]
+  },
+  {
+   "id": "afirmacion-5",
+   "desde": "@L18-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "zoom",
+    "dur": 0.26
+   },
+   "camara": {
+    "zoom": [
+     1.0,
+     1.05
+    ]
+   },
+   "textos": [
+    {
+     "texto": "#5",
+     "y": 430,
+     "en": "@L18",
+     "tam": 190,
+     "peso": 900,
+     "color": "oro",
+     "anim": "golpe"
+    },
+    {
+     "texto": "FRESH PAINT MEANS THE HOUSE IS IN GREAT SHAPE.",
+     "y": 820,
+     "en": "@L18/fresh",
+     "tam": 100,
+     "ancho": 920,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube",
+     "interlineado": 1.0
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "votacion",
+     "en": 45.3,
+     "decide": "@L19",
+     "respuesta": "mito",
+     "y": 1360
+    }
+   ]
+  },
+  {
+   "id": "veredicto-5",
+   "desde": "@L19",
+   "fondo": "acento",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 540,
+    "y": 1360,
+    "dur": 0.32
+   },
+   "camara": {
+    "zoom": [
+     1.04,
+     1.0
+    ]
+   },
+   "textos": [
+    {
+     "texto": "Fresh paint means the house is in great shape",
+     "y": 1240,
+     "en": "@L19+0.05",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 60,
+     "ancho": 900,
+     "color": "hueso",
+     "anim": "aparece",
+     "opacidad": 0.9,
+     "tachar": "@L19+0.3"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "estampa",
+     "en": "@L19",
+     "texto": "MYTH",
+     "y": 880,
+     "tam": 230,
+     "rot": -8,
+     "color": "hueso"
+    }
+   ]
+  },
+  {
+   "id": "pintura",
+   "desde": "@L20-0.04",
+   "fondo": "hueso",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "SOMETIMES FRESH PAINT IS HIDING",
+     "y": 360,
+     "ancho": 940,
+     "tamMax": 80,
+     "peso": 900,
+     "sync": true,
+     "anim": "sube"
+    },
+    {
+     "texto": "MOISTURE.",
+     "y": 1440,
+     "en": "@L20/moisture",
+     "tam": 170,
+     "peso": 900,
+     "color": "cielo",
+     "anim": "golpe"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "pared",
+     "en": "@L20",
+     "x": 470,
+     "y": 900,
+     "ancho": 660,
+     "alto": 680,
+     "revela": "@L20/hiding"
+    },
+    {
+     "tipo": "tarjetaVideo",
+     "en": "@L20/we",
+     "x": 800,
+     "y": 1000,
+     "ancho": 300,
+     "titulo": "RED FLAGS"
+    }
+   ]
+  },
+  {
+   "id": "resultado",
+   "desde": "@L21-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "circulo",
+    "x": 540,
+    "y": 900
+   },
+   "textos": [
+    {
+     "texto": "HOW MANY",
+     "y": 470,
+     "tam": 170,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe"
+    },
+    {
+     "texto": "did you get right?",
+     "y": 660,
+     "en": "@L21/did",
+     "fuente": "serif",
+     "italica": true,
+     "tam": 110,
+     "sync": true,
+     "anim": "aparece"
+    },
+    {
+     "texto": "ONLY #4 WAS TRUE",
+     "y": 1440,
+     "en": "@L21/right+0.25",
+     "tam": 84,
+     "peso": 900,
+     "color": "verde",
+     "anim": "golpe"
+    }
+   ]
+  },
+  {
+   "id": "comenta",
+   "desde": "@L21/comment-0.04",
+   "fondo": "tinta",
+   "entrada": {
+    "tipo": "empuje",
+    "dir": "arriba"
+   },
+   "textos": [
+    {
+     "texto": "COMMENT YOUR SCORE",
+     "y": 420,
+     "ancho": 920,
+     "tamMax": 110,
+     "peso": 900,
+     "sync": true,
+     "anim": "golpe"
+    }
+   ],
+   "graficos": [
+    {
+     "tipo": "comentario",
+     "en": "@L21/comment",
+     "x": 540,
+     "y": 700,
+     "texto": "4/5",
+     "escribe": "@L21/score",
+     "envia": "@L21/and",
+     "placeholder": "Add a comment…",
+     "autor": "you · now",
+     "fondo": "panel",
+     "letra": "hueso"
+    },
+    {
+     "tipo": "boton",
+     "en": "@L21/follow-0.1",
+     "y": 1150,
+     "pulsa": "@L21/before+0.15"
+    },
+    {
+     "tipo": "logoCasa",
+     "en": "@L21/buy-0.2",
+     "y": 1470,
+     "tam": 0.72
+    }
+   ]
+  }
+ ],
+ "capas": [
+  {
+   "tipo": "marcador",
+   "en": "@L3/keep",
+   "intro": [
+    "@L3/score+0.3",
+    "@L4-0.1"
+   ],
+   "foco": [
+    "@L21",
+    "@L21+0.5"
+   ],
+   "hasta": "@L21/comment-0.04",
+   "y": 205,
+   "yCentro": 1130,
+   "escala": 1.7,
+   "activos": [
+    "@L4",
+    "@L8",
+    "@L11",
+    "@L15",
+    "@L18"
+   ],
+   "resultados": [
+    {
+     "t": "@L5",
+     "tipo": "mito"
+    },
+    {
+     "t": "@L9",
+     "tipo": "mito"
+    },
+    {
+     "t": "@L12",
+     "tipo": "mito"
+    },
+    {
+     "t": "@L16",
+     "tipo": "hecho"
+    },
+    {
+     "t": "@L19",
+     "tipo": "mito"
+    }
+   ]
+  },
+  {
+   "tipo": "grano",
+   "opacidad": 0.07
+  }
+ ],
+ "golpes": [
+  {
+   "t": "@L1",
+   "tipo": "zoom",
+   "fuerza": 0.08
+  },
+  {
+   "t": "@L1",
+   "tipo": "sacudida",
+   "fuerza": 16
+  },
+  {
+   "t": "@L2/true",
+   "tipo": "zoom",
+   "fuerza": 0.05
+  },
+  {
+   "t": "@L3",
+   "tipo": "zoom",
+   "fuerza": 0.07
+  },
+  {
+   "t": "@L4",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L5",
+   "tipo": "sacudida",
+   "fuerza": 26
+  },
+  {
+   "t": "@L5",
+   "tipo": "zoom",
+   "fuerza": 0.09
+  },
+  {
+   "t": "@L5",
+   "tipo": "flash",
+   "fuerza": 0.5,
+   "color": "hueso",
+   "dur": 0.08
+  },
+  {
+   "t": "@L8",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L9",
+   "tipo": "sacudida",
+   "fuerza": 26
+  },
+  {
+   "t": "@L9",
+   "tipo": "zoom",
+   "fuerza": 0.09
+  },
+  {
+   "t": "@L9",
+   "tipo": "flash",
+   "fuerza": 0.5,
+   "color": "hueso",
+   "dur": 0.08
+  },
+  {
+   "t": "@L11",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L12",
+   "tipo": "sacudida",
+   "fuerza": 26
+  },
+  {
+   "t": "@L12",
+   "tipo": "zoom",
+   "fuerza": 0.09
+  },
+  {
+   "t": "@L12",
+   "tipo": "flash",
+   "fuerza": 0.5,
+   "color": "hueso",
+   "dur": 0.08
+  },
+  {
+   "t": "@L15",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L16",
+   "tipo": "zoom",
+   "fuerza": 0.09
+  },
+  {
+   "t": "@L16",
+   "tipo": "flash",
+   "fuerza": 0.55,
+   "color": "hueso",
+   "dur": 0.1
+  },
+  {
+   "t": "@L18",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L19",
+   "tipo": "sacudida",
+   "fuerza": 26
+  },
+  {
+   "t": "@L19",
+   "tipo": "zoom",
+   "fuerza": 0.09
+  },
+  {
+   "t": "@L19",
+   "tipo": "flash",
+   "fuerza": 0.5,
+   "color": "hueso",
+   "dur": 0.08
+  },
+  {
+   "t": "@L10/negotiable",
+   "tipo": "zoom",
+   "fuerza": 0.05
+  },
+  {
+   "t": "@L14/are",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L17/move",
+   "tipo": "sacudida",
+   "fuerza": 14
+  },
+  {
+   "t": "@L20/moisture",
+   "tipo": "zoom",
+   "fuerza": 0.06
+  },
+  {
+   "t": "@L21/right+0.25",
+   "tipo": "zoom",
+   "fuerza": 0.05
+  }
+ ],
+ "sonidos": [
+  {
+   "t": 0,
+   "id": "pulso_100",
+   "vol": 0.16
+  },
+  {
+   "t": "@L1",
+   "id": "boom",
+   "vol": 0.6,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L1/things",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": "@L2",
+   "id": "whoosh_corto",
+   "vol": 0.35,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L2+0.05",
+   "id": "pop",
+   "vol": 0.22
+  },
+  {
+   "t": "@L2+0.12",
+   "id": "pop",
+   "vol": 0.22
+  },
+  {
+   "t": "@L2+0.19",
+   "id": "pop",
+   "vol": 0.22
+  },
+  {
+   "t": "@L2+0.26",
+   "id": "pop",
+   "vol": 0.22
+  },
+  {
+   "t": "@L2+0.33",
+   "id": "pop",
+   "vol": 0.22
+  },
+  {
+   "t": "@L2/true",
+   "id": "acierto",
+   "vol": 0.45
+  },
+  {
+   "t": "@L3",
+   "id": "sello",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L3/keep",
+   "id": "pop",
+   "vol": 0.35
+  },
+  {
+   "t": "@L3/score+0.3",
+   "id": "whoosh",
+   "vol": 0.3,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L4",
+   "id": "zoom",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L4",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": 8.5,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 8.7,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 8.9,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 9.1,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 9.3,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 9.5,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": "@L5",
+   "id": "buzzer",
+   "vol": 0.5,
+   "alinear": "ataque"
+  },
+  {
+   "t": "@L5",
+   "id": "sello",
+   "vol": 0.5,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L6+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L7+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L8",
+   "id": "zoom",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L8",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": 19.75,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 19.95,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 20.15,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 20.35,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 20.55,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 20.75,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": "@L9",
+   "id": "buzzer",
+   "vol": 0.5,
+   "alinear": "ataque"
+  },
+  {
+   "t": "@L9",
+   "id": "sello",
+   "vol": 0.5,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L10+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L11",
+   "id": "zoom",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L11",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": 27.95,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 28.15,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 28.35,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 28.55,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 28.75,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": "@L12",
+   "id": "buzzer",
+   "vol": 0.5,
+   "alinear": "ataque"
+  },
+  {
+   "t": "@L12",
+   "id": "sello",
+   "vol": 0.5,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L13+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L14+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L15",
+   "id": "zoom",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L15",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": 37.95,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 38.15,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 38.35,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 38.55,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 38.75,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": "@L16",
+   "id": "acierto",
+   "vol": 0.6
+  },
+  {
+   "t": "@L16",
+   "id": "boom_suave",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L17+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L18",
+   "id": "zoom",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L18",
+   "id": "pop",
+   "vol": 0.3
+  },
+  {
+   "t": 45.3,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 45.5,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 45.7,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": 45.9,
+   "id": "tock",
+   "vol": 0.32
+  },
+  {
+   "t": 46.1,
+   "id": "tick",
+   "vol": 0.32
+  },
+  {
+   "t": "@L19",
+   "id": "buzzer",
+   "vol": 0.5,
+   "alinear": "ataque"
+  },
+  {
+   "t": "@L19",
+   "id": "sello",
+   "vol": 0.5,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L20+0.1",
+   "id": "whoosh_corto",
+   "vol": 0.32,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L6/flexibility",
+   "id": "check",
+   "vol": 0.4
+  },
+  {
+   "t": "@L6/zero",
+   "id": "check",
+   "vol": 0.4
+  },
+  {
+   "t": "@L10/price",
+   "id": "check",
+   "vol": 0.4
+  },
+  {
+   "t": "@L10/closing",
+   "id": "check",
+   "vol": 0.4
+  },
+  {
+   "t": "@L10/appliances",
+   "id": "check",
+   "vol": 0.4
+  },
+  {
+   "t": "@L7/interest",
+   "id": "ding",
+   "vol": 0.3
+  },
+  {
+   "t": "@L7/taxes",
+   "id": "ding",
+   "vol": 0.3
+  },
+  {
+   "t": "@L7/maintenance",
+   "id": "ding",
+   "vol": 0.3
+  },
+  {
+   "t": "@L7/never",
+   "id": "whoosh",
+   "vol": 0.4,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L10",
+   "id": "whoosh_abajo",
+   "vol": 0.35,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L10/negotiable",
+   "id": "tijera",
+   "vol": 0.5,
+   "alinear": "ataque"
+  },
+  {
+   "t": "@L13",
+   "id": "trazo_largo",
+   "vol": 0.4
+  },
+  {
+   "t": "@L13/doesn't",
+   "id": "glitch",
+   "vol": 0.3
+  },
+  {
+   "t": "@L14/delays",
+   "id": "error",
+   "vol": 0.35
+  },
+  {
+   "t": "@L14/changes",
+   "id": "error",
+   "vol": 0.35
+  },
+  {
+   "t": "@L14/are",
+   "id": "sello",
+   "vol": 0.4,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L17/remodel",
+   "id": "ding",
+   "vol": 0.35
+  },
+  {
+   "t": "@L17/you#2+0.12",
+   "id": "sello",
+   "vol": 0.45,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L17/move",
+   "id": "error",
+   "vol": 0.4
+  },
+  {
+   "t": "@L20",
+   "id": "trazo",
+   "vol": 0.4
+  },
+  {
+   "t": "@L20/hiding",
+   "id": "rasgado",
+   "vol": 0.45
+  },
+  {
+   "t": "@L20/moisture",
+   "id": "boom_suave",
+   "vol": 0.4,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L20/we",
+   "id": "whoosh",
+   "vol": 0.35,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L21",
+   "id": "riser_corto",
+   "vol": 0.4,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L21/right+0.25",
+   "id": "acierto",
+   "vol": 0.45
+  },
+  {
+   "t": "@L21/comment",
+   "id": "whoosh_corto",
+   "vol": 0.3,
+   "alinear": "pico"
+  },
+  {
+   "t": "@L21/score+0.00",
+   "id": "tecla",
+   "vol": 0.35
+  },
+  {
+   "t": "@L21/score+0.09",
+   "id": "tecla",
+   "vol": 0.35
+  },
+  {
+   "t": "@L21/score+0.18",
+   "id": "tecla",
+   "vol": 0.35
+  },
+  {
+   "t": "@L21/and",
+   "id": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": "@L21/before+0.15",
+   "id": "check",
+   "vol": 0.45
+  },
+  {
+   "t": "@L21/buy-0.2",
+   "id": "boom_suave",
+   "vol": 0.4,
+   "alinear": "pico"
+  }
+ ]
+}

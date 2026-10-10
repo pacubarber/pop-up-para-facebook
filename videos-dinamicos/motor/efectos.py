@@ -108,13 +108,13 @@ def counter(a, b, p, fmt="{:,.0f}", sep=","):
 
 # ---------------------------------------------------------------------- subtítulos karaoke
 def karaoke(ctx, page, t, fname="montserrat", size=78, y=1380, color="#ffffff", active="#ffd400", max_w=920,
-            upper=True, shadow=10, highlight: dict | None = None, wght=None, line_h=1.12, pop_from=0.55):
+            upper=True, shadow=10, highlight: dict | None = None, wght=None, line_h=1.12, pop_from=0.55, space=1.0):
     """Dibuja una página de subtítulos: cada palabra aparece con rebote al decirse; la palabra activa cambia de color.
     highlight: {palabra_normalizada: color} para resaltar palabras clave."""
     from motor import libreria_norm
     words = page["words"]
     texts = [w["text"].upper() if upper else w["text"] for w in words]
-    sp = text_width(" ", fname, size, wght)
+    sp = text_width(" ", fname, size, wght) * space
     widths = [text_width(s, fname, size, wght) for s in texts]
     # reparto en líneas
     lines, cur, cw = [], [], 0

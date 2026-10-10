@@ -10,7 +10,9 @@ export const normaliza = (s: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]/g, '');
 
-const REF = /^@(?:L(\d+)(?:\/([^#.+\-]+)(?:#(\d+))?)?|([^#.+\-/\s]+)(?:#(\d+))?)(\.fin)?([+-]\d*\.?\d+)?$/;
+// una palabra puede llevar guion ("pre-construction") siempre que no vaya seguido de un número (eso es un desfase)
+const W_ = '((?:[^#.+\\-/\\s]|-(?![\\d.]))+)';
+const REF = new RegExp(`^@(?:L(\\d+)(?:\\/${W_}(?:#(\\d+))?)?|${W_}(?:#(\\d+))?)(\\.fin)?([+-]\\d*\\.?\\d+)?$`);
 
 const palabrasDe = (voz: VozData) => voz.lineas.flatMap((l) => l.palabras);
 
