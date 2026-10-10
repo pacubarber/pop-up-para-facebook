@@ -420,8 +420,7 @@ const Cronometro: React.FC<GProps> = ({g, ctx}) => {
   return (
     <div style={{position: 'absolute', left: 0, width: ctx.W, top: y, transform: `translateY(-50%) scale(${s})`, textAlign: 'center', opacity: clamp(lt / 0.06)}}>
       {g.etiqueta ? (
-        <div style={{fontFamily: familia.mono, fontWeight: 600, fontSize: 36, letterSpacing: '0.14em', color: col('gris', tema), marginBottom: 10}}>
-          <span style={{display: 'inline-block', width: 22, height: 22, borderRadius: 11, background: col('acento', tema), marginRight: 16, opacity: Math.floor(t * 2) % 2 ? 0.3 : 1}} />
+        <div style={{fontFamily: familia.display, fontWeight: 800, fontSize: 44, letterSpacing: '-0.01em', color: ctx.tinta, marginBottom: 6}}>
           {g.etiqueta}
         </div>
       ) : null}

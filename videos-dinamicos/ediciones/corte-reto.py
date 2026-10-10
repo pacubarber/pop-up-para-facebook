@@ -2,7 +2,7 @@
 
 Sin material de librerías: todo se dibuja en código y todo el sonido se sintetiza (motor/sonido.py), sin música.
 Es un video "meta": cada truco de retención aparece justo cuando la voz lo nombra (zoom, sonido, pregunta),
-un contador REC mide cuánto llevas viendo y al final la línea de tiempo marca los tres trucos donde ocurrieron.
+y al final la línea de tiempo marca los tres trucos donde ocurrieron.
 El cierre empalma con el inicio para que el video se repita solo.
 """
 import math
@@ -18,7 +18,7 @@ from motor import (H, W, Video, back, clamp, ease_in, ease_io, ease_out, fit_siz
 
 VO = load_vo("corte-reto")
 from ilustraciones import (BONE, F, INK, LINE, MONO, MUTED, PANEL, RED, SI, logo, phone, slam_words,  # noqa: E402
-                           speaker, tag, thumb, tight)
+                           speaker, thumb, tight)
 L = [l["words"] for l in VO["lines"]]
 END = 19.6
 
@@ -67,7 +67,6 @@ def esc_zoom(ctx, lt):
     py = 1240 - 210 * drag
     phone(ctx, W / 2, py, 0.72, rot=-2 - 6 * drag, frame=INK, screen=PANEL, progress=0.18)
     thumb(ctx, 820, py + 520 - 40 * drag, 0.95, -28)
-    tag(ctx, "TRUCO 1", 120, 150, t - por["start"], RED, INK, anchor="l")
     if t < por["start"]:
         for txt, y, t0 in (("AQUÍ TE", 330, L[1][0]["start"]), ("IBAS A IR…", 490, L[1][2]["start"])):
             fx.rise(ctx, txt, F, 150, W / 2, y, t - t0 + 0.04, color=INK, wght=900, tracking=tight(150))
@@ -89,7 +88,6 @@ def esc_zoom(ctx, lt):
 def esc_sonido(ctx, lt):
     t = S["sonido"][0] + lt
     son = w("sonido")["start"]
-    tag(ctx, "TRUCO 2", 120, 150, t - S["sonido"][0] - 0.1, INK, BONE, anchor="l")
     fx.rise(ctx, "AQUÍ,", F, 150, W / 2, 330, t - L[2][0]["start"] + 0.04, color=BONE, wght=900, tracking=tight(150))
     fx.rise(ctx, "UN SONIDO", F, 150, W / 2, 490, t - L[2][1]["start"] + 0.04, color=BONE, wght=900, tracking=tight(150))
     q = t - son
@@ -109,7 +107,6 @@ def esc_sonido(ctx, lt):
 def esc_pregunta(ctx, lt):
     t = S["pregunta"][0] + lt
     sig = w("sigues")["start"]
-    tag(ctx, "TRUCO 3", 120, 150, t - S["pregunta"][0] - 0.1, RED, BONE, anchor="l")
     fx.rise(ctx, "Y AQUÍ,", F, 120, W / 2, 330, t - L[3][0]["start"] + 0.04, color=BONE, wght=900, tracking=tight(120))
     fx.rise(ctx, "UNA PREGUNTA:", F, 120, W / 2, 470, t - L[3][2]["start"] + 0.04, color=BONE, wght=900, tracking=tight(120))
     # cronómetro: avanza a saltos con el tic-tac y se congela en el silencio
@@ -289,19 +286,6 @@ def build():
     for k, (a, b, bg) in S.items():
         kw = dict(trans=trans[k], tdur=0.22 if trans[k] != "glitch" else 0.12) if k in trans else {}
         v.scene(a, b, draws[k], bg=bg, **kw)
-
-    # contador REC: cuánto llevas viendo (el video te mide a ti)
-    def rec(ctx, lt, t):
-        if S["pregunta"][0] <= t < S["pregunta"][1]:
-            return
-        col = INK if bg_at(t) == BONE else BONE
-        x = W - 70
-        ctx.text(f"00:{int(t):02d}", MONO, 34, x, 110, color=col, anchor="r", tracking=4)
-        tw = text_width("00:00", MONO, 34, tracking=4)
-        ctx.circle(x - tw - 30, 110, 11, RED if bg_at(t) != RED else INK, opacity=1.0 if int(t * 2) % 2 == 0 else 0.25)
-        ctx.text("REC", MONO, 26, x - tw - 52, 110, color=col, anchor="r", tracking=4, opacity=0.8)
-
-    v.layer(0.0, END, rec, z=10)
 
     # golpes visuales
     for wd in (L[0][0], L[0][2], L[0][3]):

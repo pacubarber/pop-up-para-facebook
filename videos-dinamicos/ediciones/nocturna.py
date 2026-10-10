@@ -223,8 +223,6 @@ def build():
             fnt_m = font("mono", 58)
             tw = fnt_m.getlength(txt) + 12 * (len(txt) - 1)
             x0 = W / 2 - tw / 2
-            blink = 0.55 + 0.45 * (1 if int(t * 4) % 2 == 0 else 0)
-            ctx.circle(x0 - 44, 600, 13, PINK, opacity=blink)
             ctx.text(txt[:n], "mono", 58, x0, 600, color=WHITE, anchor="l", tracking=12, shadow=6)
         fx.rise(ctx, "SOLO", "grotesk", 100, W / 2, 790, t - solo["start"] + 0.04, color=WHITE, tracking=16, wght=700)
         qm = t - mil["start"]

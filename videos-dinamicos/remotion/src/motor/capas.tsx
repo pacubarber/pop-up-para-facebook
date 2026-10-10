@@ -18,7 +18,7 @@ const Regla: React.FC<{c: C; ctx: Ctx}> = ({c, ctx}) => {
   const xs = marcas.map((_, k) => x0 + ((x1 - x0) * (k + 1)) / n);
   const aparece = c.en ?? 0;
   if (t < aparece) return null;
-  const entra = easeOut(prog(t, aparece, 0.4));
+  const entra = aparece <= 0 ? 1 : easeOut(prog(t, aparece, 0.4));
   // cabezal: avanza por tramos hasta cada marca; después de la última, hasta el final del video
   const tiempos = [0, ...marcas, ctx.dur];
   const puntos = [x0, ...xs, x1 + 0.0001];
@@ -86,7 +86,7 @@ const Rotulo: React.FC<{c: C; ctx: Ctx}> = ({c, ctx}) => {
   });
   if (k < 0 || cambios[k].texto === '') return null;
   const lt = t - cambios[k].t;
-  const e = easeOut(lt / 0.3, 4);
+  const e = cambios[k].t <= 0 ? 1 : easeOut(lt / 0.3, 4);
   const al = c.alinear ?? 'izq';
   return (
     <div
@@ -105,7 +105,6 @@ const Rotulo: React.FC<{c: C; ctx: Ctx}> = ({c, ctx}) => {
       }}
     >
       <div style={{transform: `translateY(${(1 - e) * 110}%)`, display: 'flex', alignItems: 'center', gap: 14}}>
-        {c.punto ? <span style={{width: 18, height: 18, borderRadius: 9, background: col('acento', tema), opacity: Math.floor(t * 2) % 2 ? 0.35 : 1}} /> : null}
         {cambios[k].texto}
       </div>
     </div>

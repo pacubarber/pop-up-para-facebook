@@ -82,18 +82,6 @@ def thumb(ctx, x, y, s=1.0, rot=-28.0, shadow=True):
     ctx.poly(rot_pts(rrect(70 * s, 8 * s, 4 * s), kx, ky, rot), "#CDBFAA", opacity=0.8)
 
 
-def tag(ctx, txt, x, y, lt, color=RED, ink=BONE, anchor="c"):
-    """Nota de editor: punto + texto mono."""
-    if lt < 0:
-        return
-    e = ease_out(prog(lt, 0, 0.25), 3)
-    tw = text_width(txt, MONO, 34, tracking=6)
-    left = {"c": x - tw / 2, "l": x}[anchor]
-    ctx.circle(left - 26, y, 10 * e, color)
-    ctx.text(txt[: max(1, int(len(txt) * clamp(lt / 0.3)))], MONO, 34, left, y, color=ink, anchor="l", tracking=6,
-             opacity=e)
-
-
 def half_disc_pts(cx, cy, r, ang, n=40):
     return [(cx + r * math.cos(math.radians(a)), cy + r * math.sin(math.radians(a))) for a in np.linspace(ang, ang + 180, n)]
 

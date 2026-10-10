@@ -16,7 +16,7 @@ import numpy as np
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "motor"))
 import efectos as fx  # noqa: E402
 from ilustraciones import (BONE, F, INK, LINE, MONO, MUTED, PANEL, RED, SI, checkmark, loading_bar, logo,  # noqa: E402
-                           padlock, phone, slam_words, speaker, tag, thumb, tight)
+                           padlock, phone, slam_words, speaker, thumb, tight)
 from motor import (H, W, Video, back, caption_pages, clamp, ease_in, ease_io, ease_out, lerp, load_vo, prog,  # noqa: E402,F401
                    spring, text_width, warp, zoom_blur)
 
@@ -116,17 +116,6 @@ def hud(ctx, lt, t):
                 padlock(ctx, x + shake, y + dy - 12, 0.27, ink, ink, op=a)
             else:
                 ctx.text(str(k + 1), MONO, 42, x, y + dy, color=ink, opacity=a)
-
-
-def rec(ctx, lt, t):
-    if S["revela"][0] <= t < S["quedaste"][1]:
-        return
-    bg = bg_at(t)
-    col = ink_on(bg)
-    x = W - 64
-    ctx.text(f"00:{int(t):02d}", MONO, 30, x, 80, color=col, anchor="r", tracking=4, opacity=0.9)
-    tw = text_width("00:00", MONO, 30, tracking=4)
-    ctx.circle(x - tw - 24, 80, 9, RED if bg != RED else INK, opacity=1.0 if int(t * 2) % 2 == 0 else 0.25)
 
 
 # ====================================================================== escenas
@@ -391,8 +380,6 @@ def esc_quedaste(ctx, lt):
     a = prog(t, LS[13], LS[13] + 0.3)
     ctx.text("LLEVAS", MONO, 40, W / 2, 1210, color=INK, tracking=10, opacity=a)
     ctx.text(f"00:{int(t):02d}", MONO, 220, W / 2, 1380, color=BONE, opacity=a, tracking=6)
-    ctx.circle(W / 2 - 330, 1380, 22, INK, opacity=a * (1.0 if int(t * 2) % 2 == 0 else 0.3))
-    tag(ctx, "TRUCO 4 · PROMETER UN FINAL", W / 2 + 20, 1640, t - (wd(13, 11) + 0.2), INK, BONE)
 
 
 def esc_marca(ctx, lt):
@@ -493,7 +480,6 @@ def build():
             kw = dict(trans=tr, tdur=0.12 if tr == "glitch" else 0.22)
         v.scene(a, b, DRAW[name], bg=bg, **kw)
     v.layer(0.0, END, hud, z=10)
-    v.layer(0.0, END, rec, z=11)
 
     # ------------------------------------------------ golpes visuales
     v.hit(wd(0, 3), punch=0.08, shake=0.3, decay=0.2)

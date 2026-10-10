@@ -83,7 +83,8 @@ export const Texto: React.FC<{b: Bloque; ctx: Ctx}> = ({b, ctx}) => {
   const cps = b.cps ?? 22;
 
   // palabras
-  let cursorEn = -1;
+  const ultima = lastVisible(tokens, wt, t);
+  const escribiendo = wt(tokens.length - 1) + tokens[tokens.length - 1].length / cps > t;
   const palabras = tokens.map((tok, i) => {
     const lt = t - wt(i);
     const style: React.CSSProperties = {display: 'inline-block', whiteSpace: 'pre'};
@@ -91,10 +92,10 @@ export const Texto: React.FC<{b: Bloque; ctx: Ctx}> = ({b, ctx}) => {
     let contenido: React.ReactNode = tok;
     if (anim === 'escribe') {
       const n = lt < 0 ? 0 : Math.min(tok.length, Math.floor(lt * cps) + 1);
-      if (n > 0) cursorEn = i;
       contenido = (
         <>
           {tok.slice(0, n)}
+          {b.cursor !== false && i === ultima ? <Cursor t={t} escribiendo={escribiendo} color={colorAcento} /> : null}
           <span style={{opacity: 0}}>{tok.slice(n)}</span>
         </>
       );
@@ -106,9 +107,6 @@ export const Texto: React.FC<{b: Bloque; ctx: Ctx}> = ({b, ctx}) => {
       <React.Fragment key={i}>
         {i > 0 ? ' ' : null}
         <span style={style}>{contenido}</span>
-        {anim === 'escribe' && b.cursor !== false && i === cursorEn && i === lastVisible(tokens, wt, t) ? (
-          <Cursor t={t} escribiendo={wt(tokens.length - 1) + tokens[tokens.length - 1].length / cps > t} color={colorAcento} />
-        ) : null}
       </React.Fragment>
     );
   });
@@ -195,15 +193,15 @@ export const Texto: React.FC<{b: Bloque; ctx: Ctx}> = ({b, ctx}) => {
 
   // se parte en diagonal: dos copias recortadas que se separan
   const e = easeOut(prog(t, partir, 0.42), 3);
-  const d = e * tam * 0.5;
+  const d = e * tam * 0.42;
   const destello = 1 - prog(t, partir, 0.16);
   const alto = tam * (b.interlineado ?? 0.96);
   return (
     <>
-      <div style={{...caja, clipPath: 'polygon(0 0, 100% 0, 100% 40%, 0 60%)', transform: `${caja.transform} translate(${-d * 0.35}px, ${-d}px) rotate(${-e * 3}deg)`}}>
+      <div style={{...caja, clipPath: 'polygon(0 0, 100% 0, 100% 40%, 0 60%)', transform: `${caja.transform} translate(${-d * 0.75}px, ${-d * 0.32}px) rotate(${-e * 3}deg)`}}>
         {interior}
       </div>
-      <div style={{...caja, clipPath: 'polygon(0 60%, 100% 40%, 100% 100%, 0 100%)', transform: `${caja.transform} translate(${d * 0.35}px, ${d}px) rotate(${e * 3}deg)`}}>
+      <div style={{...caja, clipPath: 'polygon(0 60%, 100% 40%, 100% 100%, 0 100%)', transform: `${caja.transform} translate(${d * 0.75}px, ${d * 0.32}px) rotate(${e * 3}deg)`}}>
         {interior}
       </div>
       {destello > 0 ? (
@@ -234,15 +232,17 @@ const lastVisible = (tokens: string[], wt: (i: number) => number, t: number) => 
 };
 
 const Cursor: React.FC<{t: number; escribiendo: boolean; color: string}> = ({t, escribiendo, color}) => (
-  <span
-    style={{
-      display: 'inline-block',
-      width: '0.07em',
-      height: '0.86em',
-      marginLeft: '0.06em',
-      verticalAlign: '-0.08em',
-      background: color,
-      opacity: escribiendo || Math.floor(t * 2.2) % 2 === 0 ? 1 : 0,
-    }}
-  />
+  <span style={{position: 'relative', display: 'inline-block', width: 0}}>
+    <span
+      style={{
+        position: 'absolute',
+        left: '0.04em',
+        bottom: '-0.06em',
+        width: '0.07em',
+        height: '0.84em',
+        background: color,
+        opacity: escribiendo || Math.floor(t * 2.2) % 2 === 0 ? 1 : 0,
+      }}
+    />
+  </span>
 );

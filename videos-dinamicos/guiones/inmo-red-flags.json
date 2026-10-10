@@ -1,0 +1,28 @@
+{
+ "name": "inmo-red-flags",
+ "audio": "voces/inmo-red-flags-elevenlabs.mp3",
+ "idioma": "en",
+ "fuente": "ElevenLabs · voz Bella (Professional, Bright, Warm) · Multilingual v2 · velocidad 1.10 · estabilidad 30 · similitud 75 · estilo 10",
+ "pause_keep": 0.16,
+ "speed": 1.0,
+ "lead": 0.0,
+ "tail": 0.5,
+ "lines": [
+  "If you see this in a house... don't sign anything.",
+  "Five red flags.",
+  "And the last one costs the most money... and almost nobody checks it.",
+  "One. Diagonal cracks at the corners of doors and windows.",
+  "That's not the paint... it could be the structure.",
+  "Two. One single wall with fresh paint.",
+  "What's underneath? Very often... moisture.",
+  "Three. Turn on the sink and the shower at the same time.",
+  "If the water pressure drops, there's a problem with the pipes.",
+  "Four. Bring your phone charger and test the outlets.",
+  "If one doesn't charge, the wiring is going to cost you.",
+  "And five... the one almost nobody checks: the paperwork.",
+  "Make sure the house is in the seller's name, with no liens or unpaid debts.",
+  "Because a beautiful house with bad paperwork... isn't yours.",
+  "We check all of this before we ever show you a house.",
+  "Save this video for your next home tour... and send it to someone who's house hunting."
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "name": "inmo-myth-or-fact",
+ "audio": "voces/inmo-myth-or-fact-elevenlabs.mp3",
+ "idioma": "en",
+ "fuente": "ElevenLabs · voz Bella (Professional, Bright, Warm) · Multilingual v2 · velocidad 1.10 · estabilidad 30 · similitud 75 · estilo 20",
+ "pause_keep": 0.16,
+ "speed": 1.0,
+ "lead": 0.0,
+ "tail": 0.6,
+ "pausas": [
+  [
+   "away",
+   1,
+   0.85,
+   "despues"
+  ],
+  [
+   "price",
+   2,
+   0.85,
+   "despues"
+  ],
+  [
+   "cheaper",
+   1,
+   0.85,
+   "despues"
+  ],
+  [
+   "house",
+   1,
+   0.85,
+   "despues"
+  ],
+  [
+   "shape",
+   1,
+   0.85,
+   "despues"
+  ]
+ ],
+ "lines": [
+  "Five things everyone believes about buying a home.",
+  "Only one of them is true.",
+  "Guess before I tell you... and keep score.",
+  "One. Renting is throwing money away.",
+  "Myth.",
+  "Rent buys you flexibility... and zero repair bills.",
+  "Owners pay interest, taxes and maintenance. Money they never get back either.",
+  "Two. The asking price is the final price.",
+  "Myth.",
+  "Price, closing date, even the appliances... almost everything is negotiable.",
+  "Three. Pre-construction is always cheaper.",
+  "Myth.",
+  "It can be cheaper on paper... but you're paying for something that doesn't exist yet.",
+  "Delays and changes are your risk.",
+  "Four. Location matters more than the house.",
+  "Fact.",
+  "You can remodel a kitchen... you can't move the house.",
+  "Five. Fresh paint means the house is in great shape.",
+  "Myth.",
+  "Sometimes fresh paint is hiding moisture. We made a whole video about it.",
+  "How many did you get right? Comment your score... and follow before you buy anything."
+ ]
+}

@@ -215,7 +215,7 @@
       "textos": [
         {"texto": "te dije que lo contaba al final…", "y": 420, "fuente": "serif", "italica": true, "tam": 80, "sync": true, "anim": "aparece"},
         {"texto": "Y TE QUEDASTE", "en": "@L14/y", "y": 700, "ancho": 900, "tamMax": 170, "peso": 900, "sync": true, "anim": "golpe", "acentos": ["quedaste"]},
-        {"texto": "TRUCO 4 · PROMETER UN FINAL", "en": "@L14/hasta", "y": 1400, "fuente": "mono", "tam": 40, "peso": 700, "color": "hueso", "etiqueta": "tinta", "anim": "desliza", "tracking": 0.04}
+        {"texto": "TRUCO 4 · PROMETER UN FINAL", "en": "@L14/hasta", "y": 1400, "tam": 46, "peso": 800, "color": "hueso", "etiqueta": "tinta", "anim": "desliza"}
       ],
       "graficos": [
         {"tipo": "cronometro", "en": "@L14/quedaste", "y": 1050, "tam": 170, "etiqueta": "LLEVAS VIENDO"}
@@ -272,7 +272,6 @@
     {"tipo": "regla", "en": 0, "y": 205, "x0": 150, "x1": 930, "r": 30,
      "marcas": ["@L5.fin", "@L8.fin", "@L11.fin", "@L13/viste"], "misterio": 3, "revela": "@L13/viste",
      "rebobina": ["@L17/otra", "@L17/vas"]},
-    {"tipo": "rotulo", "x": 70, "y": 70, "tam": 28, "punto": true, "cambios": [{"t": 0, "texto": "CORTE · 4 TRUCOS"}]},
     {"tipo": "grano", "opacidad": 0.09}
   ],
 

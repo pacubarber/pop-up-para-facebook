@@ -145,10 +145,10 @@ def tts(text: str, voice: str, instructions: str, model: str) -> np.ndarray:
         return decode(fh.read())
 
 
-def whisper_words(x: np.ndarray, prompt: str = "") -> list[dict]:
+def whisper_words(x: np.ndarray, prompt: str = "", lang: str = "es") -> list[dict]:
     r = requests.post(f"{API}/audio/transcriptions", headers={"Authorization": f"Bearer {key()}"}, timeout=180,
                       files={"file": ("voz.wav", wav_bytes(x), "audio/wav")},
-                      data=[("model", "whisper-1"), ("language", "es"), ("response_format", "verbose_json"),
+                      data=[("model", "whisper-1"), ("language", lang), ("response_format", "verbose_json"),
                             ("timestamp_granularities[]", "word"), ("prompt", prompt)])
     r.raise_for_status()
     d = r.json()
@@ -209,7 +209,7 @@ def build(spec: dict, out_dir: str | None = None) -> dict:
         raw = tts(line["text"], line.get("voice", voice), line.get("instructions", inst), model)
         y = tighten(raw, spec.get("pause_max", 0.12), spec.get("pause_keep", 0.05))
         y = atempo(y, float(line.get("speed", speed)))
-        heard, text = whisper_words(y, prompt=line["text"])
+        heard, text = whisper_words(y, prompt=line["text"], lang=spec.get("idioma", "es"))
         words = align(line["text"].split(), heard, len(y) / SR)
         for w in words:
             w["start"] = round(w["start"] + t, 3)
@@ -274,20 +274,37 @@ def from_audio(spec: dict, out_dir: str | None = None) -> dict:
         x = decode(fh.read())
     lines = [l if isinstance(l, str) else l["text"] for l in spec["lines"]]
     script = [wd for l in lines for wd in l.split()]
-    raw_words, _ = whisper_words(x, prompt=" ".join(lines))
+    lang = spec.get("idioma", "es")
+    raw_words, _ = whisper_words(x, prompt=" ".join(lines), lang=lang)
     x = compress_gaps(x, raw_words, spec.get("pause_keep", 0.16))
     x = atempo(x, float(spec.get("speed", 1.0)))
-    heard, text = whisper_words(x, prompt=" ".join(lines))
+    heard, text = whisper_words(x, prompt=" ".join(lines), lang=lang)
     words = align(script, heard, len(x) / SR)
-    # pausas dramáticas: se insertan silencios y se corren los tiempos
-    for word, occ, secs in sorted(spec.get("pausas", []), key=lambda p: -_find(words, p[0], p[1])["start"]):
+    # pausas dramáticas: se insertan silencios y se corren los tiempos.
+    # [palabra, ocurrencia, segundos] → antes de esa palabra
+    # [palabra, ocurrencia, segundos, "despues"] → en el silencio que sigue a esa palabra; la palabra siguiente
+    #   (p. ej. un "Myth." suelto, que Whisper suele ubicar mal) toma su inicio y su final de la energía del audio
+    for p in sorted(spec.get("pausas", []), key=lambda p: -_find(words, p[0], p[1])["start"]):
+        word, occ, secs = p[:3]
         wd = _find(words, word, occ)
-        cut = max(0, int((wd["start"] - 0.02) * SR))
+        if len(p) > 3 and p[3] == "despues":
+            # el primer silencio justo después de la palabra, aunque sea corto (a veces la locución casi no respira)
+            runs = _quiet_runs(x, min_len=0.03)
+            run = next((r for r in runs if r[1] > wd["end"] - 0.03 and r[0] >= wd["end"] - 0.15), None)
+            at = (run[0] + run[1]) / 2 if run else wd["end"] + 0.05
+            nxt = words[words.index(wd) + 1] if words.index(wd) + 1 < len(words) else None
+        else:
+            at, run, nxt = wd["start"] - 0.02, None, None
+        cut = max(0, int(at * SR))
         x = np.concatenate([x[:cut], np.zeros(int(secs * SR), np.float32), x[cut:]])
         for w2 in words:
-            if w2["start"] >= wd["start"] - 0.001:
+            if w2["start"] >= at - 0.001:
                 w2["start"] = round(w2["start"] + secs, 3)
                 w2["end"] = round(w2["end"] + secs, 3)
+        if run and nxt:
+            onset = run[1] + secs
+            fin = next((r[0] for r in _quiet_runs(x, min_len=0.06) if r[0] > onset + 0.05), onset + 0.4)
+            nxt["start"], nxt["end"] = round(onset, 3), round(fin, 3)
     lead, tail = float(spec.get("lead", 0.0)), float(spec.get("tail", 0.4))
     x = np.concatenate([np.zeros(int(lead * SR), np.float32), x, np.zeros(int(tail * SR), np.float32)])
     for w2 in words:
@@ -348,6 +365,21 @@ def compress_gaps(x: np.ndarray, words: list[dict], keep=0.16, speech_db=-30.0, 
             x[pos:pos + f] *= np.linspace(0, 1, f)
     out.append(x[pos:])
     return np.concatenate(out)
+
+
+def _quiet_runs(x: np.ndarray, thresh_db=-35.0, min_len=0.08) -> list[tuple[float, float]]:
+    """Tramos de silencio (inicio, fin) en segundos, medidos en ventanas de 10 ms."""
+    env = envelope(x, 0.01)
+    quiet = 20 * np.log10(env / (env.max() + 1e-9) + 1e-9) < thresh_db
+    runs, start = [], None
+    for i, q in enumerate(np.append(quiet, False)):
+        if q and start is None:
+            start = i
+        elif not q and start is not None:
+            if (i - start) / 100 >= min_len:
+                runs.append((start / 100, i / 100))
+            start = None
+    return runs
 
 
 def _find(words, word, occ=1):
