@@ -1,6 +1,6 @@
 // Datos del sitio: contacto, precios y portafolio.
-// Las tres variantes (ritmo/, croma/, barras/) y sus páginas de portafolio leen
-// este archivo, así que un cambio aquí se ve en todas.
+// index.html y portfolio.html leen este archivo, así que un cambio aquí se ve en las dos.
+// El sitio está en inglés: los textos visibles de aquí van en inglés.
 //
 // Para sumar un video al portafolio:
 //   1. Copia el .mp4 y su miniatura .jpg a web/media/
@@ -18,11 +18,11 @@ window.CORTE = {
   },
 
   precios: [
-    {nombre: 'Reel', precio: '$5–8', unidad: 'por reel'},
-    {nombre: 'Paquete', precio: '$50', unidad: '6 videos'},
-    {nombre: 'Formato largo', precio: '$20', unidad: 'por video'},
+    {nombre: 'Reel', precio: '$5–8', unidad: 'per reel'},
+    {nombre: 'Bundle', precio: '$50', unidad: '6 videos'},
+    {nombre: 'Long-form', precio: '$20', unidad: 'per video'},
   ],
-  incluye: 'Subtítulos, música y 2 rondas de cambios en cada video.',
+  incluye: 'Captions, licensed music and 2 rounds of revisions on every video.',
 
   portafolio: [
     {
@@ -30,19 +30,19 @@ window.CORTE = {
       video: 'media/showreel-corte.mp4', poster: 'media/showreel-corte.jpg', preview: 'media/previews/showreel-corte.mp4',
     },
     {
-      id: 'mente-fundadora', titulo: 'Mente Fundadora', tipo: 'Clip de podcast', formato: '9:16', duracion: '0:26',
+      id: 'mente-fundadora', titulo: 'Mente Fundadora', tipo: 'Podcast clip', formato: '9:16', duracion: '0:26',
       video: 'media/podcast-mente-fundadora.mp4', poster: 'media/podcast-mente-fundadora.jpg', preview: 'media/previews/podcast-mente-fundadora.mp4',
     },
     {
-      id: 'grano-alto', titulo: 'Grano Alto', tipo: 'Anuncio', formato: '9:16', duracion: '0:15',
+      id: 'grano-alto', titulo: 'Grano Alto', tipo: 'Ad', formato: '9:16', duracion: '0:15',
       video: 'media/anuncio-grano-alto.mp4', poster: 'media/anuncio-grano-alto.jpg', preview: 'media/previews/anuncio-grano-alto.mp4',
     },
     {
-      id: 'casa-alameda', titulo: 'Casa Alameda', tipo: 'Inmobiliaria', formato: '9:16', duracion: '0:18',
+      id: 'casa-alameda', titulo: 'Casa Alameda', tipo: 'Real estate', formato: '9:16', duracion: '0:18',
       video: 'media/inmobiliaria-casa-alameda.mp4', poster: 'media/inmobiliaria-casa-alameda.jpg', preview: 'media/previews/inmobiliaria-casa-alameda.mp4',
     },
     {
-      id: 'flujo', titulo: 'Flujo', tipo: 'Producto SaaS', formato: '16:9', duracion: '0:16',
+      id: 'flujo', titulo: 'Flujo', tipo: 'SaaS product', formato: '16:9', duracion: '0:16',
       video: 'media/saas-flujo.mp4', poster: 'media/saas-flujo.jpg', preview: 'media/previews/saas-flujo.mp4',
     },
   ],

@@ -67,10 +67,10 @@ Nichos disponibles (con 3 ideas de contenido cada uno): `restaurante, cafeteria,
 
 ## Web
 
-`web/index.html` es estático: se puede abrir directamente o publicar.
-- **Variantes nuevas:** `web/ritmo/`, `web/croma/` y `web/barras/`, cada una con su inicio y su `portafolio.html` (el enlace para mandar a prospectos). Precios, contacto y lista de videos salen de `web/assets/datos.js`.
+El sitio está en inglés y es estático: `web/index.html` (inicio) y `web/portfolio.html` (portafolio, el enlace para mandar a prospectos). Se pueden abrir directamente o publicar.
+- Precios, contacto y lista de videos salen de `web/assets/datos.js`; el comportamiento común (videos, reproductor, contacto) está en `web/assets/sitio.js`.
 - **GitHub Pages:** en Settings → Pages elige "GitHub Actions". El workflow `.github/workflows/pages.yml` publica `web/` en cada push a `main`.
-- **Antes de publicar:** cambia los datos de contacto (busca `CONFIGURA AQUÍ` en `web/index.html`).
+- **Antes de publicar:** cambia los datos de contacto (busca `CONFIGURA AQUÍ` en `web/assets/datos.js`).
 
 ## Ventas
 

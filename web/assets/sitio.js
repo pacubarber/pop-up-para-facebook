@@ -1,4 +1,4 @@
-// Comportamiento común de todas las variantes: rutas de los videos, datos de
+// Comportamiento común de index.html y portfolio.html: rutas de los videos, datos de
 // contacto, reproducción automática al entrar en pantalla, reproductor con
 // sonido y animaciones de entrada. Cada página pone su propio diseño encima.
 (() => {
@@ -29,7 +29,7 @@
     const links = {
       instagram: c.instagram && {href: `https://instagram.com/${c.instagram}`, text: `@${c.instagram}`},
       email: c.email && {href: `mailto:${c.email}`, text: c.email},
-      whatsapp: wa && {href: `https://wa.me/${wa}?text=${encodeURIComponent('Hola, quiero editar un video')}`, text: `+${wa}`},
+      whatsapp: wa && {href: `https://wa.me/${wa}?text=${encodeURIComponent("Hi! I'd like to get a video edited.")}`, text: `+${wa}`},
     };
     root.querySelectorAll('[data-contacto]').forEach((el) => {
       const l = links[el.dataset.contacto];
@@ -76,8 +76,8 @@
     if (!dlg) {
       dlg = document.createElement('dialog');
       dlg.className = 'lb';
-      dlg.setAttribute('aria-label', 'Reproductor de video');
-      dlg.innerHTML = '<div class="lb-in"><video controls playsinline></video><div class="lb-bar"><span class="lb-t"></span><button class="lb-x" type="button">Cerrar</button></div></div>';
+      dlg.setAttribute('aria-label', 'Video player');
+      dlg.innerHTML = '<div class="lb-in"><video controls playsinline></video><div class="lb-bar"><span class="lb-t"></span><button class="lb-x" type="button">Close</button></div></div>';
       document.body.append(dlg);
       lbv = dlg.querySelector('video');
       lbt = dlg.querySelector('.lb-t');

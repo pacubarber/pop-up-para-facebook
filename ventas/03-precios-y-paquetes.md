@@ -1,6 +1,6 @@
 # Precios (Latinoamérica, USD)
 
-Tres opciones, sin planes mensuales ni permanencia. Son las mismas que muestra la web; si cambias un precio, cámbialo también en `web/assets/datos.js`.
+Tres opciones, sin planes mensuales ni permanencia. Son las mismas que muestra la web (en inglés: Reel, Bundle y Long-form); si cambias un precio, cámbialo también en `web/assets/datos.js`.
 
 | Opción | Qué es | Precio |
 |---|---|---|
@@ -12,7 +12,7 @@ Tres opciones, sin planes mensuales ni permanencia. Son las mismas que muestra l
 - **Todo incluye** subtítulos, música con licencia y 2 rondas de cambios por video.
 - **Entrega:** 48–72 h por video desde que llega el material completo.
 - **Pago por adelantado**, antes de empezar a editar.
-- **No hay video de prueba gratis.** Para que el cliente vea la calidad antes de pagar están el portafolio (`web/<variante>/portafolio.html`) y el video personalizado que le mandas al prospectar. Si duda, que empiece con un solo reel.
+- **No hay video de prueba gratis.** Para que el cliente vea la calidad antes de pagar están el portafolio (`web/portfolio.html`) y el video personalizado que le mandas al prospectar. Si duda, que empiece con un solo reel.
 
 Súbelos un 20 % cada vez que tengas la agenda llena 2 meses seguidos.
 
