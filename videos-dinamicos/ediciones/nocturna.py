@@ -154,7 +154,8 @@ def build():
             q = t - t0
             val = int(round(lerp(0, int(num), ease_out(prog(q, 0, 0.28), 2))))
             s, op, bl = fx.slam(q, 0.2, 1.7)
-            ctx.text(str(val) if q < 0.28 else num, "unbounded", 600, W / 2, 860, color=ACID, scale=s, opacity=op,
+            ctx.text(str(val) if q < 0.28 else num, "unbounded", min(600, fit_size(num, "unbounded", W * 0.84, 600)), W / 2, 860,
+                     color=ACID, scale=s, opacity=op,
                      blur=bl, shadow=18, shadow_op=0.45)
             fx.rise(ctx, lab, "grotesk", 92, W / 2, 1230, q - 0.1, color=WHITE, tracking=22, wght=700)
 
