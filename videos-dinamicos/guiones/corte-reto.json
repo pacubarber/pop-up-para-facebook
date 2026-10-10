@@ -1,0 +1,32 @@
+{
+ "name": "corte-reto",
+ "voice": "ash",
+ "model": "gpt-4o-mini-tts-2025-12-15",
+ "speed": 1.08,
+ "instructions": "Español latinoamericano neutro (no de España), pronunciación clara. Voz masculina cercana, segura y un poco pícara, como alguien que te reta en un reel y sabe que vas a perder. Frases cortas, con intención y sonrisa. Ritmo ágil, sin pausas largas.",
+ "lead": 0.0,
+ "gap": 0.08,
+ "tail": 0.45,
+ "pause_max": 0.14,
+ "pause_keep": 0.06,
+ "lines": [
+  {
+   "text": "Intenta no saltarte este video.",
+   "gap": 0.18
+  },
+  {
+   "text": "Aquí te ibas a ir... por eso puse este zoom.",
+   "gap": 0.14
+  },
+  {
+   "text": "Aquí, un sonido.",
+   "gap": 0.16
+  },
+  {
+   "text": "Y aquí, una pregunta: ¿sigues aquí?",
+   "gap": 0.22
+  },
+  "Eso que sientes se llama retención. Y se edita.",
+  "Comenta CORTE y te edito tu primer video gratis."
+ ]
+}

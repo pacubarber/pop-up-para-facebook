@@ -75,7 +75,11 @@ def mix(video, out_wav: str) -> str:
 
     # efectos
     for j, s in enumerate(video.sfx_list):
-        p = libreria.sfx_path(s["id"])
+        if isinstance(s["id"], str):   # efecto sintetizado (motor/sonido.py) o ruta a un archivo
+            import sonido
+            p = s["id"] if os.path.exists(s["id"]) else sonido.path(s["id"])
+        else:
+            p = libreria.sfx_path(s["id"])
         inputs += ["-i", p]
         k = len(inputs) // 2 - 1
         t = s["t"] - sfx_offset(p, s["align"])

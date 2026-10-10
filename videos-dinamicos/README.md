@@ -12,6 +12,8 @@ Flujo: **librería pública (Mixkit + Coverr) → guion → voz con OpenAI → t
 | `salida/regla-50-30-20.mp4` · Educativo de finanzas | 35 s | Gancho con golpes de cámara, montaje rápido de pagos, 50/30/20 que caen, dona que se llena por categoría, listas que se arman con la voz, barra de $1.000 que se reparte y se reordena para explicar "el 20 primero", subtítulos karaoke con palabras clave en el color de cada categoría, marcador que se rellena en el llamado a la acción. |
 | `salida/aura.mp4` · Anuncio de skincare | 22 s | Tipografía serif con revelados suaves, "AURA" gigante detrás de la modelo en el drop, contador 15 % con anillo, destello de luz que cruza el texto, barrido antes/después, temporizador circular con palomita, tachado animado, fugas de luz cálidas y cierre en el que el video se encoge a una tarjeta sobre fondo crema. |
 
+| `salida/corte-reto.mp4` · Video de la agencia CORTE | 19.6 s | Estilo ilustrado (como Grano Alto), **sin librerías**: todo dibujado en código y sonido 100 % sintetizado, sin música. Video "meta": el zoom, el ¡PUM! y la pregunta aparecen justo cuando la voz los nombra, un contador REC mide cuánto llevas viendo, la línea de tiempo marca los tres trucos donde ocurrieron y se corta en diagonal como el logo. Tic-tac que se corta en "¿sigues aquí?", risers, golpes y un final que empalma con el inicio (bucle). |
+
 Las marcas (Nocturna, Aura) son ficticias. Los guiones están en `guiones/` y la edición de cada video en `ediciones/`.
 
 ## Requisitos
@@ -59,8 +61,10 @@ motor/
   libreria.py   Búsqueda y descarga: Mixkit (video, música, efectos) y Coverr (video, sin clips premium ni generados con IA)
   voz.py        OpenAI TTS (gpt-4o-mini-tts) por frase → recorta silencios → Whisper (whisper-1) da el tiempo de cada palabra
   ritmo.py      BPM, rejilla de beats y curva de energía para cortar al ritmo y ubicar el drop
+  sonido.py     Efectos sintetizados sin librerías: tic-tac, risers, swells, golpes sub, whooshes, zoom,
+                latido, ding, tecleo, tijera, sello, glitch (python3 motor/sonido.py los genera)
   recorte.py    Robust Video Matting (ONNX, CPU): alfa de la persona para poner texto detrás
-  motor.py      Conform con FFmpeg (encuadre 9:16, gradación de color, 30 fps), lectura por fotograma,
+  motor.py      Escenas ilustradas (Video.scene: se dibujan en código, sin clips) y conform con FFmpeg (encuadre 9:16, gradación de color, 30 fps), lectura por fotograma,
                 transiciones (whip, zoom, glitch, iris, persianas, destello, desenfoque), Ken Burns,
                 golpes (zoom, sacudida, separación RGB, flash), texto antialiasado, formas, grano, viñeta, bloom
   efectos.py    Animaciones de texto: golpe, rebote, subida con máscara, desenfoque de entrada,

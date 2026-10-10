@@ -98,3 +98,12 @@ Todo el material viene de librerías con licencia de uso comercial gratuito y si
 **Efectos de sonido (Mixkit):** [#166](https://assets.mixkit.co/active_storage/sfx/166/166-preview.mp3), [#175](https://assets.mixkit.co/active_storage/sfx/175/175-preview.mp3), [#1489](https://assets.mixkit.co/active_storage/sfx/1489/1489-preview.mp3), [#2568](https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3), [#2586](https://assets.mixkit.co/active_storage/sfx/2586/2586-preview.mp3), [#2633](https://assets.mixkit.co/active_storage/sfx/2633/2633-preview.mp3), [#3062](https://assets.mixkit.co/active_storage/sfx/3062/3062-preview.mp3)
 
 **Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/aura.json`; tiempos por palabra con Whisper (`whisper-1`).
+
+## corte-reto
+
+| Clip | Tramo usado | Enlace |
+|---|---|---|
+
+**Efectos de sonido (Mixkit):** [#boom](https://assets.mixkit.co/active_storage/sfx/boom/boom-preview.mp3), [#boom_suave](https://assets.mixkit.co/active_storage/sfx/boom_suave/boom_suave-preview.mp3), [#ding](https://assets.mixkit.co/active_storage/sfx/ding/ding-preview.mp3), [#dron](https://assets.mixkit.co/active_storage/sfx/dron/dron-preview.mp3), [#glitch](https://assets.mixkit.co/active_storage/sfx/glitch/glitch-preview.mp3), [#latido](https://assets.mixkit.co/active_storage/sfx/latido/latido-preview.mp3), [#pop](https://assets.mixkit.co/active_storage/sfx/pop/pop-preview.mp3), [#riser_corto](https://assets.mixkit.co/active_storage/sfx/riser_corto/riser_corto-preview.mp3), [#sello](https://assets.mixkit.co/active_storage/sfx/sello/sello-preview.mp3), [#swell](https://assets.mixkit.co/active_storage/sfx/swell/swell-preview.mp3), [#swell_largo](https://assets.mixkit.co/active_storage/sfx/swell_largo/swell_largo-preview.mp3), [#tecla](https://assets.mixkit.co/active_storage/sfx/tecla/tecla-preview.mp3), [#tick](https://assets.mixkit.co/active_storage/sfx/tick/tick-preview.mp3), [#tijera](https://assets.mixkit.co/active_storage/sfx/tijera/tijera-preview.mp3), [#tock](https://assets.mixkit.co/active_storage/sfx/tock/tock-preview.mp3), [#whoosh](https://assets.mixkit.co/active_storage/sfx/whoosh/whoosh-preview.mp3), [#whoosh_abajo](https://assets.mixkit.co/active_storage/sfx/whoosh_abajo/whoosh_abajo-preview.mp3), [#whoosh_corto](https://assets.mixkit.co/active_storage/sfx/whoosh_corto/whoosh_corto-preview.mp3), [#zoom](https://assets.mixkit.co/active_storage/sfx/zoom/zoom-preview.mp3)
+
+**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/corte-reto.json`; tiempos por palabra con Whisper (`whisper-1`).

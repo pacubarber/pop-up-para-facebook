@@ -135,6 +135,20 @@ def font(name: str, size: int, wght: int | None = None) -> ImageFont.FreeTypeFon
     return f
 
 
+def track_offset(fnt, txt, i, tracking):
+    """Posición x del carácter i con espaciado entre letras. Con espaciado negativo los espacios
+    conservan su ancho (si no, las palabras se pegan)."""
+    if tracking == 0:
+        return fnt.getlength(txt[:i])
+    spaces = txt[:i].count(" ")
+    extra = -tracking * 2 * spaces if tracking < 0 else 0
+    return fnt.getlength(txt[:i]) + tracking * i + extra
+
+
+def track_width(fnt, txt, tracking):
+    return track_offset(fnt, txt, len(txt), tracking) - (tracking if txt and tracking else 0)
+
+
 @dataclass
 class Sprite:
     arr: np.ndarray        # (h, w, 3) float32: relleno, contorno, sombra (alfas 0–1)
@@ -150,7 +164,7 @@ def sprite(txt: str, fname: str, size: int, wght: int | None = None, tracking: f
     fnt = font(fname, size, wght)
     asc, desc = fnt.getmetrics()
     n = len(txt)
-    adv = fnt.getlength(txt) + tracking * max(0, n - 1)
+    adv = track_width(fnt, txt, tracking)
     sh = int(math.ceil(shadow * 2.5)) if shadow else 0
     pad = int(size * 0.25) + stroke + sh
     w = int(math.ceil(adv + 2 * pad))
@@ -164,7 +178,7 @@ def sprite(txt: str, fname: str, size: int, wght: int | None = None, tracking: f
             d.text((x0, base), txt, font=fnt, fill=255, anchor="ls", stroke_width=sw, stroke_fill=255)
         else:
             for i, ch in enumerate(txt):
-                xi = x0 + fnt.getlength(txt[:i]) + tracking * i
+                xi = x0 + track_offset(fnt, txt, i, tracking)
                 d.text((xi, base), ch, font=fnt, fill=255, anchor="ls", stroke_width=sw, stroke_fill=255)
         return np.asarray(im, np.float32) / 255.0
 
@@ -183,7 +197,7 @@ def sprite(txt: str, fname: str, size: int, wght: int | None = None, tracking: f
 
 def text_width(txt, fname, size, wght=None, tracking=0.0) -> float:
     fnt = font(fname, size, wght)
-    return fnt.getlength(txt) + tracking * max(0, len(txt) - 1)
+    return track_width(fnt, txt, tracking)
 
 
 def fit_size(txt, fname, max_w, start=400, wght=None, tracking_em=0.0, lo=10) -> int:
@@ -411,13 +425,13 @@ class Ctx:
     def letters(self, txt, fname, size, x, y, fn: Callable[[int, int], dict], wght=None, tracking=0.0, anchor="c", **kw):
         """Dibuja letra por letra. fn(i, n) → dict con dx, dy, scale, rot, opacity, blur, color…"""
         fnt = font(fname, int(size), wght)
-        total = fnt.getlength(txt) + tracking * max(0, len(txt) - 1)
+        total = track_width(fnt, txt, tracking)
         left = {"c": x - total / 2, "l": x, "r": x - total}[anchor]
         n = len(txt)
         for i, ch in enumerate(txt):
             if ch == " ":
                 continue
-            off = fnt.getlength(txt[:i]) + tracking * i
+            off = track_offset(fnt, txt, i, tracking)
             cw = fnt.getlength(ch)
             p = dict(kw)
             p.update(fn(i, n))
@@ -687,7 +701,7 @@ def ease_in_out_r(p):
 class Shot:
     t0: float
     t1: float
-    clip: Clip
+    clip: Clip | None = None
     at: float = 0.0                       # segundo del clip donde empieza el plano
     zoom: tuple = (1.0, 1.0)              # zoom de inicio y fin (Ken Burns)
     pan: tuple = (0.0, 0.0, 0.0, 0.0)     # dx0, dy0, dx1, dy1 (px)
@@ -700,6 +714,8 @@ class Shot:
     tparams: dict = field(default_factory=dict)
     dim: float = 0.0                      # oscurecer el plano (0–1)
     blur: float = 0.0
+    draw: Callable | None = None          # escena dibujada (sin clip): fn(ctx, t_local)
+    bg: str = "#000000"
 
     def src_time(self, t):
         lt = t - self.t0
@@ -745,6 +761,10 @@ class Video:
         self.shots.sort(key=lambda s: s.t0)
         return s
 
+    def scene(self, t0, t1, draw, bg="#000000", **kw) -> Shot:
+        """Escena ilustrada: se dibuja en código, sin material de video."""
+        return self.shot(t0, t1, None, draw=draw, bg=bg, **kw)
+
     def layer(self, t0, t1, fn, behind=False, z=0):
         self.layers.append(Layer(t0, t1, fn, behind, z))
         self.layers.sort(key=lambda l: l.z)
@@ -773,9 +793,16 @@ class Video:
 
     def render_shot(self, s: Shot, t, need_matte=False):
         st = s.src_time(t)
-        fr = reader(s.clip.path).at(st).astype(np.float32) * (1 / 255.0)
         m = None
-        if need_matte and s.clip.alpha:
+        if s.draw is not None:
+            fr = np.empty((H, W, 3), np.float32)
+            fr[:] = hexc(s.bg)
+            c = Ctx(fr, t, self)
+            s.draw(c, t - s.t0)
+            fr = c.img
+        else:
+            fr = reader(s.clip.path).at(st).astype(np.float32) * (1 / 255.0)
+        if need_matte and s.clip is not None and s.clip.alpha:
             m = reader(s.clip.alpha, gray=True).at(st, blend=False).astype(np.float32) * (1 / 255.0)
         lt = prog(t, s.t0, s.t1)
         e = s.ease(lt) if s.ease else lt
