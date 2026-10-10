@@ -13,6 +13,7 @@ Flujo: **librería pública (Mixkit + Coverr) → guion → voz con OpenAI → t
 | `salida/aura.mp4` · Anuncio de skincare | 22 s | Tipografía serif con revelados suaves, "AURA" gigante detrás de la modelo en el drop, contador 15 % con anillo, destello de luz que cruza el texto, barrido antes/después, temporizador circular con palomita, tachado animado, fugas de luz cálidas y cierre en el que el video se encoge a una tarjeta sobre fondo crema. |
 
 | `salida/corte-reto.mp4` · Video de la agencia CORTE | 19.6 s | Estilo ilustrado (como Grano Alto), **sin librerías**: todo dibujado en código y sonido 100 % sintetizado, sin música. Video "meta": el zoom, el ¡PUM! y la pregunta aparecen justo cuando la voz los nombra, un contador REC mide cuánto llevas viendo, la línea de tiempo marca los tres trucos donde ocurrieron y se corta en diagonal como el logo. Tic-tac que se corta en "¿sigues aquí?", risers, golpes y un final que empalma con el inicio (bucle). |
+| `salida/corte-4-trucos.mp4` · Video de la agencia CORTE | 47.4 s | Locución de **ElevenLabs** (voz Stanley – Trailer, Eleven v3) con pausas recortadas y tiempos de Whisper. Bucle abierto: el truco 4 se promete al inicio y se revela al final; lista de 4 casillas que se marcan (con candado en la 4, que se rompe en "Ya lo viste"); corte, zoom y sonido aplicados sobre su propia palabra; subtítulos que aparecen en el celular cuando se explica el truco 3; rebobinado final que empalma con el inicio. Sin librerías ni música. |
 
 Las marcas (Nocturna, Aura) son ficticias. Los guiones están en `guiones/` y la edición de cada video en `ediciones/`.
 
@@ -39,6 +40,7 @@ python3 motor/libreria.py sfx whoosh impact
 python3 motor/libreria.py hoja /tmp/hoja.jpg mixkit:48508 mixkit:50435 coverr:coverr-dj-at-a-party-8079   # hoja de contactos
 
 # 2) Locución: TTS de OpenAI por frase, silencios recortados y tiempos de cada palabra con Whisper
+#    (o una locución propia, p. ej. de ElevenLabs: guion con "audio": "voces/archivo.mp3"; ver guiones/corte-4-trucos.json)
 python3 motor/voz.py guiones/nocturna.json
 python3 motor/voz.py guiones/nocturna.json --probar echo onyx cedar      # comparar voces
 
@@ -59,7 +61,9 @@ La primera vez descarga los clips (los horizontales en 4K para recortarlos a ver
 ```
 motor/
   libreria.py   Búsqueda y descarga: Mixkit (video, música, efectos) y Coverr (video, sin clips premium ni generados con IA)
-  voz.py        OpenAI TTS (gpt-4o-mini-tts) por frase → recorta silencios → Whisper (whisper-1) da el tiempo de cada palabra
+  voz.py        OpenAI TTS (gpt-4o-mini-tts) por frase → recorta silencios → Whisper (whisper-1) da el tiempo de cada palabra;
+                también procesa locuciones externas (ElevenLabs): acorta pausas sin tocar la voz y alinea al guion
+  ilustraciones.py  Ilustraciones de la marca CORTE (celular, pulgar, logo, candado, casillas…) para los videos de la agencia
   ritmo.py      BPM, rejilla de beats y curva de energía para cortar al ritmo y ubicar el drop
   sonido.py     Efectos sintetizados sin librerías: tic-tac, risers, swells, golpes sub, whooshes, zoom,
                 latido, ding, tecleo, tijera, sello, glitch (python3 motor/sonido.py los genera)

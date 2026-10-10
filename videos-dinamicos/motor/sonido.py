@@ -250,12 +250,71 @@ def drone(dur=3.0):
     return stereo((x + air) * e, 0.8)
 
 
+def check():
+    """Palomita: dos notas ascendentes cortas."""
+    x = np.zeros(int(0.32 * SR))
+    for k, f in enumerate((880, 1320)):
+        d = 0.14
+        n = sweep(f, f * 1.01, d) * env_exp(d, 0.05, 0.002)
+        i = int(k * 0.07 * SR)
+        x[i:i + len(n)] += n
+    return stereo(reverb(x, 0.6, 0.15)[: int(0.5 * SR)], 0.4)
+
+
+def clack():
+    """Candado que se cierra: clic metálico + golpe seco."""
+    d = 0.35
+    click = highpass(RNG.normal(0, 1, int(d * SR)), 3500) * env_exp(d, 0.008)
+    ring_ = sum(np.sin(2 * np.pi * f * t_axis(d)) for f in (2300, 3700)) * env_exp(d, 0.05) * 0.3
+    thud = sweep(160, 70, d) * env_exp(d, 0.05)
+    return stereo(click * 0.8 + ring_ + thud * 0.9, 0.3)
+
+
+def quiebre():
+    """El candado se rompe: chasquido metálico + campana rota + golpe sub."""
+    d = 1.4
+    snap = highpass(RNG.normal(0, 1, int(d * SR)), 2000) * env_exp(d, 0.02)
+    bell = sum(a * np.sin(2 * np.pi * f * t_axis(d)) * np.exp(-t_axis(d) / dd)
+               for f, a, dd in ((1870, 0.4, 0.3), (2950, 0.3, 0.2), (4410, 0.2, 0.12)))
+    b = boom(1.2, 100, 38, 0.4)[:, 0]
+    x = np.zeros(max(len(b), int(d * SR)))
+    x[: int(d * SR)] += snap * 0.7 + bell
+    x[: len(b)] += b * 0.9
+    return stereo(x, 0.7)
+
+
+def rebobinado(dur=1.1):
+    """Cinta que rebobina: chirridos que bajan de tono con temblor."""
+    t = t_axis(dur)
+    u = t / dur
+    f = 2400 * (300 / 2400) ** u * (1 + 0.08 * np.sin(2 * np.pi * 23 * t))
+    chirp = np.sin(2 * np.pi * np.cumsum(f) / SR)
+    noise = shaped_noise(dur, lambda uu: 3000 * (500 / 3000) ** uu, 0.6)
+    gate = 0.6 + 0.4 * np.sign(np.sin(2 * np.pi * 14 * t))
+    x = (chirp * 0.5 + noise * 0.6) * gate * np.sin(np.pi * np.clip(u, 0, 1)) ** 0.5
+    return stereo(x, 1.0)
+
+
+def error():
+    """Pitido de error (barra de carga atascada)."""
+    x = np.zeros(int(0.5 * SR))
+    for k in range(2):
+        d = 0.12
+        n = np.sign(np.sin(2 * np.pi * 196 * t_axis(d))) * env_exp(d, 0.08, 0.004)
+        n = lowpass(n, 2500)
+        i = int(k * 0.17 * SR)
+        x[i:i + len(n)] += n
+    return x * 0.8
+
+
 EFFECTS = {
     "tick": lambda: tick(True), "tock": lambda: tick(False), "riser": riser, "riser_corto": lambda: riser(1.0),
     "swell": reverse_swell, "swell_largo": lambda: reverse_swell(1.4), "boom": boom,
     "boom_suave": lambda: boom(1.2, 90, 40, 0.35), "whoosh": whoosh, "whoosh_abajo": lambda: whoosh(0.45, False),
     "whoosh_corto": lambda: whoosh(0.28, True), "zoom": zoom_hit, "latido": heartbeat, "ding": ding, "pop": pop,
     "tecla": key_click, "tijera": snip, "sello": stamp, "glitch": glitch, "dron": drone,
+    "dron_largo": lambda: drone(6.0), "check": check, "candado": clack, "quiebre": quiebre, "rebobinado": rebobinado,
+    "error": error,
 }
 
 

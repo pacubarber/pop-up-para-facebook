@@ -240,6 +240,12 @@ def similarity(a: str, b: str) -> float:
 
 def main(argv):
     spec = json.load(open(argv[0], encoding="utf-8"))
+    if spec.get("audio"):   # locución externa (ElevenLabs u otra): solo recorte + tiempos con Whisper
+        d = from_audio(spec)
+        for l in d["lines"]:
+            print(f"{l['start']:6.2f}–{l['end']:6.2f}  {l['text']}")
+        print(f"total {d['dur']:.2f}s → cache/voz/{d['name']}.wav")
+        return
     if "--probar" in argv:
         voices = argv[argv.index("--probar") + 1:]
         text = " ".join(l if isinstance(l, str) else l["text"] for l in spec["lines"][:3])
@@ -254,6 +260,104 @@ def main(argv):
         ok = similarity(l["text"], l["heard"])
         print(f"{l['start']:6.2f}–{l['end']:6.2f}  {ok:.2f}  {l['text']}")
     print(f"total {d['dur']:.2f}s → cache/voz/{d['name']}.wav")
+
+
+
+# ------------------------------------------------------------------ audio externo (p. ej. ElevenLabs)
+def from_audio(spec: dict, out_dir: str | None = None) -> dict:
+    """Usa una locución ya grabada (spec["audio"]): recorta silencios, agrega pausas dramáticas donde se pidan
+    (spec["pausas"] = [[palabra, ocurrencia, segundos], …]) y saca los tiempos de cada palabra con Whisper,
+    alineados al texto del guion (spec["lines"])."""
+    out_dir = out_dir or CACHE
+    src = spec["audio"] if os.path.isabs(spec["audio"]) else os.path.join(ROOT, spec["audio"])
+    with open(src, "rb") as fh:
+        x = decode(fh.read())
+    lines = [l if isinstance(l, str) else l["text"] for l in spec["lines"]]
+    script = [wd for l in lines for wd in l.split()]
+    raw_words, _ = whisper_words(x, prompt=" ".join(lines))
+    x = compress_gaps(x, raw_words, spec.get("pause_keep", 0.16))
+    x = atempo(x, float(spec.get("speed", 1.0)))
+    heard, text = whisper_words(x, prompt=" ".join(lines))
+    words = align(script, heard, len(x) / SR)
+    # pausas dramáticas: se insertan silencios y se corren los tiempos
+    for word, occ, secs in sorted(spec.get("pausas", []), key=lambda p: -_find(words, p[0], p[1])["start"]):
+        wd = _find(words, word, occ)
+        cut = max(0, int((wd["start"] - 0.02) * SR))
+        x = np.concatenate([x[:cut], np.zeros(int(secs * SR), np.float32), x[cut:]])
+        for w2 in words:
+            if w2["start"] >= wd["start"] - 0.001:
+                w2["start"] = round(w2["start"] + secs, 3)
+                w2["end"] = round(w2["end"] + secs, 3)
+    lead, tail = float(spec.get("lead", 0.0)), float(spec.get("tail", 0.4))
+    x = np.concatenate([np.zeros(int(lead * SR), np.float32), x, np.zeros(int(tail * SR), np.float32)])
+    for w2 in words:
+        w2["start"] = round(w2["start"] + lead, 3)
+        w2["end"] = round(w2["end"] + lead, 3)
+    x = x / (np.max(np.abs(x)) + 1e-9) * 0.89
+    out_lines, k = [], 0
+    for l in lines:
+        n = len(l.split())
+        ws = words[k:k + n]
+        k += n
+        out_lines.append({"text": l, "start": ws[0]["start"], "end": ws[-1]["end"], "words": ws})
+    name = spec["name"]
+    write_wav(os.path.join(out_dir, f"{name}.wav"), x)
+    data = {"name": name, "dur": round(len(x) / SR, 3), "lines": out_lines, "heard": text}
+    with open(os.path.join(out_dir, f"{name}.json"), "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=1)
+    return data
+
+
+def compress_gaps(x: np.ndarray, words: list[dict], keep=0.16, speech_db=-30.0, pad=0.06) -> np.ndarray:
+    """Acorta las pausas entre palabras (respiraciones, colas de reverb) sin tocar la voz: protege cada palabra
+    según Whisper y extiende la protección mientras el nivel siga siendo claramente voz (> speech_db)."""
+    env = envelope(x, 0.01)
+    db = 20 * np.log10(env / (env.max() + 1e-9) + 1e-9)
+    cuts = []
+    for a, b in zip(words, words[1:]):
+        l, r = a["end"] + pad, b["start"] - pad
+        if r - l < 0.12:
+            continue
+        # solo se corta dentro del tramo silencioso continuo más largo del hueco: si hay voz que Whisper
+        # ubicó mal (p. ej. una "s" inicial), queda fuera del corte
+        seg = db[int(l * 100):int(r * 100)]
+        quiet = seg < speech_db
+        best, run, best_end = 0, 0, 0
+        for i, q in enumerate(quiet):
+            run = run + 1 if q else 0
+            if run > best:
+                best, best_end = run, i + 1
+        q0 = l + (best_end - best) / 100 + 0.04
+        q1 = l + best_end / 100 - 0.04
+        excess = (r - l) - max(0.0, keep - 2 * pad)
+        amount = min(q1 - q0, excess)
+        if amount > 0.04:
+            mid = (q0 + q1) / 2
+            cuts.append((mid - amount / 2, mid + amount / 2))
+    out, pos, f = [], 0, int(0.008 * SR)
+    for c0, c1 in cuts:
+        i0, i1 = int(c0 * SR), int(c1 * SR)
+        seg = x[pos:i0].copy()
+        if len(seg) > f:
+            seg[-f:] *= np.linspace(1, 0, f)
+        out.append(seg)
+        pos = i1
+        nxt = x[pos:pos + f].copy()
+        if len(nxt) == f:
+            x = x.copy()
+            x[pos:pos + f] *= np.linspace(0, 1, f)
+    out.append(x[pos:])
+    return np.concatenate(out)
+
+
+def _find(words, word, occ=1):
+    k = 0
+    for w in words:
+        if norm(w["text"]) == norm(word):
+            k += 1
+            if k == occ:
+                return w
+    raise KeyError(word)
 
 
 if __name__ == "__main__":

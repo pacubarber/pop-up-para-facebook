@@ -35,7 +35,7 @@ Todo el material viene de librerías con licencia de uso comercial gratuito y si
 
 **Efectos de sonido (Mixkit):** [#166](https://assets.mixkit.co/active_storage/sfx/166/166-preview.mp3), [#175](https://assets.mixkit.co/active_storage/sfx/175/175-preview.mp3), [#645](https://assets.mixkit.co/active_storage/sfx/645/645-preview.mp3), [#772](https://assets.mixkit.co/active_storage/sfx/772/772-preview.mp3), [#1120](https://assets.mixkit.co/active_storage/sfx/1120/1120-preview.mp3), [#1143](https://assets.mixkit.co/active_storage/sfx/1143/1143-preview.mp3), [#1486](https://assets.mixkit.co/active_storage/sfx/1486/1486-preview.mp3), [#1489](https://assets.mixkit.co/active_storage/sfx/1489/1489-preview.mp3), [#1492](https://assets.mixkit.co/active_storage/sfx/1492/1492-preview.mp3), [#2299](https://assets.mixkit.co/active_storage/sfx/2299/2299-preview.mp3), [#2303](https://assets.mixkit.co/active_storage/sfx/2303/2303-preview.mp3), [#2364](https://assets.mixkit.co/active_storage/sfx/2364/2364-preview.mp3), [#2633](https://assets.mixkit.co/active_storage/sfx/2633/2633-preview.mp3), [#2946](https://assets.mixkit.co/active_storage/sfx/2946/2946-preview.mp3), [#2951](https://assets.mixkit.co/active_storage/sfx/2951/2951-preview.mp3), [#3115](https://assets.mixkit.co/active_storage/sfx/3115/3115-preview.mp3)
 
-**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/nocturna.json`; tiempos por palabra con Whisper (`whisper-1`).
+**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/nocturna.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
 
 ## regla-50-30-20
 
@@ -71,7 +71,7 @@ Todo el material viene de librerías con licencia de uso comercial gratuito y si
 
 **Efectos de sonido (Mixkit):** [#166](https://assets.mixkit.co/active_storage/sfx/166/166-preview.mp3), [#175](https://assets.mixkit.co/active_storage/sfx/175/175-preview.mp3), [#772](https://assets.mixkit.co/active_storage/sfx/772/772-preview.mp3), [#1120](https://assets.mixkit.co/active_storage/sfx/1120/1120-preview.mp3), [#1489](https://assets.mixkit.co/active_storage/sfx/1489/1489-preview.mp3), [#1992](https://assets.mixkit.co/active_storage/sfx/1992/1992-preview.mp3), [#1993](https://assets.mixkit.co/active_storage/sfx/1993/1993-preview.mp3), [#2299](https://assets.mixkit.co/active_storage/sfx/2299/2299-preview.mp3), [#2364](https://assets.mixkit.co/active_storage/sfx/2364/2364-preview.mp3), [#2568](https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3), [#3115](https://assets.mixkit.co/active_storage/sfx/3115/3115-preview.mp3)
 
-**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/regla-50-30-20.json`; tiempos por palabra con Whisper (`whisper-1`).
+**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/regla-50-30-20.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
 
 ## aura
 
@@ -97,7 +97,7 @@ Todo el material viene de librerías con licencia de uso comercial gratuito y si
 
 **Efectos de sonido (Mixkit):** [#166](https://assets.mixkit.co/active_storage/sfx/166/166-preview.mp3), [#175](https://assets.mixkit.co/active_storage/sfx/175/175-preview.mp3), [#1489](https://assets.mixkit.co/active_storage/sfx/1489/1489-preview.mp3), [#2568](https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3), [#2586](https://assets.mixkit.co/active_storage/sfx/2586/2586-preview.mp3), [#2633](https://assets.mixkit.co/active_storage/sfx/2633/2633-preview.mp3), [#3062](https://assets.mixkit.co/active_storage/sfx/3062/3062-preview.mp3)
 
-**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/aura.json`; tiempos por palabra con Whisper (`whisper-1`).
+**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/aura.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
 
 ## corte-reto
 
@@ -106,4 +106,17 @@ Todo el material viene de librerías con licencia de uso comercial gratuito y si
 
 **Efectos de sonido (Mixkit):** [#boom](https://assets.mixkit.co/active_storage/sfx/boom/boom-preview.mp3), [#boom_suave](https://assets.mixkit.co/active_storage/sfx/boom_suave/boom_suave-preview.mp3), [#ding](https://assets.mixkit.co/active_storage/sfx/ding/ding-preview.mp3), [#dron](https://assets.mixkit.co/active_storage/sfx/dron/dron-preview.mp3), [#glitch](https://assets.mixkit.co/active_storage/sfx/glitch/glitch-preview.mp3), [#latido](https://assets.mixkit.co/active_storage/sfx/latido/latido-preview.mp3), [#pop](https://assets.mixkit.co/active_storage/sfx/pop/pop-preview.mp3), [#riser_corto](https://assets.mixkit.co/active_storage/sfx/riser_corto/riser_corto-preview.mp3), [#sello](https://assets.mixkit.co/active_storage/sfx/sello/sello-preview.mp3), [#swell](https://assets.mixkit.co/active_storage/sfx/swell/swell-preview.mp3), [#swell_largo](https://assets.mixkit.co/active_storage/sfx/swell_largo/swell_largo-preview.mp3), [#tecla](https://assets.mixkit.co/active_storage/sfx/tecla/tecla-preview.mp3), [#tick](https://assets.mixkit.co/active_storage/sfx/tick/tick-preview.mp3), [#tijera](https://assets.mixkit.co/active_storage/sfx/tijera/tijera-preview.mp3), [#tock](https://assets.mixkit.co/active_storage/sfx/tock/tock-preview.mp3), [#whoosh](https://assets.mixkit.co/active_storage/sfx/whoosh/whoosh-preview.mp3), [#whoosh_abajo](https://assets.mixkit.co/active_storage/sfx/whoosh_abajo/whoosh_abajo-preview.mp3), [#whoosh_corto](https://assets.mixkit.co/active_storage/sfx/whoosh_corto/whoosh_corto-preview.mp3), [#zoom](https://assets.mixkit.co/active_storage/sfx/zoom/zoom-preview.mp3)
 
-**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/corte-reto.json`; tiempos por palabra con Whisper (`whisper-1`).
+**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/corte-reto.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
+
+Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).
+
+## corte-4-trucos
+
+| Clip | Tramo usado | Enlace |
+|---|---|---|
+
+**Efectos de sonido (Mixkit):** [#boom](https://assets.mixkit.co/active_storage/sfx/boom/boom-preview.mp3), [#boom_suave](https://assets.mixkit.co/active_storage/sfx/boom_suave/boom_suave-preview.mp3), [#candado](https://assets.mixkit.co/active_storage/sfx/candado/candado-preview.mp3), [#check](https://assets.mixkit.co/active_storage/sfx/check/check-preview.mp3), [#dron](https://assets.mixkit.co/active_storage/sfx/dron/dron-preview.mp3), [#dron_largo](https://assets.mixkit.co/active_storage/sfx/dron_largo/dron_largo-preview.mp3), [#error](https://assets.mixkit.co/active_storage/sfx/error/error-preview.mp3), [#glitch](https://assets.mixkit.co/active_storage/sfx/glitch/glitch-preview.mp3), [#latido](https://assets.mixkit.co/active_storage/sfx/latido/latido-preview.mp3), [#pop](https://assets.mixkit.co/active_storage/sfx/pop/pop-preview.mp3), [#quiebre](https://assets.mixkit.co/active_storage/sfx/quiebre/quiebre-preview.mp3), [#rebobinado](https://assets.mixkit.co/active_storage/sfx/rebobinado/rebobinado-preview.mp3), [#riser_corto](https://assets.mixkit.co/active_storage/sfx/riser_corto/riser_corto-preview.mp3), [#sello](https://assets.mixkit.co/active_storage/sfx/sello/sello-preview.mp3), [#swell](https://assets.mixkit.co/active_storage/sfx/swell/swell-preview.mp3), [#swell_largo](https://assets.mixkit.co/active_storage/sfx/swell_largo/swell_largo-preview.mp3), [#tecla](https://assets.mixkit.co/active_storage/sfx/tecla/tecla-preview.mp3), [#tick](https://assets.mixkit.co/active_storage/sfx/tick/tick-preview.mp3), [#tijera](https://assets.mixkit.co/active_storage/sfx/tijera/tijera-preview.mp3), [#whoosh](https://assets.mixkit.co/active_storage/sfx/whoosh/whoosh-preview.mp3), [#whoosh_abajo](https://assets.mixkit.co/active_storage/sfx/whoosh_abajo/whoosh_abajo-preview.mp3), [#whoosh_corto](https://assets.mixkit.co/active_storage/sfx/whoosh_corto/whoosh_corto-preview.mp3), [#zoom](https://assets.mixkit.co/active_storage/sfx/zoom/zoom-preview.mp3)
+
+**Voz:** ElevenLabs · voz Stanley (Trailer) · Eleven v3 · velocidad 1.15 · estabilidad 35 · similitud 75, guion en `guiones/corte-4-trucos.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
+
+Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).

@@ -1,0 +1,46 @@
+{
+ "name": "corte-4-trucos",
+ "audio": "voces/corte-4-trucos-elevenlabs.mp3",
+ "fuente": "ElevenLabs · voz Stanley (Trailer) · Eleven v3 · velocidad 1.15 · estabilidad 35 · similitud 75",
+ "pause_max": 0.24,
+ "pause_keep": 0.16,
+ "speed": 1.05,
+ "lead": 0.0,
+ "tail": 0.5,
+ "pausas": [
+  [
+   "y",
+   3,
+   0.3
+  ],
+  [
+   "ya",
+   1,
+   0.35
+  ],
+  [
+   "vas",
+   1,
+   0.25
+  ]
+ ],
+ "lines": [
+  "Este video tiene cuatro trucos para que no lo puedas dejar de ver.",
+  "Y el cuarto... te lo digo al final.",
+  "Truco uno: abrir una pregunta... y no cerrarla.",
+  "Como acabo de hacer con el cuarto truco.",
+  "Tu cerebro odia las historias sin final.",
+  "Truco dos: que algo cambie cada dos o tres segundos.",
+  "Un corte. Un zoom. Un sonido.",
+  "Si nada cambia... tu pulgar se aburre.",
+  "Truco tres: subtítulos.",
+  "Mucha gente ve los videos en silencio.",
+  "Sin texto en pantalla, para ellos estás hablando solo.",
+  "¿Y el cuarto truco?",
+  "Ya lo viste.",
+  "Te dije que lo contaba al final... y te quedaste hasta el final.",
+  "Eso hacemos en Corte: editamos videos que nadie se salta.",
+  "Comenta \"Corte\" y te edito tu primer video gratis.",
+  "Y si lo ves otra vez... vas a encontrar los cuatro trucos."
+ ]
+}

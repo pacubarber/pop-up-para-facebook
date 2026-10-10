@@ -461,6 +461,8 @@ class Ctx:
             return
         R = r + width / 2 + 2
         X0, Y0, X1, Y1 = self._region(cx - R, cy - R, cx + R, cy + R)
+        if X1 <= X0 or Y1 <= Y0:      # fuera de cuadro
+            return
         yy, xx = np.mgrid[Y0:Y1, X0:X1].astype(np.float32) + 0.5
         dx, dy = xx - cx, yy - cy
         rad = np.sqrt(dx * dx + dy * dy)

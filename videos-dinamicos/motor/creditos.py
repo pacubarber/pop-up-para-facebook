@@ -41,8 +41,14 @@ def main(paths):
             out += ["", "**Efectos de sonido (Mixkit):** " + ", ".join(
                 f"[#{i}](https://assets.mixkit.co/active_storage/sfx/{i}/{i}-preview.mp3)" for i in sfx)]
         if v.vo:
-            out += ["", f"**Voz:** OpenAI TTS (`gpt-4o-mini-tts`), guion en `guiones/{v.vo['name']}.json`; "
-                        "tiempos por palabra con Whisper (`whisper-1`)."]
+            import json
+            g = os.path.join(ROOT, "guiones", f"{v.vo['name']}.json")
+            spec = json.load(open(g, encoding="utf-8")) if os.path.exists(g) else {}
+            fuente = spec.get("fuente") or "OpenAI TTS (`gpt-4o-mini-tts`)"
+            out += ["", f"**Voz:** {fuente}, guion en `guiones/{v.vo['name']}.json`; "
+                        "silencios recortados y tiempos por palabra con Whisper (`whisper-1`)."]
+        if not v.clips:
+            out += ["", "Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`)."]
         out.append("")
     path = os.path.join(ROOT, "salida", "creditos.md")
     with open(path, "w", encoding="utf-8") as fh:
