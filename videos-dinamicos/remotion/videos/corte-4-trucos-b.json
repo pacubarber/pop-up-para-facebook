@@ -1,0 +1,410 @@
+{
+  "nombre": "corte-4-trucos-b",
+  "descripcion": "Variante B de «Los 4 trucos»: misma locución de ElevenLabs, tipografía cinética sobre papel hueso, regla de progreso con una marca por truco y tarjeta sellada con cinta para el truco 4.",
+  "fps": 30,
+  "ancho": 1080,
+  "alto": 1920,
+  "duracion": "@fin+0.06",
+  "poster": 1.7,
+  "tema": {
+    "hueso": "#F2EEE6",
+    "papel": "#E6E0D4",
+    "tinta": "#0C0C0E",
+    "panel": "#17171A",
+    "linea": "#2A2A2F",
+    "gris": "#8C8A84",
+    "acento": "#FF3B1F",
+    "acento2": "#C9260E"
+  },
+  "voz": {"guion": "../../guiones/corte-4-trucos.json", "archivo": "voz/corte-4-trucos.wav", "volumen": 1.0},
+
+  "escenas": [
+    {
+      "id": "gancho",
+      "desde": 0,
+      "fondo": "hueso",
+      "camara": {"zoom": [1.0, 1.05]},
+      "textos": [
+        {"texto": "ESTE VIDEO TIENE", "y": 420, "tam": 84, "peso": 800, "sync": true, "anim": "sube"},
+        {"texto": "4", "en": "@L1/cuatro", "y": 930, "tam": 1000, "peso": 900, "color": "acento", "anim": "golpe", "tracking": -0.05},
+        {"texto": "TRUCOS", "en": "@L1/trucos", "y": 1430, "ancho": 780, "tamMax": 240, "peso": 900, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "anillo", "en": "@L1/cuatro+0.08", "x": 540, "y": 930, "r": 380, "grosor": 12, "color": "tinta", "dur": 0.55, "giro": -120}
+      ]
+    },
+    {
+      "id": "no-puedas",
+      "desde": "@L1/para-0.05",
+      "fondo": "tinta",
+      "entrada": {"tipo": "empuje", "dir": "arriba"},
+      "camara": {"zoom": [1.0, 1.08]},
+      "textos": [
+        {"texto": "para que no lo puedas", "y": 760, "fuente": "serif", "italica": true, "tam": 104, "sync": true, "anim": "aparece"},
+        {"texto": "DEJAR", "en": "@L1/dejar", "y": 1000, "ancho": 860, "tamMax": 260, "peso": 900, "anim": "golpe"},
+        {"texto": "DE VER.", "en": "@L1/de", "y": 1240, "ancho": 860, "tamMax": 260, "peso": 900, "color": "acento", "anim": "golpe"}
+      ]
+    },
+    {
+      "id": "promesa",
+      "desde": "@L2-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "circulo", "x": 540, "y": 930},
+      "textos": [
+        {"texto": "Y EL CUARTO…", "y": 400, "tam": 120, "peso": 900, "sync": true, "anim": "sube"},
+        {"texto": "te lo digo", "y": 1370, "fuente": "serif", "italica": true, "tam": 100, "sync": true, "anim": "aparece"},
+        {"texto": "AL FINAL.", "en": "@L2/al+0.2", "y": 1500, "tam": 150, "peso": 900, "color": "acento", "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "sello", "en": "@L2/cuarto+0.1", "x": 540, "y": 930, "ancho": 480, "alto": 640, "texto": "?"}
+      ]
+    },
+    {
+      "id": "truco-1",
+      "desde": "@L3-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "barrido", "dir": "arriba"},
+      "camara": {"zoom": [1.0, 1.04]},
+      "textos": [
+        {"texto": "01", "y": 600, "tam": 480, "peso": 900, "contorno": 5, "anim": "golpe", "tracking": -0.04},
+        {"texto": "ABRIR UNA", "y": 960, "tam": 150, "peso": 900, "sync": true, "anim": "sube"},
+        {"texto": "PREGUNTA…", "en": "@L3/pregunta", "y": 1150, "ancho": 880, "tamMax": 220, "peso": 900, "color": "acento", "anim": "golpe"},
+        {"texto": "y no cerrarla.", "en": "@L3/y", "y": 1350, "fuente": "serif", "italica": true, "tam": 104, "sync": true, "anim": "aparece"}
+      ],
+      "graficos": [
+        {"tipo": "anillo", "en": "@L3/cerrarla", "x": 540, "y": 600, "r": 300, "grosor": 14, "hasta": 0.84, "dur": 0.75, "giro": -60}
+      ]
+    },
+    {
+      "id": "como-acabo",
+      "desde": "@L4-0.04",
+      "fondo": "tinta",
+      "entrada": {"tipo": "barrido", "dir": "izq"},
+      "textos": [
+        {"texto": "como acabo de hacer", "y": 420, "fuente": "serif", "italica": true, "tam": 96, "sync": true, "anim": "aparece"},
+        {"texto": "CON EL CUARTO TRUCO.", "en": "@L4/con", "y": 1380, "ancho": 900, "peso": 900, "sync": true, "anim": "golpe", "acentos": ["cuarto"]}
+      ],
+      "graficos": [
+        {"tipo": "sello", "en": "@L4", "x": 540, "y": 880, "escala": 0.6, "cae": false, "texto": "?"},
+        {"tipo": "flecha", "en": "@L4/cuarto-0.2", "de": [880, 1290], "a": [730, 1070], "curva": -0.3, "grosor": 12}
+      ]
+    },
+    {
+      "id": "cerebro",
+      "desde": "@L5-0.04",
+      "fondo": "hueso",
+      "camara": {"zoom": [1.08, 1.0]},
+      "textos": [
+        {"texto": "TU CEREBRO", "y": 520, "ancho": 880, "tamMax": 200, "peso": 900, "sync": true, "anim": "golpe"},
+        {"texto": "odia", "en": "@L5/odia", "y": 760, "fuente": "serif", "italica": true, "tam": 220, "color": "acento", "anim": "aparece"},
+        {"texto": "las historias sin", "en": "@L5/las", "y": 1000, "tam": 96, "peso": 800, "sync": true, "anim": "sube"},
+        {"texto": "FINAL", "en": "@L5/final", "y": 1240, "ancho": 880, "tamMax": 330, "peso": 900, "anim": "golpe", "partir": "@L5/final+0.32"}
+      ]
+    },
+    {
+      "id": "truco-2",
+      "desde": "@L6-0.04",
+      "fondo": "tinta",
+      "entrada": {"tipo": "empuje", "dir": "arriba"},
+      "textos": [
+        {"texto": "02", "y": 560, "tam": 480, "peso": 900, "contorno": 5, "anim": "golpe", "tracking": -0.04},
+        {"texto": "QUE ALGO CAMBIE", "en": "@L6/que", "y": 900, "ancho": 900, "peso": 900, "sync": true, "anim": "sube"},
+        {"texto": "cada 2 o 3 segundos", "en": "@L6/cada", "y": 1070, "fuente": "serif", "italica": true, "tam": 104, "escalonado": 0.2, "anim": "aparece", "acentos": ["2", "3"]}
+      ],
+      "graficos": [
+        {"tipo": "segmentos", "en": "@L6/cada", "y": 1320, "partes": [2, 3, 2, 3, 2], "paso": 0.11, "cabezal": ["@L6/segundos", "@L7-0.05"], "colores": ["hueso", "gris", "hueso", "acento", "hueso"]}
+      ]
+    },
+    {
+      "id": "un-corte",
+      "desde": "@L7-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "diagonal", "dur": 0.3},
+      "textos": [
+        {"texto": "UN CORTE.", "y": 960, "ancho": 900, "peso": 900, "sync": true, "anim": "golpe", "partir": "@L7/corte+0.24"}
+      ]
+    },
+    {
+      "id": "un-zoom",
+      "desde": "@L7/un#2-0.06",
+      "fondo": "acento",
+      "entrada": {"tipo": "zoom", "dur": 0.24},
+      "camara": {"zoom": [1.0, 1.25]},
+      "textos": [
+        {"texto": "UN ZOOM.", "y": 960, "ancho": 760, "peso": 900, "color": "hueso", "sync": true, "anim": "golpe"}
+      ]
+    },
+    {
+      "id": "un-sonido",
+      "desde": "@L7/un#3-0.06",
+      "fondo": "tinta",
+      "textos": [
+        {"texto": "UN SONIDO.", "y": 760, "ancho": 900, "peso": 900, "sync": true, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "ondas", "en": "@L7/sonido", "x": 540, "y": 760, "radio": 560, "yBarras": 1250}
+      ]
+    },
+    {
+      "id": "pulgar",
+      "desde": "@L8-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "empuje", "dir": "arriba"},
+      "textos": [
+        {"texto": "SI NADA CAMBIA…", "y": 400, "ancho": 900, "tamMax": 150, "peso": 900, "sync": true, "anim": "sube"},
+        {"texto": "tu pulgar se aburre.", "en": "@L8/tu", "y": 545, "fuente": "serif", "italica": true, "tam": 92, "sync": true, "anim": "aparece"}
+      ],
+      "graficos": [
+        {"tipo": "feed", "en": "@L8+0.1", "x": 540, "y": 1110, "ancho": 520, "alto": 900, "swipe": "@L8/aburre"}
+      ]
+    },
+    {
+      "id": "truco-3",
+      "desde": "@L9-0.04",
+      "fondo": "tinta",
+      "entrada": {"tipo": "barrido", "dir": "izq"},
+      "textos": [
+        {"texto": "03", "y": 640, "tam": 480, "peso": 900, "contorno": 5, "anim": "golpe", "tracking": -0.04},
+        {"texto": "SUBTÍTULOS.", "en": "@L9/subtitulos", "y": 1060, "ancho": 900, "peso": 900, "anim": "escribe", "cps": 26, "subrayar": "@L9/subtitulos+0.5"}
+      ]
+    },
+    {
+      "id": "silencio",
+      "desde": "@L10-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "empuje", "dir": "arriba"},
+      "textos": [
+        {"texto": "EN SILENCIO.", "en": "@L10/silencio", "y": 1520, "tam": 130, "peso": 900, "color": "acento", "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "celular", "en": "@L10", "x": 540, "y": 880, "ancho": 520, "alto": 960, "mudo": "@L10/silencio", "subtitulos": {"desde": "@L10", "hasta": "@L10.fin"}}
+      ]
+    },
+    {
+      "id": "sin-texto",
+      "desde": "@L11-0.04",
+      "fondo": "hueso",
+      "textos": [
+        {"texto": "SIN TEXTO", "y": 800, "tam": 140, "peso": 900, "color": "hueso", "etiqueta": "acento", "rot": -4, "anim": "golpe"},
+        {"texto": "EN PANTALLA", "en": "@L11/en", "y": 980, "tam": 100, "peso": 900, "color": "hueso", "etiqueta": "tinta", "rot": 3, "anim": "golpe"},
+        {"texto": "para ellos estás", "en": "@L11/para", "y": 1425, "fuente": "serif", "italica": true, "tam": 92, "sync": true, "anim": "aparece"},
+        {"texto": "HABLANDO SOLO.", "en": "@L11/hablando", "y": 1540, "ancho": 900, "tamMax": 120, "peso": 900, "sync": true, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "celular", "en": "@L11-0.04", "estatico": true, "x": 540, "y": 880, "ancho": 520, "alto": 960, "mudo": "@L11-1", "atenuar": "@L11/para"}
+      ]
+    },
+    {
+      "id": "y-el-cuarto",
+      "desde": "@L12-0.04",
+      "fondo": "tinta",
+      "entrada": {"tipo": "circulo", "x": 540, "y": 980},
+      "textos": [
+        {"texto": "¿Y EL CUARTO TRUCO?", "y": 400, "ancho": 900, "tamMax": 120, "peso": 900, "sync": true, "anim": "sube"},
+        {"texto": "YA LO VISTE.", "en": "@L13", "y": 1460, "ancho": 860, "tamMax": 170, "peso": 900, "color": "acento", "sync": true, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "sello", "en": "@L12", "x": 540, "y": 930, "ancho": 480, "alto": 640, "texto": "?", "revela": "4", "fondo": "linea", "tiembla": "@L12/cuarto", "rompe": "@L13"}
+      ]
+    },
+    {
+      "id": "te-quedaste",
+      "desde": "@L14-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "barrido", "dir": "arriba"},
+      "textos": [
+        {"texto": "te dije que lo contaba al final…", "y": 420, "fuente": "serif", "italica": true, "tam": 80, "sync": true, "anim": "aparece"},
+        {"texto": "Y TE QUEDASTE", "en": "@L14/y", "y": 700, "ancho": 900, "tamMax": 170, "peso": 900, "sync": true, "anim": "golpe", "acentos": ["quedaste"]},
+        {"texto": "TRUCO 4 · PROMETER UN FINAL", "en": "@L14/hasta", "y": 1400, "fuente": "mono", "tam": 40, "peso": 700, "color": "hueso", "etiqueta": "tinta", "anim": "desliza", "tracking": 0.04}
+      ],
+      "graficos": [
+        {"tipo": "cronometro", "en": "@L14/quedaste", "y": 1050, "tam": 170, "etiqueta": "LLEVAS VIENDO"}
+      ]
+    },
+    {
+      "id": "marca",
+      "desde": "@L15-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "diagonal"},
+      "textos": [
+        {"texto": "CORTE", "en": "@L15/corte", "y": 1060, "tam": 230, "peso": 900, "tracking": -0.05, "anim": "golpe"},
+        {"texto": "editamos videos", "en": "@L15/editamos", "y": 1270, "fuente": "serif", "italica": true, "tam": 96, "sync": true, "anim": "aparece"},
+        {"texto": "QUE NADIE SE SALTA.", "en": "@L15/que", "y": 1410, "ancho": 900, "tamMax": 110, "peso": 900, "sync": true, "anim": "golpe", "acentos": ["nadie"]}
+      ],
+      "graficos": [
+        {"tipo": "logo", "en": "@L15", "x": 540, "y": 700, "r": 190, "separa": "@L15/corte", "sep": 44}
+      ]
+    },
+    {
+      "id": "comenta",
+      "desde": "@L16-0.04",
+      "fondo": "tinta",
+      "entrada": {"tipo": "empuje", "dir": "arriba"},
+      "textos": [
+        {"texto": "COMENTA", "y": 450, "ancho": 860, "tamMax": 200, "peso": 900, "anim": "golpe"},
+        {"texto": "y te edito tu", "en": "@L16/y", "y": 1140, "fuente": "serif", "italica": true, "tam": 92, "sync": true, "anim": "aparece"},
+        {"texto": "PRIMER VIDEO", "en": "@L16/primer", "y": 1280, "ancho": 860, "tamMax": 150, "peso": 900, "sync": true, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "comentario", "en": "@L16", "x": 540, "y": 790, "ancho": 880, "texto": "Corte", "escribe": "@L16/corte", "envia": "@L16/y", "fondo": "panel", "letra": "hueso"},
+        {"tipo": "estampa", "en": "@L16/gratis", "y": 1480, "texto": "GRATIS", "tam": 120, "rot": -8}
+      ]
+    },
+    {
+      "id": "bucle",
+      "desde": "@L17-0.04",
+      "fondo": "hueso",
+      "entrada": {"tipo": "circulo", "x": 540, "y": 960},
+      "textos": [
+        {"texto": "y si lo ves otra vez…", "y": 560, "fuente": "serif", "italica": true, "tam": 100, "sync": true, "anim": "aparece", "sale": "@L17/vas-0.2"},
+        {"texto": "VAS A ENCONTRAR LOS", "en": "@L17/vas", "y": 420, "tam": 84, "peso": 800, "sync": true, "anim": "sube"},
+        {"texto": "4", "en": "@L17/cuatro", "y": 930, "tam": 1000, "peso": 900, "color": "acento", "anim": "golpe", "tracking": -0.05},
+        {"texto": "TRUCOS", "en": "@L17/trucos", "y": 1430, "ancho": 780, "tamMax": 240, "peso": 900, "anim": "golpe"}
+      ],
+      "graficos": [
+        {"tipo": "rebobinar", "en": "@L17/otra", "hasta": "@L17/vas", "y": 820},
+        {"tipo": "anillo", "en": "@L17/cuatro+0.08", "x": 540, "y": 930, "r": 380, "grosor": 12, "color": "tinta", "dur": 0.55, "giro": -120}
+      ]
+    }
+  ],
+
+  "capas": [
+    {"tipo": "regla", "en": 0, "y": 205, "x0": 150, "x1": 930, "r": 30,
+     "marcas": ["@L5.fin", "@L8.fin", "@L11.fin", "@L13/viste"], "misterio": 3, "revela": "@L13/viste",
+     "rebobina": ["@L17/otra", "@L17/vas"]},
+    {"tipo": "rotulo", "x": 70, "y": 70, "tam": 28, "punto": true, "cambios": [{"t": 0, "texto": "CORTE · 4 TRUCOS"}]},
+    {"tipo": "grano", "opacidad": 0.09}
+  ],
+
+  "golpes": [
+    {"t": "@L1/cuatro", "tipo": "zoom", "fuerza": 0.08},
+    {"t": "@L1/cuatro", "tipo": "sacudida", "fuerza": 18},
+    {"t": "@L1/trucos", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L1/dejar", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L1/de", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L2/cuarto+0.23", "tipo": "sacudida", "fuerza": 14},
+    {"t": "@L2/al+0.2", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L3", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L3/pregunta", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L5/final", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L5/final+0.32", "tipo": "sacudida", "fuerza": 20},
+    {"t": "@L6", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L7/corte", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L7/corte+0.24", "tipo": "sacudida", "fuerza": 16},
+    {"t": "@L7/zoom", "tipo": "zoom", "fuerza": 0.12},
+    {"t": "@L7/sonido", "tipo": "zoom", "fuerza": 0.08},
+    {"t": "@L7/sonido", "tipo": "sacudida", "fuerza": 30},
+    {"t": "@L8/aburre", "tipo": "zoom", "fuerza": 0.04},
+    {"t": "@L9", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L10/silencio", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L11", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L11/hablando", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L12/cuarto+0.1", "tipo": "zoom", "fuerza": 0.035},
+    {"t": "@L12/truco+0.15", "tipo": "zoom", "fuerza": 0.035},
+    {"t": "@L13", "tipo": "flash", "fuerza": 0.9, "color": "acento", "dur": 0.12},
+    {"t": "@L13", "tipo": "invertir", "dur": 0.067},
+    {"t": "@L13", "tipo": "sacudida", "fuerza": 34},
+    {"t": "@L13", "tipo": "zoom", "fuerza": 0.1},
+    {"t": "@L14/quedaste", "tipo": "zoom", "fuerza": 0.06},
+    {"t": "@L15/corte", "tipo": "zoom", "fuerza": 0.07},
+    {"t": "@L16", "tipo": "zoom", "fuerza": 0.05},
+    {"t": "@L16/gratis", "tipo": "zoom", "fuerza": 0.08},
+    {"t": "@L16/gratis", "tipo": "sacudida", "fuerza": 22},
+    {"t": "@L17/cuatro", "tipo": "zoom", "fuerza": 0.1},
+    {"t": "@L17/cuatro", "tipo": "sacudida", "fuerza": 20}
+  ],
+
+  "sonidos": [
+    {"t": "@L1/cuatro", "id": "swell", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L1/cuatro", "id": "boom", "vol": 0.75, "alinear": "pico"},
+    {"t": "@L1/trucos", "id": "pop", "vol": 0.35},
+    {"t": "@L1/para", "id": "whoosh_corto", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L1/dejar", "id": "sello", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L1/de", "id": "sello", "vol": 0.5, "alinear": "pico"},
+    {"t": "@L2+0.15", "id": "whoosh", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L2/cuarto+0.2", "id": "whoosh_abajo", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L2/cuarto+0.23", "id": "candado", "vol": 0.6, "alinear": "ataque"},
+    {"t": "@L2/cuarto+0.23", "id": "boom_suave", "vol": 0.5, "alinear": "pico"},
+    {"t": "@L2/al+0.2", "id": "sello", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L3+0.1", "id": "whoosh_corto", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L3", "id": "boom_suave", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L3/pregunta", "id": "pop", "vol": 0.35},
+    {"t": "@L3/cerrarla", "id": "trazo_largo", "vol": 0.4},
+    {"t": "@L4+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L4", "id": "pop", "vol": 0.35},
+    {"t": "@L4/cuarto-0.2", "id": "trazo", "vol": 0.35},
+    {"t": "@L5", "id": "pop", "vol": 0.3},
+    {"t": "@L5/final", "id": "sello", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L5/final+0.32", "id": "tijera", "vol": 0.55, "alinear": "ataque"},
+    {"t": "@L5.fin", "id": "check", "vol": 0.45},
+    {"t": "@L6+0.12", "id": "whoosh_corto", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L6", "id": "boom_suave", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L6/cada", "id": "tick", "vol": 0.3},
+    {"t": "@L6/cada+0.11", "id": "tock", "vol": 0.3},
+    {"t": "@L6/cada+0.22", "id": "tick", "vol": 0.3},
+    {"t": "@L6/cada+0.33", "id": "tock", "vol": 0.3},
+    {"t": "@L6/cada+0.44", "id": "tick", "vol": 0.3},
+    {"t": "@L7", "id": "swell", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L7/corte", "id": "tijera", "vol": 0.6, "alinear": "ataque"},
+    {"t": "@L7/zoom", "id": "zoom", "vol": 0.7, "alinear": "pico"},
+    {"t": "@L7/sonido", "id": "boom", "vol": 0.8, "alinear": "pico"},
+    {"t": "@L8+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L8+0.35", "id": "tick", "vol": 0.25},
+    {"t": "@L8+0.85", "id": "tock", "vol": 0.25},
+    {"t": "@L8+1.35", "id": "tick", "vol": 0.25},
+    {"t": "@L8/aburre+0.15", "id": "whoosh", "vol": 0.55, "alinear": "pico"},
+    {"t": "@L8.fin", "id": "check", "vol": 0.45},
+    {"t": "@L9+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L9", "id": "boom_suave", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L9/subtitulos", "id": "tecla", "vol": 0.3},
+    {"t": "@L9/subtitulos+0.08", "id": "tecla", "vol": 0.3},
+    {"t": "@L9/subtitulos+0.16", "id": "tecla", "vol": 0.3},
+    {"t": "@L9/subtitulos+0.24", "id": "tecla", "vol": 0.3},
+    {"t": "@L9/subtitulos+0.32", "id": "tecla", "vol": 0.3},
+    {"t": "@L9/subtitulos+0.40", "id": "tecla", "vol": 0.3},
+    {"t": "@L10+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L10/silencio", "id": "pop", "vol": 0.4},
+    {"t": "@L10/silencio", "id": "sello", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L11", "id": "glitch", "vol": 0.25},
+    {"t": "@L11", "id": "sello", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L11/en", "id": "pop", "vol": 0.3},
+    {"t": "@L11/hablando", "id": "boom_suave", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L11.fin", "id": "check", "vol": 0.45},
+    {"t": "@L12/cuarto", "id": "swell_largo", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L12+0.08", "id": "whoosh_abajo", "vol": 0.35, "alinear": "pico"},
+    {"t": "@L12+0.13", "id": "candado", "vol": 0.55, "alinear": "ataque"},
+    {"t": "@L12/cuarto+0.1", "id": "latido", "vol": 0.6, "alinear": "ataque"},
+    {"t": "@L12/truco+0.15", "id": "latido", "vol": 0.6, "alinear": "ataque"},
+    {"t": "@L12/truco+0.45", "id": "tick", "vol": 0.3},
+    {"t": "@L12/truco+0.65", "id": "tock", "vol": 0.3},
+    {"t": "@L12/truco+0.8", "id": "tick", "vol": 0.3},
+    {"t": "@L12/truco+0.9", "id": "tock", "vol": 0.3},
+    {"t": "@L13", "id": "riser_corto", "vol": 0.45, "alinear": "pico"},
+    {"t": "@L13-0.02", "id": "rasgado", "vol": 0.6},
+    {"t": "@L13", "id": "boom", "vol": 0.7, "alinear": "pico"},
+    {"t": "@L13/viste", "id": "check", "vol": 0.5},
+    {"t": "@L14+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L14/quedaste", "id": "sello", "vol": 0.4, "alinear": "pico"},
+    {"t": 35, "id": "tick", "vol": 0.25},
+    {"t": 36, "id": "tock", "vol": 0.25},
+    {"t": "@L15+0.05", "id": "tijera", "vol": 0.5, "alinear": "ataque"},
+    {"t": "@L15+0.16", "id": "candado", "vol": 0.5, "alinear": "ataque"},
+    {"t": "@L15/corte", "id": "tijera", "vol": 0.45, "alinear": "ataque"},
+    {"t": "@L15/corte", "id": "boom_suave", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L16+0.1", "id": "whoosh_corto", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L16/corte", "id": "tecla", "vol": 0.3},
+    {"t": "@L16/corte+0.09", "id": "tecla", "vol": 0.3},
+    {"t": "@L16/corte+0.18", "id": "tecla", "vol": 0.3},
+    {"t": "@L16/corte+0.27", "id": "tecla", "vol": 0.3},
+    {"t": "@L16/corte+0.36", "id": "tecla", "vol": 0.3},
+    {"t": "@L16/y", "id": "pop", "vol": 0.45},
+    {"t": "@L16/y+0.5", "id": "ding", "vol": 0.3},
+    {"t": "@L16/gratis", "id": "sello", "vol": 0.6, "alinear": "pico"},
+    {"t": "@L16/gratis", "id": "boom_suave", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L17+0.15", "id": "whoosh", "vol": 0.3, "alinear": "pico"},
+    {"t": "@L17/otra", "id": "rebobinado", "vol": 0.55},
+    {"t": "@L17/cuatro", "id": "swell", "vol": 0.4, "alinear": "pico"},
+    {"t": "@L17/cuatro", "id": "boom", "vol": 0.75, "alinear": "pico"},
+    {"t": "@L17/trucos", "id": "pop", "vol": 0.35}
+  ]
+}

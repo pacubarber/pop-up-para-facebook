@@ -1,0 +1,4 @@
+node_modules/
+out/
+# Se regenera con `python3 preparar.py videos/*.json` (voz, efectos, fuentes y grano)
+public/

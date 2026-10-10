@@ -1,9 +1,10 @@
 """Genera salida/creditos.md: clips, música y efectos de sonido que usa cada video.
 
-  python3 motor/creditos.py ediciones/nocturna.py ediciones/aura.py …
+  python3 motor/creditos.py ediciones/nocturna.py ediciones/aura.py … remotion/videos/corte-4-trucos-b.json
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 
@@ -15,12 +16,36 @@ from render import load  # noqa: E402
 ROOT = os.path.dirname(HERE)
 
 
+def fuente_voz(guion_path: str) -> str:
+    spec = json.load(open(guion_path, encoding="utf-8")) if os.path.exists(guion_path) else {}
+    return spec.get("fuente") or "OpenAI TTS (`gpt-4o-mini-tts`)"
+
+
+def creditos_json(path: str) -> list[str]:
+    """Videos de Remotion descritos en JSON (remotion/videos/*.json)."""
+    spec = json.load(open(path, encoding="utf-8"))
+    rel = os.path.relpath(path, ROOT)
+    out = [f"## {spec['nombre']} (Remotion)", "", f"Descrito en `{rel}` y renderizado con Remotion."]
+    ids = sorted({s["id"] for s in spec.get("sonidos", [])})
+    if ids:
+        out += ["", "**Efectos sintetizados (`motor/sonido.py`):** " + ", ".join(f"`{i}`" for i in ids)]
+    if spec.get("voz"):
+        g = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(path)), spec["voz"]["guion"]))
+        out += ["", f"**Voz:** {fuente_voz(g)}, guion en `{os.path.relpath(g, ROOT)}`; "
+                    "silencios recortados y tiempos por palabra con Whisper (`whisper-1`)."]
+    out += ["", "Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).", ""]
+    return out
+
+
 def main(paths):
     out = ["# Créditos del material", "",
            "Todo el material viene de librerías con licencia de uso comercial gratuito y sin atribución obligatoria "
            "([Mixkit](https://mixkit.co/license/), [Coverr](https://coverr.co/license)). Se lista para que cualquiera pueda "
            "volver a descargarlo o reemplazarlo.", ""]
     for p in paths:
+        if p.endswith(".json"):
+            out += creditos_json(p)
+            continue
         v = load(p)
         out += [f"## {v.name}", "", "| Clip | Tramo usado | Enlace |", "|---|---|---|"]
         seen = set()
@@ -44,10 +69,7 @@ def main(paths):
         if syn_sfx:
             out += ["", "**Efectos sintetizados (`motor/sonido.py`):** " + ", ".join(f"`{i}`" for i in syn_sfx)]
         if v.vo:
-            import json
-            g = os.path.join(ROOT, "guiones", f"{v.vo['name']}.json")
-            spec = json.load(open(g, encoding="utf-8")) if os.path.exists(g) else {}
-            fuente = spec.get("fuente") or "OpenAI TTS (`gpt-4o-mini-tts`)"
+            fuente = fuente_voz(os.path.join(ROOT, "guiones", f"{v.vo['name']}.json"))
             out += ["", f"**Voz:** {fuente}, guion en `guiones/{v.vo['name']}.json`; "
                         "silencios recortados y tiempos por palabra con Whisper (`whisper-1`)."]
         if not v.clips:

@@ -307,6 +307,33 @@ def error():
     return x * 0.8
 
 
+def rasgado(dur=0.42):
+    """Cinta adhesiva que se arranca: chasquidos cada vez más densos sobre ruido que sube de tono."""
+    n = int(dur * SR)
+    u = np.arange(n) / n
+    x = np.zeros(n)
+    pos = 0
+    while pos < n:
+        k = pos / n
+        gap = int(SR * (0.012 - 0.009 * np.sin(np.pi * k)))
+        d = int(SR * 0.004)
+        if pos + d < n:
+            x[pos:pos + d] += RNG.normal(0, 1, d) * np.exp(-np.arange(d) / (0.0012 * SR)) * RNG.uniform(0.4, 1)
+        pos += gap + int(RNG.uniform(0, 0.004) * SR)
+    x = highpass(x, 1500)
+    hiss = shaped_noise(dur, lambda uu: 1800 * (5200 / 1800) ** uu, 0.5) * 0.35
+    return stereo((x + hiss) * np.sin(np.pi * u) ** 0.4, 0.8)
+
+
+def trazo(dur=0.5):
+    """Marcador sobre papel: ruido de banda media con el temblor de la mano."""
+    t = t_axis(dur)
+    u = t / dur
+    x = shaped_noise(dur, lambda uu: 2600 + 900 * np.sin(2 * np.pi * 3 * uu), 0.7)
+    wobble = 0.65 + 0.35 * np.sin(2 * np.pi * 11 * t + 2 * np.sin(2 * np.pi * 4 * t))
+    return x * wobble * np.clip(u / 0.05, 0, 1) * np.clip((1 - u) / 0.12, 0, 1) * 0.7
+
+
 EFFECTS = {
     "tick": lambda: tick(True), "tock": lambda: tick(False), "riser": riser, "riser_corto": lambda: riser(1.0),
     "swell": reverse_swell, "swell_largo": lambda: reverse_swell(1.4), "boom": boom,
@@ -314,7 +341,7 @@ EFFECTS = {
     "whoosh_corto": lambda: whoosh(0.28, True), "zoom": zoom_hit, "latido": heartbeat, "ding": ding, "pop": pop,
     "tecla": key_click, "tijera": snip, "sello": stamp, "glitch": glitch, "dron": drone,
     "dron_largo": lambda: drone(6.0), "check": check, "candado": clack, "quiebre": quiebre, "rebobinado": rebobinado,
-    "error": error,
+    "error": error, "rasgado": rasgado, "trazo": trazo, "trazo_largo": lambda: trazo(0.9),
 }
 
 

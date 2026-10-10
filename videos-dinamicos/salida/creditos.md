@@ -120,3 +120,13 @@ Sin material de librerías: escenas dibujadas en código y efectos sintetizados 
 **Voz:** ElevenLabs · voz Stanley (Trailer) · Eleven v3 · velocidad 1.15 · estabilidad 35 · similitud 75, guion en `guiones/corte-4-trucos.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
 
 Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).
+
+## corte-4-trucos-b (Remotion)
+
+Descrito en `remotion/videos/corte-4-trucos-b.json` y renderizado con Remotion.
+
+**Efectos sintetizados (`motor/sonido.py`):** `boom`, `boom_suave`, `candado`, `check`, `ding`, `glitch`, `latido`, `pop`, `rasgado`, `rebobinado`, `riser_corto`, `sello`, `swell`, `swell_largo`, `tecla`, `tick`, `tijera`, `tock`, `trazo`, `trazo_largo`, `whoosh`, `whoosh_abajo`, `whoosh_corto`, `zoom`
+
+**Voz:** ElevenLabs · voz Stanley (Trailer) · Eleven v3 · velocidad 1.15 · estabilidad 35 · similitud 75, guion en `guiones/corte-4-trucos.json`; silencios recortados y tiempos por palabra con Whisper (`whisper-1`).
+
+Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).
