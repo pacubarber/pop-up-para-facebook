@@ -56,7 +56,7 @@ def rise_words(ctx, words, fname, size, x, y, t, color="#ffffff", space=1.6, col
     """Palabras (con tiempos de Whisper) que van subiendo una a una en la misma línea."""
     sp = text_width(" ", fname, size, kw.get("wght")) * space
     ws = [w["text"].upper() if upper else w["text"] for w in words]
-    widths = [text_width(s, fname, size, kw.get("wght")) for s in ws]
+    widths = [text_width(s, fname, size, kw.get("wght"), kw.get("tracking", 0)) for s in ws]
     total = sum(widths) + sp * (len(ws) - 1)
     left = {"c": x - total / 2, "l": x, "r": x - total}[anchor]
     cx = left

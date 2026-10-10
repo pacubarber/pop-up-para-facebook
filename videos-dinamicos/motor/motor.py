@@ -802,11 +802,11 @@ class Video:
                 b = self.shots[j]
                 if b.tdur > 0 and b.trans != "cut" and b.t0 - b.tdur / 2 <= t < b.t0 + b.tdur / 2:
                     a = self.shots[j - 1]
-                    A, _ = self.render_shot(a, t)
-                    B, mb = self.render_shot(b, t, need_matte)
                     p = (t - (b.t0 - b.tdur / 2)) / b.tdur
+                    A, ma = self.render_shot(a, t, need_matte and p <= 0.5)
+                    B, mb = self.render_shot(b, t, need_matte and p > 0.5)
                     out = transition(b.trans, A, B, p, b.tparams, t)
-                    return out, (mb if p > 0.5 else None)
+                    return out, (mb if p > 0.5 else ma)
         return self.render_shot(s, t, need_matte)
 
     def frame(self, n: int) -> np.ndarray:

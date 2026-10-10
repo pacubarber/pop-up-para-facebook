@@ -151,7 +151,7 @@ def main():
     os.makedirs(a.salida, exist_ok=True)
     out = os.path.join(a.salida, f"{v.name}.mp4")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", silent, "-i", wav, "-map", "0:v", "-map", "1:a", *ENC,
-                    "-preset", "slow", "-crf", "20", "-maxrate", "7M", "-bufsize", "14M", "-profile:v", "high",
+                    "-preset", "slow", "-crf", "21", "-maxrate", "5M", "-bufsize", "10M", "-profile:v", "high",
                     "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", out], check=True)
     poster_t = getattr(v, "poster", v.dur * 0.3)
     cv2.imwrite(os.path.join(a.salida, f"{v.name}.jpg"), v.frame_u8(int(poster_t * FPS)), [cv2.IMWRITE_JPEG_QUALITY, 86])

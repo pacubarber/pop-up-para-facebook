@@ -97,7 +97,12 @@ def build():
 
     # ------------------------------------------------------------------ 3. "Por eso creamos Aura." AURA detrás de la modelo
     def tres_front(ctx, lt, t):
-        fx.rise_words(ctx, L[2][:3], SANS, 46, W / 2, 330, t, color=BROWN, wght=600, tracking=10, space=1.4)
+        # "Por eso creamos" delante de la modelo; se va cuando entra AURA
+        gone = ease_in(prog(t, DROP - 0.08, DROP + 0.12), 2)
+        if gone < 1:
+            ctx.band(1000, 1500, "#1a0f08", 0.35 * (1 - gone))
+            fx.rise_words(ctx, L[2][:3], SERIF_I, 112, W / 2, 1250 - gone * 40, t, color=WHITE, upper=False, space=1.3,
+                          shadow=12, opacity=1 - gone, blur=gone * 14)
 
     def tres_back(ctx, lt, t):
         q = t - DROP + 0.03
@@ -105,7 +110,7 @@ def build():
             return
         size = fit_size("AURA", SERIF, W * 0.98, 560)
         p = ease_out(prog(q, 0, 0.5), 3)
-        ctx.text("AURA", SERIF, size, W / 2, 760, color=ORANGE, scale=lerp(1.25, 1.0, p) * (1 + 0.03 * prog(t, DROP, 6.6)),
+        ctx.text("AURA", SERIF, size, W / 2, 330, color=ORANGE, scale=lerp(1.25, 1.0, p) * (1 + 0.03 * prog(t, DROP, 6.6)),
                  opacity=prog(q, 0, 0.1), blur=(1 - p) * 18, tracking=round(lerp(60, 6, p)))
 
     v.layer(4.83, 6.57, tres_back, behind=True)
@@ -156,7 +161,7 @@ def build():
             d = np.abs((xx + (yy - y) * 0.45) - pos)
             band = np.clip(1 - d / 90, 0, 1) ** 2
             ctx.put(m * band, "#ffffff", 0, 0, 0.95, "add")
-        fx.rise_words(ctx, L[4][2:], SANS, 54, W / 2, 1100, t, color=CREAM, wght=700, tracking=10, space=1.4, shadow=8)
+        fx.rise_words(ctx, L[4][2:], SANS, 54, W / 2, 1100, t, color=CREAM, wght=700, tracking=10, space=3.0, shadow=8)
 
     v.layer(9.95, 12.42, cinco)
     v.sfx(10.6, 2586, gain=-15, align="peak")
