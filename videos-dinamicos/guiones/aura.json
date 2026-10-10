@@ -1,0 +1,23 @@
+{
+ "name": "aura",
+ "voice": "marin",
+ "model": "gpt-4o-mini-tts-2025-12-15",
+ "speed": 1.03,
+ "instructions": "Español latinoamericano neutro (no de España), pronunciación clara. Voz femenina suave, elegante e íntima de anuncio de cosmética de lujo: cálida, segura, casi susurrada pero muy clara. Ritmo fluido, sin pausas largas.",
+ "lead": 0.0,
+ "gap": 0.1,
+ "tail": 0.5,
+ "pause_max": 0.12,
+ "pause_keep": 0.05,
+ "lines": [
+  "Tu piel lo nota todo.",
+  "El sol. El estrés. Las noches cortas.",
+  "Por eso creamos Aura.",
+  "Sérum de vitamina C al quince por ciento.",
+  "Más luz desde la primera semana.",
+  "Un tono más uniforme.",
+  "Y se absorbe en segundos.",
+  "Sin perfume. Sin parabenos.",
+  "Aura. Tu piel, en su mejor versión."
+ ]
+}

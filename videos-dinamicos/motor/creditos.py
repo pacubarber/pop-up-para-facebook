@@ -1,0 +1,86 @@
+"""Genera salida/creditos.md: clips, música y efectos de sonido que usa cada video.
+
+  python3 motor/creditos.py ediciones/nocturna.py ediciones/aura.py … remotion/videos/corte-4-trucos-b.json
+"""
+from __future__ import annotations
+
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import libreria  # noqa: E402
+from render import load  # noqa: E402
+
+ROOT = os.path.dirname(HERE)
+
+
+def fuente_voz(guion_path: str) -> str:
+    spec = json.load(open(guion_path, encoding="utf-8")) if os.path.exists(guion_path) else {}
+    return spec.get("fuente") or "OpenAI TTS (`gpt-4o-mini-tts`)"
+
+
+def creditos_json(path: str) -> list[str]:
+    """Videos de Remotion descritos en JSON (remotion/videos/*.json)."""
+    spec = json.load(open(path, encoding="utf-8"))
+    rel = os.path.relpath(path, ROOT)
+    out = [f"## {spec['nombre']} (Remotion)", "", f"Descrito en `{rel}` y renderizado con Remotion."]
+    ids = sorted({s["id"] for s in spec.get("sonidos", [])})
+    if ids:
+        out += ["", "**Efectos sintetizados (`motor/sonido.py`):** " + ", ".join(f"`{i}`" for i in ids)]
+    if spec.get("voz"):
+        g = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(path)), spec["voz"]["guion"]))
+        out += ["", f"**Voz:** {fuente_voz(g)}, guion en `{os.path.relpath(g, ROOT)}`; "
+                    "silencios recortados y tiempos por palabra con Whisper (`whisper-1`)."]
+    out += ["", "Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`).", ""]
+    return out
+
+
+def main(paths):
+    out = ["# Créditos del material", "",
+           "Todo el material viene de librerías con licencia de uso comercial gratuito y sin atribución obligatoria "
+           "([Mixkit](https://mixkit.co/license/), [Coverr](https://coverr.co/license)). Se lista para que cualquiera pueda "
+           "volver a descargarlo o reemplazarlo.", ""]
+    for p in paths:
+        if p.endswith(".json"):
+            out += creditos_json(p)
+            continue
+        v = load(p)
+        out += [f"## {v.name}", "", "| Clip | Tramo usado | Enlace |", "|---|---|---|"]
+        tramos: dict[str, list[str]] = {}
+        for c in v.clips:
+            t = f"{c.desde:.1f}–{c.desde + c.dur:.1f}"
+            if t not in tramos.setdefault(c.ref, []):
+                tramos[c.ref].append(t)
+        for ref, ts in tramos.items():
+            src, key = ref.split(":", 1)
+            link = (f"https://assets.mixkit.co/videos/{key}/{key}-1080.mp4" if src == "mixkit"
+                    else f"https://cdn.coverr.co/videos/{key}/1080p.mp4")
+            out.append(f"| `{ref}` | {', '.join(sorted(ts, key=lambda x: float(x.split('–')[0])))} s | [{src}]({link}) |")
+        if v.music_spec:
+            m = v.music_spec
+            out += ["", f"**Música:** Mixkit #{m['id']} desde el segundo {m['start']:.2f} "
+                        f"([mp3](https://assets.mixkit.co/music/{m['id']}/{m['id']}.mp3))"]
+        mix_sfx = sorted({s["id"] for s in v.sfx_list if not isinstance(s["id"], str)})
+        syn_sfx = sorted({s["id"] for s in v.sfx_list if isinstance(s["id"], str)})
+        if mix_sfx:
+            out += ["", "**Efectos de sonido (Mixkit):** " + ", ".join(
+                f"[#{i}](https://assets.mixkit.co/active_storage/sfx/{i}/{i}-preview.mp3)" for i in mix_sfx)]
+        if syn_sfx:
+            out += ["", "**Efectos sintetizados (`motor/sonido.py`):** " + ", ".join(f"`{i}`" for i in syn_sfx)]
+        if v.vo:
+            fuente = fuente_voz(os.path.join(ROOT, "guiones", f"{v.vo['name']}.json"))
+            out += ["", f"**Voz:** {fuente}, guion en `guiones/{v.vo['name']}.json`; "
+                        "silencios recortados y tiempos por palabra con Whisper (`whisper-1`)."]
+        if not v.clips:
+            out += ["", "Sin material de librerías: escenas dibujadas en código y efectos sintetizados (`motor/sonido.py`)."]
+        out.append("")
+    path = os.path.join(ROOT, "salida", "creditos.md")
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(out))
+    print(path)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
